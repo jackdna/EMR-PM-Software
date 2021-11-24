@@ -1,0 +1,43 @@
+.no-left-pad{padding-left:0;}
+.no-right-pad{padding-right:0;}
+.margin-adj{height:10px;}
+.margin-adj-5{height:5px;}
+.module_border{padding:10px;}
+.lbl100{width:100px;}
+.lbl50{width:50px;}
+.lbl100,.lbl50{display:inline-block;}
+#LensData input[type="text"], #LensData select{width:100%;}
+#itemDisp input[type="text"], #itemDisp select{width:100%;}
+#itemDisp span{font-size:15px; font-weight:bold;}
+#GDT input[type="text"]{width:100%;}
+#ptWearPicShow{
+	padding:2px;
+	text-align:center;
+	display:inline-block;
+	cursor:pointer;
+}
+#ptWearImg{
+	right:75px;
+	width:460px;
+    top:0px;
+	left:0px;
+    position:fixed;
+    z-index:999;
+    background-color:#FFF;
+    padding:10px;
+    border:1px solid #ccc;
+}
+#CloseIconPtWear {
+    position:absolute;
+    top:14px;
+    right:14px;
+	cursor:pointer;
+}
+.ptWearPic{
+	float:right;
+	padding-right: 10px;	
+}
+input[type="text"] {
+    height: 25px;
+}
+.text_purpule{font-size:13px;}
