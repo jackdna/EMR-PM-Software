@@ -1,0 +1,36 @@
+<!--
+Under MIT License
+Use, Modify, Distribute under MIT License.
+MIT License 2019
+-->
+<html>
+<body>
+<center>
+<p align="center">
+<font color="#CC0000" face="Arial, Helvetica, sans-serif" size="5"><br>
+Image Acquisition and Uploading with JTwain</font>
+<p><br>
+
+<applet code="scanDocs.class" 
+	codebase="http://192.168.0.5/demoApplet/"
+	archive="scan.jar,JTwain.jar"
+	width="600" height="470">
+	<param name="DOWNLOAD_URL" value="http://192.168.0.5/demoApplet/AspriseJTwain.dll">
+	<param name="DLL_NAME" value="AspriseJTwain.dll">
+	<param name="UPLOAD_URL" value="http://192.168.0.5/demoApplet/fileupload.php?method=upload">
+	<param name="UPLOAD_PARAM_NAME" value="file[]">
+	<param name="UPLOAD_EXTRA_PARAMS" value="A=B">
+	<!--<param name="UPLOAD_OPEN_URL" value="http://localhost/demoApplet/fileupload.php">-->
+	<param name="UPLOAD_OPEN_TARGET" value="_blank">
+	Oops, Your browser does not support Java applet!
+</applet>
+
+<p align="center">
+<br>
+<a href="pdfDemo.php">Retrieve Files </a>
+<!--<p align="center"> The applet above uses four tabs for the demo purpose. <br>
+In a production version, one single click should be able to finish all the tasks.  
+<p align="center"> -->
+</body>
+</html>
+		

@@ -1,0 +1,20 @@
+Chestysoft csXMultiUpload version 1.1
+CORPORATE LICENCE.
+
+PLEASE READ THESE TERMS AND CONDITIONS BEFORE INSTALLING THE SOFTWARE.
+
+These terms and conditions apply to the Chestysoft csXMultiUpload programme and any accompanying documentation (referred to as "the software"). By installing the software, you are considered to have agreed to the terms and conditions.
+
+This licence grants you, the licence holder, a non-exclusive licence to install and use the software on any number of computers that you own or control at a single geographical location.
+
+If the software is used as a client side control the OCX file, csXMultiUpload.ocx, may be freely distributed but the licence file, csXMultiUpload.lic, must not be distributed. The licence file may be added to one or more Licence Package Files (.lpk) and installed on the computers covered by this licence.
+
+If the software is used for the development of applications, the licence file, csXMultiUpload.lic, may be copied to any of the computers covered by this licence, but it must not be distributed to computers not covered by this licence. The OCX file, csXMultiUpload.ocx, may be included as part of a distributed application and there is no limit to the number of applications which may be distributed.
+
+The software is the intellectual property of Chestysoft, and may not be copied except for backup purposes and for installation and distribution as described above. You may not resell or otherwise distribute the software.
+
+The software is sold "as is" and without warranties as to performance or purpose. Any liability of Chestysoft will be limited to product replacement or refund of the purchase price.
+
+Chestysoft, May 2007.
+Web site: www.chestysoft.com
+Email: info@chestysoft.com

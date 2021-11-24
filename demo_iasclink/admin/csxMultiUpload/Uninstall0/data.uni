@@ -1,0 +1,210 @@
+[Scripts]
+InitScriptCount=0
+FinalScriptCount=0
+InstallFilesCount=0
+
+[General]
+AppName=csXMultiUpload
+Caption=csXMultiUpload Setup
+CaptionFontName=MS Sans Serif
+CaptionFontSize=8
+CaptionFontColor=0
+CaptionFontStyle=0
+VerInfo=1.1
+DetailedVersion=1.1
+Copyright=
+CopyrightFontName=MS Sans Serif
+CopyrightFontSize=8
+CopyrightFontColor=0
+CopyrightFontStyle=0
+UseGradient=0
+Company=Chestysoft
+DestDir={pro}\Chestysoft\csXMultiUpload
+ProgMenuFolder=Chestysoft csXMultiUpload
+AlwaysReboot=0
+RequirePassword=0
+Password=9C1185A5C5E9FC54612808977EE8F548B2258D31
+InstallLog=0
+InstallLogFile=
+AdminWarning=1
+System=2048
+Transparent=0
+BackAlign=0
+StartColor=16711680
+EndColor=0
+Uninstaller=1
+AutomaticUninstDir=1
+UninstallDir={app}\Uninstall
+UninstIcon=1
+IconTitle=Uninstaller
+UninstReportLevel=0
+CustomSetup=0
+BillboardLoop=1
+BillboardDelay=1000
+UninstallInfo=csXMultiUpload 1.1
+
+[Dialogs]
+0=welcome.ddf
+1=license agreement.ddf
+2=Select destination.ddf
+3=select program group.ddf
+4=custom setup.ddf
+5=user information.ddf
+6=overview.ddf
+7=installation progress.ddf
+8=setup complete.ddf
+
+[UninstallDialogs]
+0=uninstaller.ddf
+1=installation progress.ddf
+2=uninstall finished.ddf
+
+[LanguageFiles]
+0=default.tsl
+
+[Groups]
+0="Program files"
+1="Help files"
+
+[SourceFiles]
+0={emp}
+1={emp}
+2={emp}
+3={emp}
+4={emp}
+5={emp}
+6={emp}
+
+[DestFiles]
+0="{app}\instructions.pdf"
+1="{app}\csXMultiUpload.ocx"
+2="{app}\csXMultiUpload.lic"
+3="{app}\licence_corporate.txt"
+4="{app}\csxmultiupload.htm"
+5="{app}\csXMultiUpload.cab"
+6="{app}\csXMultiUpload.lpk"
+
+[CompareVersions]
+1=1
+
+[CompareTimeStamps]
+1=0
+
+[FileShared]
+1=1
+
+[RegOCX]
+1=1
+
+[InstTypes]
+0="Standard"
+1="Minimum"
+
+[GroupsInType]
+0=|0||0||1|
+1=|0|
+
+[IconTitles]
+0="instructions.pdf"
+1="csxmultiupload.htm"
+
+[IconParams]
+0="{emp}"
+1="{emp}"
+
+[IconTargets]
+0="{app}\instructions.pdf"
+1="{app}\csxmultiupload.htm"
+
+[IconWorkDirs]
+0="{app}"
+1="{app}"
+
+[IconLocations]
+0="{app}\instructions.pdf"
+1="{app}\csxmultiupload.htm"
+
+[AdditionalUninst]
+0="{app}\*.oca"
+1=C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Chestysoft csXMultiUpload\instructions.pdf.lnk
+2=C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Chestysoft csXMultiUpload\csxmultiupload.htm.lnk
+3=C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Chestysoft csXMultiUpload\Uninstaller.lnk
+4=C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Chestysoft csXMultiUpload
+
+[FileAttributes]
+0=8192
+1=8224
+2=8224
+3=8192
+4=8192
+5=8224
+6=8224
+
+[FileSizes]
+0=118812
+1=595760
+2=41
+3=1763
+4=1813
+5=304269
+6=894
+
+[WasInstalled]
+0=1
+1=1
+2=1
+3=1
+4=1
+5=1
+6=1
+
+[VarNames]
+0={win}
+1={sys}
+2={typ}
+3={emp}
+4={ser}
+5={rgo}
+6={rgc}
+7={cst}
+8={tmp}
+9={src}
+10={wtp}
+11={pro}
+12={cmf}
+13={prm}
+14={dsk}
+15={stu}
+16={snd}
+17={per}
+18={fnt}
+19={lng}
+20={app}
+21={uni}
+22={prg}
+
+[VarValues]
+0=C:\Windows
+1=C:\Windows\System32
+2=Standard
+3=
+4=
+5=compaq
+6=
+7=|0||0||1|
+8=C:\Users\compaq\AppData\Local\Temp\TS0
+9=C:\Users\compaq\Downloads
+10=C:\Users\compaq\AppData\Local\Temp
+11=C:\Program Files
+12=C:\Program Files\Common Files
+13=C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+14=C:\Users\Public\Desktop
+15=C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+16=C:\Users\compaq\AppData\Roaming\Microsoft\Windows\SendTo
+17=C:\Users\compaq\Documents
+18=C:\Windows\Fonts
+19=C:\Users\compaq\AppData\Local\Temp\TS0\default.tsl
+20=C:\Users\compaq\Desktop\csxm
+21=C:\Users\compaq\Desktop\csxm\Uninstall0
+22=C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Chestysoft csXMultiUpload
+

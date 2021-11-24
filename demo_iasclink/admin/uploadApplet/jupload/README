@@ -1,0 +1,39 @@
+JUpload 0.90 deploy-package at www.jupload.biz:
+
+1. Unzip this folder to your webserver
+2. Navigate with your webbrowser to the location of the index.html
+3. JUpload will start and upload files to the corresponding subfolders within the /uploaded/ - folder if your webbrowser is setup correctly and supports PHP.
+
+WARNING: There is no User-Authentication required by default. Everyone, accessing this site can now upload files.
+
+
+
+Files and folders:
+
+index.html                      This site embedds the JUpload-Applet
+
+index-put.html                  This site embedds the JUpload-Applet, using a different configuration for usage with the PUT-Method (see 
+                                the "Config"-Paramnter within the <applet>-tag).
+                                
+index-js-test.html              This site is using the default JUpload-configuration with some custom javascripts added.
+
+other /*.html files             Use other Configurations for testing purposes.
+
+/cfg/*.config                   Every properties-File contains configuration for JUpload in the form of key=value pairs.
+
+/cfg/jupload.default.config     Default config-file, used in the index.html
+
+/dist/*                         Contains all jar-archives, needed for JUpload and in addition the SkinLF-archiv for usage of the
+                                Skin-LookAndFeel by L2F-Productions and some skins for the Skin-LookAndFeel.
+
+/scripts/php/*.php              Contains one script for usage with the post-method and one for usage with the put-method plus an include-file
+                                and a config-file which are used for both, PUT and POST.
+                                Please note that you need to prepare several settings in your webbrowser to be able to use the PUT-Method.
+                                
+/uploaded/*                     The folder to upload files to by default (can be changed in /scripts/php/jupload.cfg.php).
+                                Inlcuding an .htaccess-file for auto-indexing under Apache.
+
+
+Copyright ©     Smartwerkz,
+                Haller Systemservices,
+                Dominik Seifert

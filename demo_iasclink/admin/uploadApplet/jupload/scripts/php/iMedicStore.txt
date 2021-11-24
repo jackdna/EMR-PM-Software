@@ -1,0 +1,3 @@
+C:\javaprograms\signApplet>keytool -genkey -dname "cn=imwemr, ou=iMedic, o=i
+Medic, c=US" -alias iMedicUpload -keypass iMedicUploadPass -validity 999 -keySto
+re iMedicStore2 -storepass iMedicStore2Pass
