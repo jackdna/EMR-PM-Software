@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>:: imwemr ::</title>
+
+<!-- Bootstrap -->
+
+<link href="../../library/css/gfs.css" rel="stylesheet" type="text/css">
+<link href="../../library/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../../library/css/common.css" rel="stylesheet" type="text/css">
+<link href="../../library/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../library/css/style.css" rel="stylesheet" type="text/css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid gfs">
+<div class="row">
+<div class="col-sm-5">
+<h2>Glaucoma Flow Sheet</h2>
+</div>
+<div class="col-sm-7 form-inline glwrht">
+<button type="submit" class="procedures">Procedures</button>
+<div class="form-group">
+    <label for="exampleInputName2">Date of Activation: </label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+  </div>
+<button type="submit" class="activate">Activate</button>
+<button type="submit" class="deactivate">Deactivate</button>
+<button type="submit" class="printbut"><i class="fa fa-print" aria-hidden="true"></i>
+</button>
+
+</div>
+
+</div>
+<div class="clearfix"></div>
+<div class="row">
+<div class="col-sm-5">
+<div class="whtbox">
+<div class="boxheadertop"><h3>cubic centimeter (CC)</h3></div>
+<div class="clearfix"></div>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr>
+<td width="28%"><strong>Description</strong></td>
+<td width="31%" align="center"><strong>OD</strong></td>
+<td width="41%" align="center"><strong>OS</strong></td>
+
+</tr>
+<tr>
+  <td><textarea class="form-control" rows="1"></textarea></td>
+  <td align="center"><textarea class="form-control" rows="1"></textarea></td>
+  <td align="center"><textarea class="form-control" rows="1"></textarea></td>
+</tr>
+<tr>
+  <td align="right">Staging code</td>
+  <td align="center"><select class="form-control minimal">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select></td>
+  <td align="center"><select class="form-control minimal">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select></td>
+</tr>
+<tr>
+  <td align="right">T<sub>MAX</sub></td>
+  <td align="center" class="formalg"><input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">  <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe"></td>
+  <td align="center" class="formalg"><input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">  <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe"></td>
+</tr>
+<tr>
+  <td colspan="3">Pachy</td>
+  </tr>
+<tr>
+  <td><select name="select" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select></td>
+  <td align="center" class="form-inline formalg"><input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">  <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe"></td>
+  <td align="center" class="form-inline formalg"><input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">  <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe"></td>
+</tr>
+<tr>
+  <td colspan="3">VF</td>
+  </tr>
+<tr>
+  <td><select name="select" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    </select></td>
+  <td align="center" class="form-inline"><textarea name="textarea" rows="1" class="form-control"></textarea></td>
+  <td align="center"><textarea name="textarea2" rows="1" class="form-control"></textarea></td>
+</tr>
+<tr>
+  <td colspan="3">OCT-RNFL</td>
+</tr>
+<tr>
+  <td><select name="select2" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select></td>
+  <td align="center" class="form-inline"><textarea name="textarea4" rows="1" class="form-control"></textarea></td>
+  <td align="center"><textarea name="textarea4" rows="1" class="form-control"></textarea></td>
+</tr>
+<tr>
+  <td colspan="3">Gonio</td>
+</tr>
+<tr>
+  <td><select name="select" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    </select></td>
+  <td align="center" ><select name="select3" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    </select></td>
+  <td align="center"><select name="select4" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    </select></td>
+</tr>
+<tr>
+  <td colspan="3">Disc Appearance</td>
+</tr>
+<tr>
+  <td><select name="select5" class="form-control minimal">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select></td>
+  <td align="center" >
+    <input type="text" class="form-control" id="exampleInputName" placeholder="Jane Doe">
+ </td>
+  <td align="center">
+    <input type="text" class="form-control" id="exampleInputName3" placeholder="Jane Doe">
+  </td>
+</tr>
+<tr>
+  <td colspan="3">Notes : </td>
+  </tr>
+<tr>
+  <td colspan="3">
+    <textarea name="textarea3" rows="1" class="form-control"></textarea>
+    </td>
+</tr>
+</table>
+</div>
+
+
+</div>
+</div>
+<div class="col-sm-2">
+<div class="rskfact">
+<h2>Risk Factor</h2>
+<div class="clearfix"></div>
+<ul>
+<li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Family HX Race</label></li>
+<li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Diabetes</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>PXF</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Steroid Responder</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>PDS</label></li>
+            
+
+
+</ul>
+
+<h2>Warnings</h2>
+<div class="clearfix"></div>
+<ul>
+<li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Arrhythmia</label></li>
+<li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Asthma/COPD</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Bradycardia</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>CHF</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Sulfa Allergy</label></li>
+      <li><label class="control control--checkbox"><input type="checkbox"/>
+      <div class="control__indicator"></div>Depression</label></li>
+            
+
+
+</ul>
+
+<h2>IOP Targets</h2>
+<div class="clearfix"></div>
+Trgt<br>
+<div class="clearfix"></div>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group text-center">
+    <label for="">OD</label>
+    <input type="" class="form-control" id="" placeholder="">
+  </div>
+
+</div>
+<div class="col-sm-6">
+<div class="form-group text-center">
+    <label for="">OS</label>
+    <input type="" class="form-control" id="" placeholder="">
+  </div>
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+<div class="col-sm-5">
+<div class="whtbox">
+<div class="boxheadertop">
+<div class="row">
+<div class="col-sm-6"><button type="submit" class="procedures">Allergies</button></div>
+<div class="col-sm-6 text-right"><button type="submit" class="activate">Systemic Meds</button></div>
+</div>
+
+</div>
+<div class="clearfix"></div>
+<div class="boxheadertop"><div class="row">
+<div class="col-sm-9"><h4>Medication Grid</h4></div>
+<div class="col-sm-3 text-right"><img src="../../library/images/add.png" alt=""> <img src="../../library/images/dlt.png" alt=""></div>
+
+</div></div>
+<div class="clearfix"></div>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr>
+<td width="100"><strong>Ocular Med</strong></td>
+<td><strong>Site </strong></td>
+<td><strong>Sig</strong></td>
+<td><strong>Started </strong></td>
+<td><strong>Stopped</strong></td>
+<td><strong>Comments</strong></td>
+
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+
+
+
+
+</table>
+</div>
+
+<div class="clearfix"></div>
+<div class="boxheadertop"><div class="row">
+<div class="col-sm-9"><h4>Medication Grid</h4></div>
+<div class="col-sm-3 text-right"><img src="../../library/images/add.png" alt=""> <img src="../../library/images/dlt.png" alt=""></div>
+
+</div></div>
+<div class="clearfix"></div>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr>
+<td width="100"><strong>Ocular Med</strong></td>
+<td><strong>Site </strong></td>
+<td><strong>Sig</strong></td>
+<td><strong>Started </strong></td>
+<td><strong>Stopped</strong></td>
+<td><strong>Comments</strong></td>
+
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+
+<tr>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+  <td><input type="text" class="form-control" id="" placeholder=""></td>
+</tr>
+
+
+
+
+</table>
+</div>
+</div>
+</div>
+
+</div>
+<div class="clearfix"></div>
+<div class="whtbox">
+<div class="boxheadertop"><h4>LOG</h4></div>
+<div class="clearfix"></div>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr>
+<td width="140" class="loglft">Date :</td>
+<td>08-01-2016 <img src="../../library/images/rhtar1.png" alt="" align="right"></td>
+<td>08-01-2016 <img src="../../library/images/rhtar1.png" alt="" align="right"></td>
+<td>08-01-2016 <img src="../../library/images/rhtar1.png" alt="" align="right"></td>
+<td>08-01-2016 <img src="../../library/images/rhtar1.png" alt="" align="right"></td>
+</tr>
+<tr>
+<td class="loglft">Visual Acuity :	</td>
+<td>OD: 20/25 <br>
+  OS: 20/30 </td>
+<td>OD: 20/25 <br>
+  OS: 20/30 </td>
+<td>OD: 20/25 <br>
+  OS: 20/30 </td>
+<td>OD: 20/25 <br>
+  OS: 20/30 </td>
+</tr>
+<tr>
+<td class="loglft">Ocular Meds :</td>
+<td>Ocuvite PO </td>
+<td>Ocuvite PO </td>
+<td>Ocuvite PO </td>
+<td>Ocuvite PO </td>
+</tr>
+<tr>
+<td class="loglft">IOP</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="loglft">Eye Meds :	</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="loglft">Test :	</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="loglft">Assessment :</td>
+<td>Blepharitis; Right Upper Lid (H01.001)<br>
+  Cataract; Left Eye (H25.13, H25.13,H25.13)<br>
+  CHALAZION; Left Upper Lid, Left Lower Lid<br>
+  (H00.14, H00.14, H00.14, H00.15)<br>
+  Conjunctivitis Chronic, Allergic (H10.45)<br></td>
+<td>Blepharitis; Right Upper Lid (H01.001)<br>
+  Cataract; Left Eye (H25.13, H25.13,H25.13)<br>
+  CHALAZION; Left Upper Lid, Left Lower Lid<br>
+  (H00.14, H00.14, H00.14, H00.15)<br>
+  Conjunctivitis Chronic, Allergic (H10.45)<br></td>
+<td>Blepharitis; Right Upper Lid (H01.001)<br>
+  Cataract; Left Eye (H25.13, H25.13,H25.13)<br>
+  CHALAZION; Left Upper Lid, Left Lower Lid<br>
+  (H00.14, H00.14, H00.14, H00.15)<br>
+  Conjunctivitis Chronic, Allergic (H10.45)<br></td>
+<td>Blepharitis; Right Upper Lid (H01.001)<br>
+  Cataract; Left Eye (H25.13, H25.13,H25.13)<br>
+  CHALAZION; Left Upper Lid, Left Lower Lid<br>
+  (H00.14, H00.14, H00.14, H00.15)<br>
+  Conjunctivitis Chronic, Allergic (H10.45)<br></td>
+</tr>
+<tr>
+<td class="loglft">Plan  : 	</td>
+<td>Aggressive warm compresses and massage.Â­</td>
+<td>Aggressive warm compresses and massage.Â­</td>
+<td>Aggressive warm compresses and massage.Â­</td>
+<td>Aggressive warm compresses and massage.Â­</td>
+</tr>
+<tr>
+<td class="loglft">Gonio  :  	</td>
+<td>OD: PTM All Quadrant<br>
+  OS: ATM Nasal</td>
+<td>OD: PTM All Quadrant<br>
+  OS: ATM Nasal</td>
+<td>OD: PTM All Quadrant<br>
+  OS: ATM Nasal</td>
+<td>OD: PTM All Quadrant<br>
+  OS: ATM Nasal</td>
+</tr>
+<tr>
+<td class="loglft">Disc  :</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="loglft">Comments :</td>
+<td><textarea class="form-control" rows="3"></textarea></td>
+<td><textarea class="form-control" rows="3"></textarea></td>
+<td><textarea class="form-control" rows="3"></textarea></td>
+<td><textarea class="form-control" rows="3"></textarea></td>
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+</div>
+
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="../../js/jquery.min.1.12.4.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../../js/bootstrap.min.js"></script> 
+<script src="../../js/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script>
+		(function($){
+			$(window).load(function(){
+				
+				$("#content-1").mCustomScrollbar({
+					theme:"minimal"
+				});
+				
+			});
+		})(jQuery);
+	</script> 
+<script>
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+    
+    </script> 
+<script src="../../js/jquery.okayNav.min.js"></script> 
+<script type="text/javascript">
+        var navigation = $('#nav-main').okayNav();
+    </script> 
+<script>
+   /**
+     * EFECTO PARA FLECHAS EN ACORDEON
+     */
+    
+    $(document).on('show','.accordion', function (e) {
+         //$('.accordion-heading i').toggleClass(' ');
+         $(e.target).prev('.accordion-heading').addClass('accordion-opened');
+    });
+    
+    $(document).on('hide','.accordion', function (e) {
+        $(this).find('.accordion-heading').not($(e.target)).removeClass('accordion-opened');
+        //$('.accordion-heading i').toggleClass('fa-chevron-right fa-chevron-down');
+    });
+
+</script>
+
+<script>
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ $(container).each(function() {
+
+   $el = $(this);
+   $($el).height('auto')
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+$(window).load(function() {
+  equalheight('.medicalhx .sdpanel');
+});
+
+
+$(window).resize(function(){
+  equalheight('.medicalhx .sdpanel');
+});
+
+
+
+</script>
+
+
+
+</body>
+</html>

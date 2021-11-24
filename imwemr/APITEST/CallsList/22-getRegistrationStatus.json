@@ -1,0 +1,13 @@
+{
+    "name": "getRegistrationStatus",
+    "description": "This call is used to query the registration status of the patient.Patient ID will be used to query the registration status of patient.",
+    "parameters": [
+         {
+             "name": "patientId",
+             "type": "Integer",
+             "description": "Patient MRN in IMW.",
+             "required": true
+         }
+     ],
+    "accessToken": true
+}

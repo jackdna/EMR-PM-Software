@@ -1,0 +1,10 @@
+#!/bin/bash
+PID=`ps -eaf | egrep "/var/www/html/bsc_asc/hl7sys/old/data_receiver/directory_read_inbound.php" |grep -v grep |awk '{print $2}'`
+if [[ "" != "$PID" ]]; 
+then
+	echo "CEC_BSC Athena HL Reader already running"
+else
+	echo "Starting Service..."
+	nohup /usr/bin/php /var/www/html/bsc_asc/hl7sys/old/data_receiver/directory_read_inbound.php bsc_asc > /dev/null 2>&1 &
+	echo "CEC_BSC Athena HL Reader Started"
+fi

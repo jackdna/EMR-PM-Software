@@ -1,0 +1,116 @@
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/*
+File: superbill.css
+Purpose: This file provides style for Superbill section.
+Access Type : Include file
+*/
+/*superbill*/
+#superbill{}
+#superbill .header{}
+#superbill .header .clickable{}
+/*	
+#superbill .dx{width:70px; }
+#superbill .cpt{width:70px; }
+#superbill .md{width:45px; }
+#superbill .unit{width:30px; }
+*/
+
+/*
+#superbill .dxCode{width:50px;}
+#superbill .cptcode{width:50px;}
+#superbill .cptunit{width:15px;}
+#superbill .modcode{width:25px;}
+*/
+
+#superbill .cptcode{min-width:50px;padding: 1px 1px !important;}
+
+#superbill table{min-width:auto;}
+#superbill .table-responsive{overflow-x:visible;}
+#superbill .dx div.form-control{padding:0px 0px !important;}
+
+#superbill #divChoosePqriCodes,#superbill #divChooseDxCodes{
+		position:fixed;display:none;width:200px;background-color:#FFFFFF;border:1px solid #000000;
+		top:0px;left:10%;z-index:1100; max-height:90%;}
+
+#superbill #divChooseDxCodes .small{white-space: normal}
+#superbill #dx_sel_tbl{/*border:1px solid black;color:black;font-size:normal;background-color:white;*/width:100%; border-spacing:0px;border-collapse: separate;}
+#superbill #divChooseDxCodes .table{margin-bottom:0px;}
+#superbill #dx_sel_tbl th.section_header{height:25px;font-size:14px;cursor:move;}
+#superbill #dx_sel_tbl div{max-height:400px;overflow:auto;background-color:white;vertical-align:top;}
+#superbill #dx_sel_tbl div table.icd10{width:100%;margin:0px;padding:0px;border-spacing:1px;border-collapse: separate;}
+#superbill #dx_sel_tbl div table.icd10 tr {height:30px;}
+#superbill #dx_sel_tbl div table.icd10 tr td{padding-left:5px;min-width:100px;}
+#superbill #dx_sel_tbl div table.icd10 tr td:nth-child(1){background-color:#e8e7e7;min-width:20px;width:20px;}
+#superbill #dx_sel_tbl div table.icd10 tr td:nth-child(2){background-color:#e8e7e7;max-width:200px; }
+#superbill #dx_sel_tbl div table.icd10 tr:nth-child(odd){ background-color:#e1edfb; }
+#superbill #dx_sel_tbl div table.icd10 tr:nth-child(1){ background-color:#333; color:white; }
+#superbill #dx_sel_tbl div table.icd10 tr:nth-child(1) td:nth-child(1), #superbill #dx_sel_tbl div table.icd10 tr:nth-child(1) td:nth-child(2){background-color:#333;}
+#superbill .dxtabel table{margin-bottom:0px;}
+#superbill .dxtabel table td{padding:0px 0px 2px 0px!important;font-size:14px;font-weight:bold;}
+#superbill .dxtabel table td .form-control{padding-left:2px!important;}
+#superbill .table td.cptbox{ position:relative; padding-left:35px!important; }
+#superbill .cptbox .contno {left: 1px;  top: 1px; padding: 0 8px;}
+#superbill .dxcodeshd td{padding-left:3px!important;}
+#superbill .dxcodeshd td:nth-child(1){padding-left:40px!important;}
+#superbill .table td{ padding: 2px 2px !important; }
+
+
+#superbill #divChoosePqriCodes table{width:100%;}
+#superbill #divChoosePqriCodes table th{background-color:#CCBBFF;}
+
+
+/*add exception of big CPT textboxes for tests in css_tests.php*/
+
+/*ICD 10 Dx code pop up*/
+#dialogLSS {max-height:400px;overflow:auto;}
+#dialogLSS table[id*=LSS] td{ color:purple;cursor:pointer;border:0px; }
+#dialogLSS table[id*=LSS] tr:nth-child(1) td{ color:black;cursor:auto;border:0px; }
+#dialogLSS table[id*=LSS] td.highlight{ font-weight:bold; color:red;  }
+#dialogLSS table[id*=LSS] td.highlight_2{ font-weight:bold; color:blue;  }
+
+/*  new css assess pop up  */
+.lbl_asl_1{ width:140px;display:inline-block; border:0px solid red; }
+label[id*=lb_nxt_lvl_code], label[for*=lb_qlfy_lvl_code]{display:inline-block;border:1px solid transparent;padding:1px;}
+label[id*=lb_rs_qlfy_], label[id*=lb_rs_nxt_] { width:100px;display:inline-block; padding:1px; }
+label.lb_rs_def_v{ margin-left:240px;}
+input[id*=lb_qlfy_lvl_code]{display:none;}
+:checked[id*=lb_qlfy_lvl_code]+label[for]{ border:1px solid red; }
+div.seprtr{ display:inline-block; width:70px; margin:2px;border:0px solid red; }
+#td_eye_cd	div.seprtr{width:140px;}
+#dialog-Mdc-cum-new-pt{ position:fixed;  width:90%;min-height:400px;border:1px solid #ccc; top:50px; left: 50px;background-color:#ffffff; padding:1px;font-size:13px;z-index:2000;}
+#dialog-Mdc-cum-new-pt .table{margin-bottom:0px;}
+#dialog-Mdc-cum-new-pt input[type=checkbox]{display:none;}
+#dialog-Mdc-cum-new-pt input[type=checkbox][id]+label{cursor:pointer; border:1px solid transparent;padding:1px;}
+#dialog-Mdc-cum-new-pt :checked[id]+label[for]{ border:1px solid red; }
+#dialog-Mdc-cum-new-pt #divmdc, #dialog-Mdc-cum-new-pt #divisnwpt{display:inline-block;margin-left:20px;}
+#dialog-Mdc-cum-new-pt #divmdc label, #dialog-Mdc-cum-new-pt #divisnwpt label{width:150px;margin-left:20px;display:inline-block;}
+#dialog-msg-diab td[onclick]{color:purple; cursor:pointer;}
+#dialog-msg-diab td.highlight{ font-weight:bold; color:red;  }
+/**/
+#staging_code_info{position:absolute;z-index:1010;background-color:#ffffff;border:1px solid red;line-height:22px;font-size:13px;display:block;}
+#staging_code_header{cursor:move;}
+#staging_code_info ol li{text-align:left;}
+#staging_code_info ol{ font-weight:bold;}
+#staging_code_info ol li ol li{ font-weight:normal;}
+.dv_ls_todo_exm{max-height:200px;overflow:auto;}
+#svrt_scl_info{ display:none; background:#ffffff;position:fixed;top:10px;left:10%;z-index:2007;font-size:14px; border:1px solid black; }
+.superbillhd .totalcharges{color:white;}
+#div_as_srv_lvl table td{vertical-align: top!important;}
+
+/*in workview only*/
+#frmMain #superbill .glyphicon.glyphicon-plus, #superbill .glyphicon.glyphicon-remove {font-size: 16px;}
+#superbill .glyphicon.glyphicon-file, #superbill .glyphicon.glyphicon-duplicate  {font-size: 10px; color:purple; } #superbill .glyphicon.glyphicon-duplicate{ color:blue; }
+#superbill td>.glyphicon{ cursor:pointer; }
+.dropdown-menu-active{ position: relative; background-color:#FFFDD0; max-width:400px; max-height:400px; overflow:auto;  }
+.menu .btn{  padding: 2px 1px!important; border:1px solid #c9c9c9;}
+.menu_cpt_ul, .menu_mod_ul {  max-height: 300px; overflow: auto;  }
+

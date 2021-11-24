@@ -1,0 +1,35 @@
+{
+    "name": "sendPatientMessage",
+    "description": "This call is used to send message to the patient. This is also used by the patient to send message to the provider",
+    "parameters": [
+        {
+			"name": "patientId",
+			"type": "Integer",
+			"description": "Patient MRN in IMW.",
+			"required": true
+		},{
+            "name": "physicianId",
+			"type": "Integer",
+			"description": "If empty, then message will be send with the patient's provider id",
+			"required": false
+        },{
+            "name": "senderType",
+			"type": "Integer",
+			"description": "1 for Physician and 2 for Patient",
+			"required": true
+        },
+		{
+            "name": "subject",
+			"type": "String",
+			"description": "Message subject",
+			"required": true
+        },
+		{
+            "name": "data",
+			"type": "String",
+			"description": "Message content",
+			"required": true
+        }
+    ],
+    "accessToken": true
+}

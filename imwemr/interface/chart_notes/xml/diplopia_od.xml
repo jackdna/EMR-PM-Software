@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<diplopia>
+	<od>
+		<binocular examname="Binocular" elem_type="CB" elem_name="elem_binocularOd" label="Binocular"></binocular>
+		<intermittent examname="Intermittent" elem_type="CB" elem_name="elem_intermittentOd" label="Intermittent"></intermittent>
+		<horizontal examname="Horizontal" elem_type="CB" elem_name="elem_horizontalOd" label="Horizontal"></horizontal>
+		<vertical examname="Vertical" elem_type="CB" elem_name="elem_verticalOd" label="Vertical"></vertical>
+		<diagonal examname="Diagonal" elem_type="CB" elem_name="elem_diagonalOd" label="Diagonal"></diagonal>
+		<distance examname="Distance">
+			<distance_value elem_type="CB" elem_name="elem_distanceOd" label="Distance"></distance_value>
+			<near elem_type="CB" elem_name="elem_nearOd" label="Near"></near>
+			<far elem_type="CB" elem_name="elem_farOd" label="Far"></far>
+			<far_near elem_type="CB" elem_name="elem_farNearOd" label="Far and Near"></far_near>
+		</distance>
+		<monocular examname="Monocular" elem_type="CB" elem_name="elem_monocularOd" label="Monocular"></monocular>
+		<advanceoptions elem_type="TA" elem_name="elem_dipAdOptionsOd"></advanceoptions>
+	</od>
+</diplopia>

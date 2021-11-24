@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+// Under MIT License
+// Distribute, Modify and Contribute under MIT License.
+// Use of Software under MIT License.
+-->
+<!--
+File: ref_surg_os.xml
+Coded in PHP7
+Purpose: This file defines exam options of Refractive Surgery OS.
+Access Type : Include file
+-->
+<ref_surg>
+<os>
+<target_ref examname="Target Refraction" elem_name="elem_trgtRefOs"></target_ref>
+<spherical_eq examname="Spherical equivalent" elem_name="elem_sphericalEqOs"></spherical_eq>
+
+<adjnomo>
+<adjtppp examname="Adjustment % per Nomo" elem_name="elem_adjstpppOs" examname_summary="Adj % per Nomo"></adjtppp>
+<phypadj examname="Phy % Adj" elem_name="elem_phypadjstOs"></phypadj>
+<phydioadj examname="Phy Diopter Adj" elem_name="elem_phydioadjstOs" examname_summary="Phy Diop Adj"></phydioadj>
+</adjnomo>
+
+<cap_dia examname="Cap Diameter" elem_name="elem_capDiaOs"></cap_dia>
+<capthick examname="Cap Thickness" elem_name="elem_capthickOs"></capthick>
+
+<ablat>
+<rsb examname="Residual Stromal Bed" elem_name="elem_RSBOs" examname_summary="RSB"></rsb>
+<ablation examname="Ablation zone" elem_name="elem_ablationOs" examname_summary="Ab. zone"></ablation>
+<ablation_depth examname="Ablation depth" elem_name="elem_abDepthOs" examname_summary="Ab. depth"></ablation_depth>
+</ablat>
+
+<laser_info>
+<laser_entry examname="Laser Entry" elem_name="elem_laserEntryOs"></laser_entry>
+<laserEnPhypadjst examname="Phy % Adj" elem_name="elem_laserEnPhypadjstOs"></laserEnPhypadjst>
+<laserEnPhydioadjst examname="Phy Diopter Adj" elem_name="elem_laserEnPhydioadjstOs" examname_summary="Phy Diop Adj"></laserEnPhydioadjst>
+</laser_info>
+
+<mr_s examname="S" elem_name="elem_mr_sOs" hidden="1"></mr_s>
+<mr_c examname="C" elem_name="elem_mr_cOs" hidden="1"></mr_c>
+<mr_a examname="A" elem_name="elem_mr_aOs" hidden="1"></mr_a>
+<corr examname="Pachy" elem_name="elem_corrOs" hidden="1"></corr>
+
+<cle examname="Custom Laser Entry" elem_name="elem_CLEOs"></cle>
+<advanceoptions elem_name="elem_refSxAdvanceOptionOs"></advanceoptions>
+</os>
+</ref_surg>

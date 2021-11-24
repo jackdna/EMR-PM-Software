@@ -1,0 +1,6 @@
+{
+    "name": "getLanguages",
+    "description": "This API call is used to list the languages available",
+    "parameters": [],
+    "accessToken": true
+}

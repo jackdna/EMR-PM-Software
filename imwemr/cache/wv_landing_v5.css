@@ -1,0 +1,1056 @@
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/*
+File: epost.css
+Purpose: This file provides style for Epost.
+Access Type : Include file
+*/
+/* wvr8.css */
+#dvloading{ width: 100%; height: 100%; top: 0;left: 0;position: fixed; display: block; opacity: 0.5; background-color: #fff; z-index: 999999999999999!important;text-align: center; font-size:40px; color:green; vertical-align:middle; }
+#menu_manuf .ui-menu .ui-menu, .ui-autocomplete {  max-height: 150px; overflow-y: auto;  /* prevent horizontal scrollbar */  overflow-x: hidden;  }
+.cbold{ font-family: "robotobold"; }
+.ui-datepicker, .ui-autocomplete, .mega-dropdown-menu, .ui-dialog{z-index: 99999999999999!important;}
+.clickable{color:#9900CC!important;cursor:pointer;text-decoration:none;}
+.glyphicon.glyphicon-plus, .glyphicon.glyphicon-remove{font-size: 18px;}
+/*.mega-dropdown-menu{z-index:999999999;}*/
+.modal-footer{text-align:center;}
+.ltyro{color:#9900CC!important;}
+.gtyro{color:darkcyan!important;}
+.worksheet .color_red{color:red;}
+.swn-hd{display:none;}
+.ui-btn-cncl, #dmb_reset{color: #fff!important;background-color: #c9302c!important;border-color: #ac2925!important;}
+.ui-btn-sucus{color: #fff!important;background-color: #5cb85c!important;border-color: #4cae4c!important;}
+.exm_title_bar{position:absolute;width:100%;margin-top:2px;}
+.cur_hnd{cursor:pointer;}
+.okayNav__menu-toggle{width:45px;margin-left:15px;}
+#dvMedRvwBy{position:absolute; z-index:10;top:0; left:0; border:1px solid lightgrey; min-width:100px; min-height:10px;}
+
+/* Pending */
+/*select.minimal{background-image: url("../library/images/x2.png");  background-position:99.5% 84%;  }
+select.minimal:focus{ background-image: url("../library/images/x2.png"); background-position:99.5% 99%; }*/
+
+select.minimal {background-image: url("../library/images/selectarrow.png");background-repeat:no-repeat;background-position:98% 50%;padding-right:17px!important;}
+select.minimal:focus {background-image: url("../library/images/selectup.png");outline: 0;}select:-moz-focusring {color: transparent;text-shadow: 0 0 0 #000;}
+
+table.borderless{margin-bottom:0px;}
+table.borderless>tbody>tr>td{ border-top: 0;padding:0px 3px 0px 0px!important;}
+table.borderless .btn-link{padding:1px;}
+
+/* btnbar */
+.btnbar button{ margin-right:20px!important;}
+
+/*Flags : wnl + pos*/
+.flagPos, .pos_flg{ width:20px; height:22px; background-image:url(../library/images/flag_yellow.png); vertical-align:middle; display:none; }
+.flagWnl, .wnl_flg{ width:20px; height:22px; background-image:url(../library/images/flag_green.png); vertical-align:middle; display:none; }
+.flgWnl_2{background-image:url(../library/images/green_flag.png); position:absolute;width:16px;height:18px;margin-top:3px; display:none;}
+#examFlag{margin-right:20px;}
+
+/*Menu: input-group*/
+.menu .btn{  padding: 2px 1px!important; border:1px solid #c9c9c9;}
+.dropdown-menu {/*max-height:200px;*/ overflow:auto;width:auto;min-width:50px;}
+.menu_followUpVistType .dropdown-menu{ max-width:400px; }
+.dd-menu-top{ top:-140px; }
+#el_chartneuro_ig .menu .btn {  line-height: 1; }
+
+
+.div_model_outer{
+	position:fixed;top:0px;left:0px;width:100%;height:100%;
+	z-Index:100000;
+	background-color:rgba(255, 255, 255, 0.4);
+}
+
+.div_msg_inner{
+	position:fixed;top:200px;background-Color:white;border:1px solid black;
+	text-align:center;padding:10px;
+	font-size: 25px;z-Index:100000;
+	width:100%;
+}
+
+/*Cdd*/
+.custom-combobox {
+    position: relative;
+    display: inline-block;
+  }
+  .custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+  }
+  .custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+  }
+
+
+/*Checkbox removal*/
+label.frcb{ cursor:pointer; text-align:left; border:1px solid transparent!important; }
+input.frcb[type=checkbox]{  display:none; }
+input.frcb[type=checkbox]:checked + label.frcb { background-color:white; font-size:auto; font-weight:bold; color:Red; border:1px solid #1569C7!important;}
+
+/**/
+.frcb label{ cursor:pointer; text-align:left; border:1px solid transparent!important; }
+.frcb input[type=checkbox]{  display:none; }
+.frcb input[type=checkbox]:checked + label[for] { background-color:white; font-size:auto; font-weight:bold; color:Red; border:1px solid #1569C7!important;}
+
+
+/*grey background*/
+.bggrey input.frcb[type=checkbox]:checked+label.frcb{background-color:#e7e7e7;color:grey;}
+.bggrey input[type=text], .bggrey textarea, .bggrey select{background-color:#e7e7e7;}
+.greyAll_v2{background:Lightgrey;}
+input[type=checkbox].greyAll_v2:checked+label, .frcb input[type=checkbox].greyAll_v2:checked+label{ background-color:lightgrey;border:2px solid #1569C7 }
+
+
+
+.od{color:blue;}
+.os{color:green;}
+.ou{color:#9900CC;}
+
+.boxhead, .section_header{
+	background-color:#CCDDE6;  border-bottom:2px solid #ffffff; padding:2px;
+	font-weight:bold; color:#000000; font-size:100%; font-family:Arial, Helvetica, sans-serif;
+	font-size:12px; cursor:move;
+}
+
+.closeBtn{
+	float:right;
+
+	width:20px;
+	cursor:pointer;
+	line-height:16px;
+	padding:0px;
+	margin:0px;
+    color: red;
+    background: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+
+	text-align:center;
+
+}
+
+.closeBtn:before {   content: "X"; }
+
+#elem_chk{ width:100%;height:100%; }
+#elem_ccompliant{ width:100%;height:100%; }
+
+#p3s select{visibility:hidden;}
+#p3s select.show{visibility:visible;}
+
+#eyecolor{width:95px;}
+#eyecolor input{width:60%;}
+/*neuropsych*/
+#neuropsych{width:180px;}
+#neuropsych input{width:50%;}
+#infoIns{max-width:160px;}
+
+.wokvewdtl div{display:inline-block; margin-left:10px;}
+div.ocu_med_grid{height:100%; overflow:auto;}
+div.ocu_med_grid table th, div.ocu_med_grid table td{padding:1px!important;}
+
+/*#tbl_domi, #dd_pain{margin:-5px;}*/
+#tbl_domi label, #ad_dir label, #advancedDirectiveModal label{margin-bottom: 0px;}
+#elem_eyeColorCc{width:75%;}
+#elem_dominantCc{width:35px;}
+#btn_close_pt_wv{font-size:35px;margin-top:5px; margin-left:5px; cursor:pointer; position:absolute; z-index:2;}
+
+.mk_bigger_el{position:absolute; height:400px!important; z-index:1000; }
+
+/*Summary Sheet*/
+
+#summarysheet .table{margin-bottom:0px;}
+#summarysheet #sec_wv_sum input[type=button]:nth-child(2){margin-left:32%;}
+#summarysheet #sec_wv_sum .edesc{text-align:left;color:white!important;text-decoration:normal;}
+#summarysheet #sec_wv_sum .edesc a{text-decoration:normal;color:white;text-decoration:normal;}
+#summarysheet .hdr label:first-child{float:left;width:32%;font-weight:normal;cursor:pointer;}
+#summarysheet .esum, #summarysheet .purged{width:100%;position:relative;margin:0px; }
+#summarysheet .esum table td,#summarysheet .purged table td{vertical-align:top!important;}
+#summarysheet .esum table td.prph,#summarysheet .purged table td.prph{font-weight:bold; text-align:center;}
+#summarysheet .edone{width:17%!important;}
+#summarysheet .sumod,#summarysheet .sumos{width:30.5%!important;word-wrap:break-word!important; white-space:normal;background-color:#d3d3d3; }
+#summarysheet .odbar,#summarysheet .osbar{width:30.5%!important;word-wrap:break-word!important; white-space:normal; }
+#summarysheet .edesc{width:22%!important;height:100%;text-align:center;vertical-align:middle; }
+#summarysheet .edesc label{position:absolute;right:10px;z-index:2;text-align:right;}
+#summarysheet .edesc div{min-height:30px;}
+#summarysheet #eom .esum .sumod, #summarysheet #eom .purged .sumod {width:61%!important;}
+#summarysheet #fundus_exam .peritab{left:90px;width:100px;height:18px;padding-left:2px; display:inline;position:absolute;margin-top:-3px;}
+#summarysheet #fundus_exam .peritab select{padding:2px!important;}
+#summarysheet #iop_gon .hdr label:first-child{width:40%;} #summarysheet #iop_gon .hdr a{width:7%;margin-right:4%;}
+#summarysheet #ref_surg .hdr label:first-child{width:77%;}
+
+.sublink .form-control{ height:27px;}
+#summarysheet .tdCDRV{ min-height:18px;}
+#summarysheet .tdCDRV label{line-height:18px;}
+
+#summarysheet .formCDRV{width:auto;height:18px;padding-left:5px!important; display:inline;position:absolute;}
+
+#summarysheet .formCDRV input{width:30px;margin-left:1px; padding:1px 1px !important;}
+#summarysheet .formCDRV input:nth-child(2){margin-right:5px;}
+#summarysheet .formCDRV input[type=button]{width:32px;}
+#summarysheet .formCDRV label{font-weight:bold;color:blue;line-height:10px;}
+#summarysheet .formCDRV label.os{font-weight:bold;color:green;}
+
+#summarysheet .dvprvsyn{display:block;position:absolute;background:white;border:1px solid black;width:79.8%;height:250px;top:0px;z-index:10;}
+#summarysheet .dvprvsyn label {border-bottom:1px solid black;border-right:0px solid black;width:39%;display:inline-block; text-align:center;line-height:20px;background-color:lightpink;}
+#summarysheet .dvprvsyn label:first-child{width:20.2%;}
+#summarysheet .dvprvsyn label.close{position:absolute;width:18px;height:20px;cursor:pointer;background-color:auto;}
+#summarysheet .dvprvsyn table {border-spacing: 0px;width:100%;	}
+#summarysheet .dvprvsyn table td{width:39.2%;padding:2px;vertical-align:0px;border-bottom:1px solid black;border-right:1px solid black;word-wrap:break-word;font-weight:normal;}
+#summarysheet .dvprvsyn table td:first-child{width:20.6%;}
+#summarysheet .bgWhite{background-color:white;}
+#summarysheet .apd_sum{color:red;}
+
+.testhx{position:fixed;top:10px;left:10%;right:10%;display:none;z-index:100000;}
+.testhx_prev{ background-color:#f2f2f2;  }
+.hxv{max-width:300px;word-wrap: break-word!important;white-space: normal!important;}
+/*
+.divArcCmn{position:absolute;border:1px solid black;background-color:white;z-index:10;width:75%;min-height:5%;overflow:auto;display:none;}
+.divArcCmn>label{float:left;width:12%;padding:2px;clear:left;}
+.divArcCmn .arcDiv, .divArcCmn .mnDiv{float:left;width:43%;color:black;
+								position:relative;display:block;height:auto;
+		 overflow:visible;background-color:white;border:1px solid #DDDDDD;z-index:10; margin-bottom:5px;
+	}
+*/
+/*.divArcCmn .mnDiv:nth-child(odd){margin-left:1%;}
+#divArcCmnEOM .arcDiv, #divArcCmnEOM .mnDiv{width:87%;}
+*/
+
+.boxheader{ border-bottom:1px solid #e3e3e3; padding-bottom:5px; margin-bottom:10px; position:relative}
+
+.wnlOpts{position:absolute;display:none;border:1px solid #000000;
+					background-color:white; width:30px;text-align:center;z-index:100;}
+
+#summarysheet .wvprvdraw{ width:auto;height:auto;position:relative;border:0px solid red; cursor:pointer; margin:0px;  }
+#summarysheet .wvprvdraw .greyscale{ border:0px solid green; background-color:lightgrey; width:100%;height:100%;position:absolute;top:0px;z-index:2; opacity:0.4;filter:alpha(opacity=40); }
+#summarysheet b.finding{ cursor:pointer;color:#663366; }
+
+#summarysheet .purged table td, #summarysheet .purged table td .drawtab {text-decoration:line-through;color:red;}
+#summarysheet .purged table td span{color:black;}
+#summarysheet .purged .prg_hdr {text-align:center;font-weight:bold;text-decoration:none;color:black;}
+#summarysheet .esum .einfo .hdr .btn, #summarysheet #sec_wv_sum .tallft .btn, .assesment .btn {padding : 2px 2px; margin-right:2px;}
+
+
+/******/
+/* text HX Div */
+.hxDiv{float:left;color:black;width:80%;position:relative;display:block;height:auto;
+		 overflow:visible;background-color:white;border:1px solid #DDDDDD;z-index:10; margin:0px;}
+.hxDiv div{padding-right:2px; margin:5px;width:auto;border:1px solid #DDDDDD; border-width:0px 1px 0px 0px}
+.hxDiv div label{display:block;height:15px;width:100%;font-weight:bold;background-color:#FFFFCC;padding:0px;}
+
+/******/
+/*
+.divArcCmn{position:absolute;border:1px solid black;background-color:white;z-index:10;width:75%;min-height:5%;overflow:auto;display:none;}
+.divArcCmn>label{float:left;width:12%;padding:2px;clear:left;}
+.divArcCmn .arcDiv, .divArcCmn .mnDiv{float:left;width:43%;color:black;
+								position:relative;display:block;height:auto;
+		 overflow:visible;background-color:white;border:1px solid #DDDDDD;z-index:10; margin-bottom:5px;
+	}
+*/
+/*.divArcCmn .arcDiv:nth-child(even), .divArcCmn .mnDiv:nth-child(odd){margin-left:2%;}*/
+/*.divArcCmn .mnDiv:nth-child(odd){margin-left:1%;}
+#divArcCmnEOM .arcDiv, #divArcCmnEOM .mnDiv{width:87%;}*/
+/******/
+
+/*Processing*/
+label.processing{position:absolute;background-color:red; color:white;border:1px solid black;padding:5px;z-index:20;font-weight:bold;}
+
+/* smart chart */
+#div_sc_con{position:absolute;top:30px;left:10px;border:1px solid black;background-color:#e2eaef;z-Index:2;}
+#div_sc_con th{text-align:left;cursor:move;}
+#div_sc_con th a{margin-right:7%;float:right;}
+#div_sc_con #sc_con{height:550px;width:650px;overflow:auto;background-color:#ececec;}
+#div_sc_con #sc_con .asmnt{font-weight:bold;width:75%;}
+#div_sc_con .tbl_smrtchart{width:100%; border-collapse:collapse;background-color:#ececec;}
+#div_sc_con .tbl_smrtchart textarea{width:300px;height:15px;}
+#div_sc_con .tbl_smrtchart td, #div_sc_con .tbl_smrtchart th{ border-color:#a3a3a3; }
+/*
+#div_sc_con .tbl_smrtchart .symp input[type=checkbox]/*As per Arun sir on phone,#div_sc_con .tbl_smrtchart .asmnt input[type=checkbox]* -/{margin-left:30px;}
+*/
+
+#sc_con_symptons{width:175px;overflow:auto;height:525px;}
+
+/*
+Commented as it was creating issue for the modal used in Smart Charting
+#div_sc_con_detail{position:absolute;top:40px;left:20px;border:1px solid blue;background-color:#e2eaef;z-Index:2;min-width:98%;min-height:200px;font-size:12px;}*/
+#div_sc_con_detail textarea{ width:80%;height:15px; font-size:12px;}
+#div_sc_con_detail table{ width:100%; }
+#div_sc_con_detail .sc_exm_hdr{ color:black;cursor:move; padding:5px;font-size:14px;line-height:20px;}
+#div_sc_con_detail .link_BL{
+		border:1px solid black; text-align:center; font-weight:bold;color:purple; cursor:pointer;
+		border: #79777a 1px solid;outline: #c2a9d9 3px solid;padding: 1px 7px 1px 8px;background: #FFF;color: #803bb5;	}
+#div_sc_con_detail .symOpt{border-top:0px solid black;border-bottom:0px solid black;padding-top:2px;padding-bottom:2px;text-align:center;}
+#div_sc_con_detail .symOpt label{display:inline-block;/*margin-right:10px;width:100px;*/padding:2px;} /*border:1px solid red;*/
+#div_sc_con_detail .symOpt .nomid{text-align:left; margin-left: auto ;  margin-right: auto ; word-wrap:break-word;}
+#div_sc_con_detail .symOpt .nomid2{width:78%;margin-left:2px;margin-right:0px;display:inline-block;} /*border:1px solid red;*/
+#div_sc_con_detail .symOpt label.nomid2{width:18%;margin-left:2px;margin-right:0px;vertical-align:top;} /*border:1px solid green;*/
+#div_sc_con_detail .symOpt span.sptrDiscarea{display:inline-block;width:40%}
+#div_sc_con_detail .symOpt span.sptr{display:inline-block;}
+/*#div_sc_con_detail .symOpt .peri_deg label{width:120px;}*/
+#div_sc_con_detail .symOpt .peri_deg span.sptr{width:18%;}
+
+
+#div_sc_con_detail label#lblasses,
+#div_sc_con_detail label#lblpln,#div_sc_con_detail label#lblcom{  display:inline-block; width:100px;  }
+
+#div_sc_con .ui-menu {min-width:200px; background:#f6f6f6; }
+#div_sc_con .ui-menu .ui-menu .ui-menu { max-height:570px; white-space:nowrap; overflow-y: auto; overflow-x: hidden;   z-index: 100 ; }
+
+/*#div_sc_con>ul>li>ul{overflow:visible;background:white;height:auto;}*/ /*require some work to fix it*/
+#div_sc_con #elem_search_symptopms{font-size:12px;}
+#sc_con_symptons .symp{ cursor:pointer; }
+
+#btn_sc_multi_plan_post{display:inline-block;position:absolute;border:1px solid black; width:20px;height:16px;background-color:grey;cursor:pointer;color:white;text-align:center;padding-top:3px; }
+#idMultiPlanSCPop{display:none;position:absolute;text-align:center;border:1px solid black;width:50%;height:300px;background-color:white;left:30%;vertical-align:top;}
+#div_sc_con_detail textarea{width:100%;height:inherit;}
+#div_sc_con_detail #idMultiPlanSCPop{position:inherit;width:100%;height:inherit;left:inherit;border:none;text-align:inherit}
+#div_sc_con_detail1 #sc_con_symptons{width:100%;height:inherit;}
+#hdrMultiPlanSCPop{font-size:11px;background-color:grey;color:white;font-weight:bold;display:block;width:99%;line-height:20px;padding:2px;text-align:center;cursor:move;}
+
+/*Check removal in smart chart*/
+#div_sc_con_detail label[for]{ cursor:pointer; text-align:left; border:2px solid transparent;}
+#div_sc_con_detail input[type=checkbox]{  display:none; }
+#div_sc_con_detail input[type=checkbox]:checked + label { background-color:white; font-size:12px; font-weight:bold; color:Red;border:2px solid #1569C7;padding:2px; }
+#div_sc_con_detail input[type=checkbox].greyAll_v2:checked+label{ background-color:lightgrey;border:2px solid #1569C7 }
+#div_sc_con_detail table.elems_tbl{ border-spacing: 0px;   border-collapse: separate;padding:0px;border:0px;}
+#div_sc_con_detail table.elems_tbl td{border:0px solid green;padding:0px; width:120px;}
+#div_sc_con_detail table.elems_tbl td:last-child{width:auto;border:0px solid red;}
+/*#div_sc_con_detail #idMultiPlanSCPop input[type=checkbox]{  display:inline-block; text-align:top;vertical-align:top;margin-top:8px;}
+#div_sc_con_detail #idMultiPlanSCPop input[type=checkbox] + label { display:inline-block; color:black; font-weight:normal;width:95%;margin-top:5px;}*/
+#div_sc_con_detail #idMultiPlanSCPop div div{line-height:20px;}
+#div_sc_con_detail #idMultiPlanSCPop input[type=checkbox] + label { padding:0px;}
+#div_sc_con_detail .table td.asmt{color:purple;vertical-align: top!important;}
+
+#div_sc_con_detail .td100 table td{border:0px solid green;padding:0px; width:100px;}
+#div_sc_con_detail .td70 table td{border:0px solid green;padding:0px; width:70px;}
+#div_sc_con_detail .td270 table td{border:0px solid green;padding:0px; width:270px;}
+#div_sc_con_detail .td270 table td:last-child, #div_sc_con_detail .td100 table td:last-child, #div_sc_con_detail .td70 table td:last-child{width:auto;}
+
+/* assess plan */
+#assessplan #spnRxHxRvd{border:1px solid black;/*position:absolute;*/display:none;width:16px;height:18px; background-color:yellow;}
+#assessplan #spnRxHxRvd.active{display:inline-block;}
+#assessplan .planform .dx{padding:0px 2px !important;}
+#assessplan .apClr{background-color:Lightgrey;}
+#assessplan .apClrRes{background-color:lightgreen;}
+
+
+/**
+ * Checkbox ass ots
+ */
+.checkboxO {
+	width: 30px;
+	height: 30px;
+	background: #eaeaea;
+	/*margin: 20px 90px;*/
+	border-radius: 100%;
+	position: relative;
+	/*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+/**
+ * Create the checkbox button
+ */
+.checkboxO label {
+	display: block;
+	width: 26px;
+	height: 26px;
+	border-radius: 100px;
+
+	/*transition: all;*/
+	cursor: pointer;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	z-index: 1;
+
+	background: white;
+	/*box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);*/
+	line-height: 23.5px;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	border:1px solid transparent;
+}
+
+/**
+ * Create the checked state
+ */
+.checkboxO input[type=checkbox]:checked + label {
+	background: #8bc34a;
+	color:white;
+	border-color:white;
+}
+
+/* - custom width -  */
+/*Archive Records*/
+
+.arcDiv{ position:absolute;display:none;height:100px;
+		 overflow:auto;background-color:#F5F5F5;border:1px solid #000000;z-index:10;}
+.arcDiv div{padding:2px;}
+.arcvChanged{color:orange!important;}
+.arcvNew{color:red!important;}
+.arcvDeleted{color:red!important;text-decoration:line-through;}
+
+/*slider*/
+/*
+#sliderRight .ulFL, #el_visit_ig .ulFL, #detailDesc1 .ulFL{
+list-style: none;
+margin: 0px;
+padding: 0px;
+}
+
+#sliderRight .ulFL li{float:left;width:98%;}
+
+#btnSliderRight{display:none;}
+#btnSliderRight{right:0px;}
+#sliderRight{right:-253px;}
+*/
+/* - Slider Right Slider - */
+
+#sliderRight{position:fixed;top:1px;right:10px;
+	width:340px;height:100%;
+	background-color:#c3c3c3;border:1px solid black;
+	display:block;z-index:100000;
+}
+
+#sliderRight ul{margin:0px;}
+#sliderRight .searchexam{width:100%;height:100%;}
+
+/*
+.frmSearch{
+	width:98%;height:18%;
+	background-color:#345f84;
+	margin:2px;
+	padding:2px;
+	color:white;
+	font-weight:bold;
+}
+
+.frmSearch input, .frmSearch select{
+	margin:2px;
+	width:100px;
+}
+
+.frmSearch input[type="submit"], .frmSearch input[type="button"]{
+	width:auto;
+}
+*/
+
+#sec_exams{overflow:auto;height:40%; }
+#sec_exams li{margin:0px;padding:2px;float:none;}
+#sec_exams span{margin:2px;cursor:pointer;}
+#sec_exams span.vInfo{color:#CC3300;font-weight:bold;}
+#sec_exams div.li_amend{padding-top:5px; padding-left:23px;cursor:pointer;}
+#sec_exams ul{padding-left:20px;display:none;}
+#sec_exams ul.open{display:block;}
+#sec_exams ul li{cursor:pointer;}
+.el-highlight, #sec_exams .loadedChart,#sec_exams .loadedChart li{background-color:#FFFFE0;}
+
+#sec_exams .purged{font-weight:bold; text-decoration: line-through;color:red;}
+#sec_exams .purged span{color:black;font-weight:normal;}
+#sec_exams .purge_user{}
+#sec_exams .editdchart{}
+#sec_exams .dosCurUsr{ background-color:#33FF33;color:black;padding:2px 0px 2px 0px; }
+
+#sec_tests_hdr{background-color:#AF4FA2;width:97%;height:25px;font-weight:bold;color:white;float:left;padding:2px;margin-bottom:0px;}
+#sec_tests{clear:left;overflow:auto;height:35%;}
+#sec_tests li{background-color:#ccd6e0;margin:1px;padding:2px;float:none;}
+#sec_tests span{margin:2px;font-weight:bold;cursor:pointer;}
+#sec_tests span.examTechFlagGreen{padding-bottom:6px; background:url(../library/images/x2.png);background-position:15.75% 96%;  border:0px solid red;padding-left:13px;}
+#sec_tests span.examTechFlag{padding-bottom:6px; background:url(../library/images/x2.png);background-position:18.5% 96%; border:0px solid red;padding-left:13px;}
+#sec_tests .purged{font-weight:bold; text-decoration: line-through;color:red;}
+#sec_tests .purged span{color:black;font-weight:normal;}
+
+/* - Slider - */
+
+/*Memo*/
+#sec_memo{clear:left;}
+#sec_memo .memo{vertical-align:top;}
+#sec_memo>.memo label{font-weight:bold;float:left;line-height:20px;padding-left:5px;}
+#sec_memo .memo>textarea{width:90%;height:80px;margin-left:10px;}
+#sec_memo>.memo>.hdr{background-color:#B58898;height:25px;}
+#sec_memo>.memo>.hdr label:nth-child(1){margin-right:100px;}
+#sec_memo>.memo>.hdr input{margin-left:100px;width:60px;}
+#sec_memo>.memo>.hdr .spnFuAdd{margin-left:100px;}
+#sec_memo>.memo>.hdr .spnDt{cursor:pointer;font-weight:bold;}
+
+/* FU */
+/*#listFU input[type="text"], #listFU select{width:22%;}*/
+
+/*div_add_future_tests*/
+/*#div_add_future_tests{background-color:white; width:700px; left:2%;right:2%;top:0px;position:fixed;border:1px solid black;z-index:2000;height:100%;overflow:auto;}
+#div_add_future_tests .hdr{ font-size:15px;font-weight:bold; text-align:center;vertical-align:middle;padding:5px; background-color:#1b9e95;cursor:move;}*/
+#div_add_future_tests .modal-body label.lft{display:inline-block;line-height:30px;width:150px;padding-left:5px;font-weight:bold;vertical-align:middle;}
+#div_add_future_tests input[type=text], #div_add_future_tests textarea{width:68%;display:inline-block;vertical-align:middle;}
+#div_add_future_tests textarea{margin-bottom:5px;}
+#div_add_future_tests input[type=button], #div_add_future_tests input[name*=date]{width:100px;}
+#div_add_future_tests input[name=elem_fsta_btn_save]{margin-left:25%;margin-right:2%;}
+#div_add_future_tests input[name=elem_fsta_btn_reset]{margin-right:2%;}
+
+#div_add_future_tests #div_saved_future_tests .panel-body, #div_add_future_tests #div_saved_future_appoint_ref .panel-body{border:0px solid red;width:100%; height:160px;overflow:auto;}
+#div_add_future_tests #div_saved_future_tests table, #div_add_future_tests #div_saved_future_appoint_ref table{width:1600px;}
+/*
+#div_add_future_tests #div_saved_future_tests table th, #div_add_future_tests #div_saved_future_appoint_ref table th{text-align:left; }
+#div_add_future_tests #div_saved_future_tests .hdr, #div_add_future_tests #div_saved_future_appoint_ref .hdr{ background-color:lightblue;font-size:11px;height:15px; padding:0px; width:1600px; text-align:left; padding-left:25px; }
+*/
+
+#div_add_future_tests .lbl_test_type{width:90px;font-weight:normal;}
+#div_add_future_tests input[type=radio]{display:inline-block;vertical-align:middle;}
+#div_add_future_tests .edclick{ cursor:pointer; }
+
+/* sign_legends */
+#sign_legends{ padding:20px 0px 0px 5px;	overflow: auto;	}
+
+/* signatures */
+#signatures{/*width:75%;float:left;overflow:visible;*/}
+#assessplan #signatures input,#assessplan #signatures select{ vertical-align:middle; /*width:220px;margin-top:5px;*/}
+#signatures img{margin-top:5px;}
+#signatures .appletCon{border:1px solid #FF9900;display:block;width:225px;height:45px;background-color:white;cursor:pointer;vertical-align:middle;overflow:hidden;}
+#signatures .appletCon img{margin:0px; width:225px;height:45px; }
+#signatures .appletEraser{font-size:20px;cursor:pointer;}
+#signatures i{font-weight:normal;}
+#signatures .signernm{line-height:30px;}
+#signatures .col-sm-2-sign {width: 12%;}
+#signatures .col-sm-4-sign {width: 37%;}
+
+#assessplan #signatures .phy_left{/*width:41%;float:left;margin-right:75px;*/}
+#assessplan #signatures .phy_right{/*width:41%;float:left;*/}
+#assessplan #signatures .signernm{color:#663366;cursor:pointer;}
+#signatures label[for]{margin-left:2px;margin-right:0px;padding:0px;width:auto;}
+
+/*sign_phy* /
+#assessplan #sign_phy{width:41%;float:left;margin-bottom:10px;}
+#assessplan #sign_phy label{float:left; width:105px;}
+#assessplan #sign_phy a{margin-left:105px;line-height:20px;}
+#assessplan #sign_phy #lbl_moreSign{position:absolute;width:auto;padding:2px;font-size:20px;z-index:3px;}
+*/
+
+/*switch_sign*/
+#assessplan .switch_sign{width:15%;vertical-align:middle;float:left; text-align:center;}
+#assessplan .switch_sign a{color:#663366; font-size:13px;font-weight:bold;text-decoration:none;}
+
+/*sign_cosigner* /
+#assessplan #sign_cosigner{width:41%;vertical-align:middle;float:left;}
+#assessplan #sign_cosigner label {float:left; width:105px;}
+#assessplan #sign_cosigner a{margin-left:105px;line-height:20px;}
+*/
+
+/*divsign*/
+.divsign{vertical-align:middle;margin-bottom:10px;}
+#assessplan .divsign label {float:left; width:105px;}
+#assessplan .divsign a{margin-left:105px;line-height:20px;}
+#assessplan .divsign #lbl_moreSign{position:absolute;width:auto;padding:2px;font-size:20px;z-index:3px;}
+#assessplan .ap_eye_removed{ display:none; }
+
+/*divAsHx*/
+#divAsHx{position:fixed;width:80%;min-height:100px;z-index:2000;top:2px;margin-left:10%;margin-right:10%;}
+
+/*.planchoose .ul_ne{margin-left:0px;border:1px solid red;width:100px;}*/
+
+/*Pt. Image in Icon Bar*/
+#ptpic{text-align:center;}
+#ptpic > figure > img{max-height:56px;border:1px solid #eee;padding:1px;}
+
+/**/
+#el_visit_ig .dropdown-header{ font-weight:bold; }
+#el_visit_ig .input-group-btn>ul{ max-height: 500px; min-width:400px; }
+
+/**/
+.clen_phy{color:green;}
+.clen_tech{color:#ffa500;}
+
+#genHealthDiv{ position:absolute; display:none; z-index:1000; background-color:#FFFFFF; width:auto; overflow:auto; border:1px solid black; }
+.div_popup_heading{
+	color:#333333; font-size:12px; text-align:left;
+}
+.div_popup_heading{
+	background:#FFCC66 url(images/popup_heading.gif) repeat-x; height:25px; padding:5px 5px;
+	border-bottom:1px solid #E6B24A;
+}
+
+/*RVS*/
+/*******Extra Style***********/
+#div_rvs{position:absolute;left:5%;top:5px;width:90%;z-Index:2000;
+			display:none;border:2px solid #673782; background-color:#fff;padding:10px;}
+#div_rvs #header label {
+    line-height: 28px;
+    background-color: #63327f;
+    color: #FFFFFF;
+    width: 123px;
+    margin: 1px;
+    padding: 0px;
+    height: 31px;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 16px;
+    line-height: 30px;
+}
+#div_rvs #header label.rvsOn{background-color:#12c7b7;color:#fff;}
+#div_rvs .tabSec:not(#Vision_Problem){display:none;}
+#div_rvs .tabSec p{/*padding-left:10px;*/ margin:0px;}
+#div_rvs .tabSec p label{float:left;}
+
+#div_rvs .tabSec p label{max-width:90%;}
+#div_rvs .tabSec p input[type='checkbox']{/*width:12px;height:12px;*/ clear:left;}
+#div_rvs .subSec{/*width:50%;float:left;*/ margin-bottom:1px;  }
+
+#div_rvs #Irritation input[name=lidsItchingYesNo]{clear:none;}
+#div_rvs #Irritation #ItchingOcularTd{margin-right: 100px;}
+#div_rvs #Irritation #PressureSensation{margin-right: 35px;}
+#div_rvs #Irritation input[type='radio']{padding-right:15px;}
+#div_rvs #Irritation label.noclr{clear:none;margin-left:10px;}
+#div_rvs #Irritation label[for=irrOcuChk]{margin-right:30%;}
+#div_rvs #Irritation label[for=div34]{margin-right:13%;}
+/*#div_rvs #Post_Segment #dv_floaters{margin-top:-3.1%;}*/
+
+/*
+#div_rvs #Post_Segment #div76,#div_rvs #Post_Segment #div77,
+#div_rvs #Post_Segment #div78,#div_rvs #Post_Segment #div79,
+#div_rvs #Post_Segment #div80,#div_rvs #Post_Segment #div46{clear:none;margin-left:25px;}
+*/
+
+#div_rvs #Neuro input[name='THAYesNo'],#div_rvs #Neuro #elem_fugaxLastMinutes,#div_rvs #Neuro #elem_fugaxCompleteLoss{clear:none;}
+/*#div_rvs #Neuro #dv_mig_hdac{margin-top:-12%;}*/
+#div_rvs .fullwidth {width:100%;}
+#div_rvs input[type=text].txt_right{/*float:right;*/float:right;clear:right;}
+#div_rvs .handleDrag{width:100%; cursor:move;position:relative;}
+#div_rvs .handleDrag .btnClose{ float:right;width:30px; line-height:18px;border:0px solid black;font-weight:bold;text-align:center;cursor:pointer;}
+
+/*remove checkbox and make labels clickable in RVS*/
+#div_rvs label[for]{ cursor:pointer; text-align:left; border:2px solid transparent;clear:left;margin-bottom:2px}
+#detailDesc2 li input[type='checkbox'],#detailDesc1 li input[type='checkbox'], #div_rvs input[type='checkbox'] {  display:none; }
+#detailDesc2 li input[type='checkbox']:checked + label,#detailDesc1 li input[type='checkbox']:checked + label,#div_rvs input[type=checkbox]:checked + label { background-color:white; /*font-size:12px;*/ font-weight:bold; color:Red; border:1px solid #1569C7}
+#div_rvs .rvs_dt_dd{cursor:pointer;color:black;float:left;border:1px solid black;margin-left:2px;}
+#div_rvs .rvs_dt_dd_hgt{/*color:red;border:1px solid red;*/}
+#detailDesc1 label[for], #detailDesc2 label[for]{ cursor:pointer; }
+
+/* Description 1 */
+#detailDesc1, #detailDesc2 {position:absolute;top:0px;width:99.5%; height:99%;
+				z-Index:2000;display:none;background-color:#FFFFFF;border:1px solid black;margin-left:2px;}
+#detailDesc1 li, #detailDesc2 li{float:none; line-height:25px;border-bottom:2px solid #DFDEDB;clear:left;}
+#detailDesc1 li label, #detailDesc2 li label{line-height:25px;float:left;padding:0px 1px 0px 1px;clear:none;}
+#detailDesc1 .table-responsive, #detailDesc2 .table-responsive{height:85%; overflow: auto;}
+/*#div_rvs #detailDesc1 li label[for], #detailDesc2 li label[for]{cursor:pointer; text-align:left; border:2px solid transparent;margin-bottom:1px;clear:none;float:left;margin-left:4px;}
+#div_rvs #detailDesc1 input[type=checkbox]:checked + label, #div_rvs #detailDesc2 input[type=checkbox]:checked + label{ border:2px solid #1569C7;font-size:11px; }*/
+
+/*
+#detailDesc1 textarea,#detailDesc1 input[type=text],#detailDesc1 img,#detailDesc1 select,
+	#detailDesc2 textarea,#detailDesc2 input[type=text],#detailDesc2 img,#detailDesc2 select {float:left;margin-top:3px;}
+*/
+#detailDesc1 select, #detailDesc2 select{width:auto;}
+#detailDesc1 .table td{padding:2px!important;}
+#detailDesc2 .table td{padding:0px!important;}
+#detailDesc1 .header, #detailDesc2 .header{text-align:center;font-weight:bold;color:white;background-color:#1b9e95;line-height:25px;cursor:move;position:relative; font-size:18px}
+#detailDesc2 .header{line-height:22px;}
+#detailDesc1 .title, #detailDesc2 .title{font-weight:bold;width:auto;}
+#detailDesc1 input[name='onSetDate'], #detailDesc2 input[name='onSetDate']{width:80px;}
+
+
+#detailDesc1 #asso_sign,#detailDesc1 #contxt, #detailDesc2 #asso_sign,#detailDesc2 #contxt{line-height:13px;}
+#detailDesc1 .right, #detailDesc2 .right{float:right;}
+#detailDesc1 #qly_othr, #detailDesc2 #qly_othr{float:right;}
+#detailDesc1 .rvs_lbl_1,#detailDesc2 .rvs_lbl_1{line-height:28px;margin-left:10px;}
+#elem_os_othr_date_grp .input-group-addon, #elem_sp_surdate_grp .input-group-addon{padding:0px!important;}
+.hpi_cntr{ color:white; background-color:red; }
+#detailDesc1 .header label:first-child, #detailDesc2 .header label:first-child {padding-left:2px;}
+
+#detailDesc1 textarea.form-control, #detailDesc2 textarea.form-control{height:auto!important; max-height:26px;}
+#detailDesc1 li.btns, #detailDesc2 li.btns{border-top:2px solid #DFDEDB; text-align:center;}
+#detailDesc1 li.btns .btn, #detailDesc2 .btns .btn{margin-right:3%;}
+/*#detailDesc2 textarea{float:right;width:350px;}
+#detailDesc2 textarea[name*=rvs_painrelievedby]{width:75%;float:left;}
+#detailDesc2 textarea[name*=rvs_followup_detail_other],#detailDesc2 textarea[name*=otherFollowCareInstruct]{width:82%;float:left;}
+#detailDesc2 textarea[name*=rvs_needs_med_refill], #detailDesc2 textarea[name*=rvs_ranoutmeds]{width:350px;float:left;}*/
+
+#detailDesc2 ul li.pull-right{width:40%;}
+#detailDesc2 ul li.pull-right textarea{width:90%;}
+#rvs_painrelievedby{width:92.5%;margin-left:5px;}
+.li_needs{width:37%;}
+#detailDesc2 li#dd2selLocOther{float:right;}
+
+/*
+#detailDesc2 textarea[name*=rvsdet_otherVision]{width:420px;}
+
+				#detailDesc2 textarea[name*=otherQty]{width:235px;}
+					{width:81%;}
+
+
+					#detailDesc2 textarea[name*=rvs_other_svrity]{width:500px;}
+*/
+
+
+.padLeft{
+	padding-left:2px;
+}
+.fontSize{
+	font-size:12px;
+}
+.selectedComplaint{
+	font-size:12px;
+	font-weight:bold;
+	color:#6633CC;
+}
+
+.dvcgc{width:18px;margin-left:1px;height:18px;display:inline-block;}
+#div_rvs  #header{ border-bottom:1px solid #c3c3c3; padding-bottom:1px; margin-bottom:1px;}
+
+.patincomt textarea{ width:100%; height:60px;}
+
+/*purged sign*/
+#dvPrgdSgn{position:fixed; left:35%; top:-50px; display:block;z-Index:9;text-align:center;vertical-align:top;font-size:500px;font-weight:bold;color:red;font-family:arial;}
+
+/*Prev Plans*/
+#assessplan #divPPlans{position:absolute;display:block;border:1px solid #000000;background-color:white;width:500px;right:10px;z-index:100000;}
+#assessplan #divPPlans div{background-color:#CCCCCC;text-align:right;padding:2px;cursor:pointer;}
+#assessplan #divPPlans table{padding:0px; border-spacing: 0px;}
+#assessplan #divPPlans table tr td:nth-child(1),#assessplan #divPPlans table tr td:nth-child(3){width:10px;}
+
+/* CPOE */
+#divApPlan{position:fixed;min-width:90%;border:1px solid black;background-color:white;left:5%;z-index:100000;top:5px;}
+#divApPlan .boxhead{cursor:move;height:20px;}
+#divApPlan .boxhead span{margin-left:20px ;}
+#divApPlan #boxhead select{width:50px!important;}
+#divApPlan .boxcontent{max-height:425px;width:100%;min-height:150px;overflow:auto;margin-bottom:2px;}
+/*#divApPlan .boxcontent table tr:nth-child(odd){background-color:#f5f5f5;}*/
+#divApPlan .as{font-weight:bold; width:40%;}
+#divApPlan .clickable{ color:purple; font-weight:bold; cursor:pointer;margin-left:20px; }
+#divApPlan .dvbtn {clear:both; width:100%; margin-bottom:5px; text-align:center;}
+#divApPlan .dvbtn input[type=button]{margin-left:15px;}
+#divApPlan div[id*=divorder]{margin-left:10px;}
+#divApPlan div[id*=divorder] label[for*=elem_app]{display:inline-block;width:200px;vertical-align:middle;}
+#divApPlan input[type=text]{ width:100px; }
+#divApPlan input[type=checkbox]{ vertical-align:top;}
+#divApPlan div[id*=divapplan]{ margin-left:10px; }
+#divApPlan label.suppordr{display:block;font-weight:bold;height:15px;margin:2px;padding:0px;padding-left:5px;font-size:12px;}
+#divApPlan .color_red{color:red;}
+#divApPlan figure { z-index:10000!important; }
+#divApPlan figure .glyphicon, .testhx figure .glyphicon{font-size:25px; color:#f55753;cursor:pointer;}
+.folwbox div[id*=dv_] .col-sm-6 h2{ margin-bottom:2px;  }
+
+/*orders*/
+.OrderList{  position:fixed;  background-color:white; border:1px solid black; width:550px; height:400px; top:0px; left:300px;z-index:100000;}
+.OrderList .hdr{background-color:lightgrey;font-weight:bold; padding:4px;}
+.OrderList label{line-height:20px;cursor:pointer;padding-left:2px;font-size:13px;margin-bottom:2px;}
+.OrderList .cont{width:100%; height:365px;overflow:auto;overflow-x:hidden;}
+.OrderList .pointer{display:inline-block;margin-left:3px;vertical-align:middle;}
+#divApPlan .relorders,.OrderList .relorders{border:1px solid black; width:500px; height:150px; display:none; background-color:#8bc34a;position:fixed;overflow:auto;overflow-x:hidden;z-index:100000; }
+.div_eye_site{display:inline-block;}
+
+
+.OrderDetail {  position:fixed;  background-color:white; border:1px solid black; width:800px; height:auto; overflow:auto; top:0px; left:150px;z-index:100000;}
+.OrderDetail label{ border:0px solid red; width:150px; display:inline-block; padding-left:5px;  }
+.OrderDetail br{line-height:25px;}
+.OrderDetail textarea,  .OrderDetail select{vertical-align:top; margin-bottom:3px;width:550px; height:40px;}
+.OrderDetail input[type=text]{width:550px;}
+.OrderDetail select{height:100px;}
+.ui-icon-blank002 { background-position: 160px 160px; }
+
+#divOrderList .boxhead input[type=text]{margin-left:10px;margin-right:5px;}
+#divOrderList .a_clr1{cursor:pointer;}
+#divOrderList input[type=button]{margin-left:10px;}
+#divOrderList span.snw{font-size:9px;}
+
+#divpopupWV{border:1px solid black;background-color:white;position:fixed;top:50px;left:10%;z-index:100000; width:80%;vertical-align:top;}
+#divMedAdmnrd{position:fixed;min-width:400px;height:400px;border:1px solid black;background-color:white;left:30%;top:0px;z-index:100000;}
+#divMedAdmnrd .med_con{height:330px;overflow:auto;}
+#divMedAdmnrd #btnMA_done{margin-left:40%;}
+
+/*patient chart lock*/
+#icoPtLock{position:fixed;top:10px;left:10px;cursor:pointer; background-color:yellow; padding:5px; width:auto; height:auto; border:1px solid black;  }
+#divLockPassPrompt{position:fixed; left:20%; top:10px; border:1px solid black; background-color:white; color:black; text-align:left;display:block;z-index:100000;padding:30px;}
+#divLockPassPrompt .dff_button{margin:2px;}
+#divLockMsg{font-weight:bold;font-size:20px;}
+
+/*CN Progress Notes*/
+#dv_cn_progess_notes{ border:0px solid black;width:80%;height:50%;position:fixed;top:10px;left:10%;background-color:white;padding:5px; z-index:1000;}
+#dv_cn_progess_notes .hdr{ line-height:30px;background-color:#7083b4;color:white;font-weight:bold;font-size:12px;padding-left:4px; text-align:left; }
+#dv_cn_progess_notes .hdr label {margin-left:10px; display:inline-block; width:22%;}
+#dv_cn_progess_notes .hdr label:first-child{margin-left:4px;width:16%;}
+#dv_cn_progess_notes textarea{ width:100%;height:70%;margin-bottom:10px;padding:0px; }
+#dv_cn_progess_notes textarea:not(.active){background-color:#d2d2d2;}
+#dv_cn_progess_notes input{ margin-left:10px;}
+#el_all_prg_note{width:auto;display:inline-block;margin-left:5px;}
+
+/*VISION*/
+#Vision li .menu{ display:inline-block;z-index:9; }
+#Vision .menu li{display:block!important;width:auto;}
+#Vision .distancetab ul li, #Vision .neartab ul li, #Vision .dv_glph_hdr ul li, #Vision .hdr ul li {vertical-align:middle;}
+#Vision .cycloplegic{width:auto;}
+#Vision .hdr h2{ padding:0px; margin:0px; font-weight:normal; text-transform:uppercase; font-family: 'robotobold'; font-size:14px; color:#616161; line-height:32px; display:inline-block}
+#Vision .form-control{color:#000000; padding: 1px 1px!important;}
+#Vision input[type=text]:not(.active),#Vision select:not(.active),#Vision textarea:not(.active){background-color:#e7e7e7;}
+#Vision input[type=checkbox]:checked:not(.active)+label{background-color:#e7e7e7;color:grey;}
+#Vision .dropdown-menu, #dv_fu_sec .dropdown-menu, .doc_eom .dropdown-menu {max-height:200px;}
+#Vision .img_acuity { top:0px; left:0px; width:40px;height:35px;}
+#Vision .exampd.default select.form-control{ width:auto!important; }
+#Vision .exampd .input-group-addon {padding: 4px 1px!important;}
+#Vision .btn_add_pc_mr{position:absolute; right:0px;top:0px; margin-right:2px; margin-top:8px;}
+#Vision .btn_add_pc_mr2{margin-right:22px;}
+#PC>.row>div[id*=pc]:nth-child(3n+1), #MR>.row>div[id*=row_mr_]:nth-child(2n+1){clear: left;}
+#Vision .examsectbox .header .glyphicon-ok-circle{position:absolute;right:0px;margin-top:10px;font-size:15px;}
+#Vision .pctab span.glyphicon-ok-circle, #Vision .mrtab span.glyphicon-ok-circle{margin-right:45px;}
+#btn_rst_vis{ /*margin-top:2px; margin-right:2px;*/ padding:0px 2px; }
+.clsProcHider{visibility:hidden;}
+#Vision .mrtab .datepicker{width:80px;}
+#Vision table.borderless>tbody>tr>td{ height:30px; }
+#Vision #div_pop_acuity4{border:1px solid black; position:fixed; background-color:white; z-index:20;}
+/*CVF*/
+.cvfbtn{padding-top:20px;}
+.cvfdrw{width:200px; 	height:150px;	background-image:url(../library/images/bg_drw_cvf.jpg); margin-right:20px;margin-top:20px;border:1px solid #e7e7e7;}
+.cvf_hdr, .ams_grid_hdr {background-color:LightBlue; color:white; padding:2px; padding-top:5px; vertical-align:middle;}
+.cvf_hdr .div_wnl, .ams_grid_hdr .div_wnl{margin-right:100px;}
+.glyphicon-color{width:20px;height:15px;margin-bottom:1px;cursor:pointer;}
+.glyphicon-color-red{background-color:rgb(255,0,0);}
+.glyphicon-color-yellow{background-color:rgb(255,255,0);}
+.glyphicon-color-green{background-color:rgb(0,128,0);}
+.glyphicon-color-maroon{background-color:rgb(128,0,0);}
+.glyphicon-color-blue{background-color:rgb(0,0,255);}
+.glyphicon-color-black{background-color:rgb(0,0,0);}
+.glyphicon-color-grey{background-color:rgb(128,128,128);}
+.dis-mr-cog{display:none;}
+
+/*Amsler Grid*/
+.amsdrw-con{ width:250px;}
+.amsdrw{ width:200px; height:200px; background-image:url(../library/images/amsler.jpg);  }
+.amsdrw-hdr{ width:70px;}
+.amsdrw-hdr .flgWnl_2{margin-left:-20px;}
+
+/*div_sel_assess_for_symp*/
+/*#div_sel_assess_for_symp{position:fixed;background:white;border:1px solid black;width:80%; height:400px; overflow:auto;top:2px; left:100px;z-index:20000;}*/
+#div_sel_assess_for_symp .modal-body{height:70%;overflow:auto;}
+/*Loading Message*/
+#img_load{display:block;position:fixed;top:10%;left:45%;z-index:100000;}
+
+
+/*sub exam close*/
+.exmhlgcol{display:none;}
+.grp_handle, .sbGrpOpen{display:table-row;}
+
+/**/
+.divLesionModifier{ position:fixed;background-color:white;border:1px solid black; width:auto; height:auto;z-index:1000; padding:2px;display:none;top:10px;left:30%;}
+.btnModifiersActive{color:red;border:1px solid red;}
+
+/**/
+#iop_gon #ptAlrgic{margin-left:35px;color:red;}
+#iop_gon #spAnesTime{margin-left:21px;font-weight:bold;}
+#iop_gon #spDialTime{margin-left:37px;font-weight:bold;}
+#iop_gon #spOODTime{margin-left:5px;font-weight:bold;}
+#iop_gon #ptAlrgic a, #iop_gon #spAnesTime a, #iop_gon #spDialTime a, #iop_gon #spOODTime a {color:purple;}
+
+.modal{ z-index:10000; }
+
+.fontsize-big{ font-size:25px; }
+
+/*Reffering phy*/
+.dvMultiRefPhy{display:none; z-index:1000; position:absolute; left:150px; top:15px; height:150px; width:250px;}
+#ref_pcp_coman_details_span{height:300px; width:245px; overflow-x:hidden; overflow-y:auto;}
+/*Reffering phy*/
+
+/*Objective Note*/
+.pnl_obj_note{ margin-bottom:5px!important; }
+
+/*care giver color row*/
+
+.grow2g .whitebox{min-height:120px;}
+.grow2g .whitebox textarea{height:80px!important;}
+
+/*cvf*/
+#cvf , #amsgrid{ border:1px solid lightgrey;margin-bottom:2px;}
+#cvf .exampd, #amsgrid .exampd {padding:0px; }
+#cvf .exampd ul{}
+#cvf .exampd li{width:35px;height:35px; margin:2px;text-align:center;line-height:34px;cursor:pointer;position:relative;background-color:white;padding-left:0px; border:1px solid #d3d3d3; }
+#cvf .positive {color:red;}
+#cvf .exampd ul.positive li, #cvf .exampd ul.wnl_lbl li{border:1px solid red;color:black;}
+#cvf li .hr{position:absolute;width:100%;height:1px;background-color:black;top:48%;font-size:1px;z-index:1;}
+#cvf li .vr{position:absolute;width:1px;height:100%;background-color:black;left:48%;z-index:1;}
+#cvf .gray_color{color:grey;}
+#cvf .wnl_lbl{color:green;}
+#cvf h2, #amsgrid h2{margin:0px 0px 0px 0px;}
+#cvf .wnl, #cvf .nc, #amsgrid .wnl, #amsgrid .nc{padding:1px 1px;}
+.leftpanel .btn:hover, .examleftpan .btn:hover, #lblAssessHx:hover{color:white;}
+#cvf .header li, #amsgrid .header li{padding:0px;margin:0px;}
+/*amsler grid*/
+#amsgrid .exampd ul{ }
+#amsgrid .exampd li{ background:url(../library/images/x2.png); background-position:22% 97%;width:35px;height:35px; margin:2px;text-align:center;line-height:34px;cursor:pointer;padding-left:0px;}
+#amsgrid .positive {color:red;}
+#amsgrid .exampd ul.positive li, #amsgrid .exampd ul.wnl_lbl li{border:1px solid red;color:black;}
+#amsgrid .gray_color{color:grey;}
+#amsgrid .wnl_lbl{color:green;}
+
+/*testing*/
+#imp_ex_done ul li[onclick]{ cursor:pointer; }
+
+/*Exam pop ups*/
+.exam_pop_up .whtbox{margin: 0px;}
+.chart_status {font-size: 18px;  margin-bottom: 0px;    padding: 4px;}
+.exam_pop_up .btnbar .container{ width:100%; }
+.exam_pop_up form{margin-bottom:25px;}
+.exam_pop_up .navbar-inverse{ background-color: white; border-color: white;}
+.table-striped .rwwhite,#d_Ping, .grp_Ptery, #d_KP,
+	.grp_IOL_decen, #d_adOpt_Lens, #d_adOpt_Conj,
+	.grp_Notch,#d_nApp,#d_Edm,.grp_onDrusen,
+	.grp_RPED,.grp_PIH,.grp_RetTear,.grp_Nevus,#d_adOpt_retinal,
+	.grp_Roseacea, .grp_ran_st,
+	.grp_ScarCorn{ background-color: #ffffff!important; }
+.table-striped .rwgrey, .grp_Injection, .grp_SHmg,
+	.grp_IOL, #d_pcHaze,#d_PPA,#d_NVasc,#d_adOpt_optic, #d_Drusen_retina1,
+	.grp_Slopping,.grp_Pallor,.grp_RetDet,.grp_ERM,
+	.grp_CWS,.grp_VasShth,.grp_PNV, .grp_av_patterns,
+	.grp_fornBody,.grp_Vasc,.grp_Flare,.grp_Depth{ background-color: #f9f9f9; }
+    .table td.grpbtn, .table td.grpbtn_ee{position:relative; padding:0px!important;}
+	.grpbtn label, .grpbtn_ee label{  width:100%; height:inherit; top:0px; vertical-align:middle; padding:4px 2px 4px 2px; margin-bottom:0px; }
+/*End Exam pop ups*/
+
+/*IOP graphs*/
+#iol_graph_doc{ position:fixed; display:none; top:10px;left:2px;padding:2px;width:100%; height:100%; z-index:200; }
+
+/*Nevigation*/
+#nav-main img { background: url(../library/images/x2.png) no-repeat; background-size: 1200%;}
+#pt_at_glance img{ background-position: 0px 0px; }
+#test_manager img{ background-position: 8.5% 0px;	}
+#ims_symph img{ background-position: -165px -79px;	} /*38% 106%;*/
+#Erx img{ background-position: 18% 0px;	}
+#eRx_prescription img{ background-position: 27.25% 0px;	}
+#general_health img{ background-position: 35.75% 0px;	}
+#smart_charting img{ background-position: 45% 0px;	}
+#patient_communication img{ background-position: 53.5% 0px;	}
+#patient_instruction_documents img{ background-position: 63% 0px;	}
+#allergies img{ background-position: 72% 0;	}
+#Surgeries img{ background-position: 80.5% 0;	}
+#glaucoma_flow_sheet img{ background-position: 89.4% 0px;	}
+#patient_refractive_sheet img{ background-position: 99% 0px;	}
+#procedure_flow_sheet img{ background-position: -1px 52%;	}
+#retinal_flow_sheet img{ background-position: 9% 52%;	}
+#consult_letter img{ background-position: 18.75% 52%;	}
+#print img{ background-position: 28% 55%;	}
+#MUR_checklist img{ background-position: 36.75% 52%;	}
+#History_of_CPT_Services img{ background-position: 46.5% 55%;	}
+#patient_chart_search img{ background-position: 56% 57%;	}
+#patient_providers img{ background-position: 65.25% 52%;	}
+#confidential_text img{ background-position: 74.5% 55%;	}
+#primary_referrals img{ background-position: 83.5% 55%;	}
+#mapy img{ background-position: 91.5% 53%;	}
+#pin_unpin_div img{ background: url(../library/images/x2.png) no-repeat; background-position: 99% 55%; width:45px;	}
+#DrawingPngImg_od, #DrawingPngImg_os{ background: url(../library/images/x2.png) no-repeat; background-position: 0% 95%; width:42px; height:33px; }
+#img_flowsheet{ background: url(../library/images/x2.png) no-repeat; background-position: 28% 94%; background-size:1900%;  }
+
+
+.div_pachy{margin-top:8px;}
+
+
+/* - alws at end custom width -  */
+@media (min-width: 768px) {
+	#summarysheet #fundus_exam .peritab{width:80px;}
+	.col-sm-1-sn {width: 8%;}
+	.col-sm-1-opt{width: 15%;}
+	.col-sm-7-as{width: 62%;}
+	.col-sm-2-dx{width: 15%;}
+	.col-sm-12-pl{width: 95%;}
+	.col-sm-1-x{width: 5%;}
+}
+@media (min-width: 960px) {
+	.col-sm-1-sn {width: 5%; }
+	.col-sm-1-opt{width: 9%; }
+	.col-sm-7-as{width: 35%; }
+	.col-sm-2-dx{width: 11%; }
+	.col-sm-12-pl{width: 35%; }
+	.col-sm-1-x{width: 3%; }
+}
+@media (min-width: 992px) {
+	.col-md-1-sn {width: 4.75%;}
+	.col-md-1-opt{width: 11.5%;}
+	.col-md-4-as{width: 35.75%;}
+	.col-md-1-dx{width: 10%;}
+	.col-md-4-pl{width: 35%;}
+	.col-md-1-x{width: 3%;}
+	#summarysheet .formCDRV input:nth-child(2){margin-right:10px;}
+}
+@media (min-width: 1200px) {
+	#summarysheet #fundus_exam .peritab{width:100px;}
+	.col-lg-1-sn {width: 3.33%;}
+	.col-lg-1-opt{width: 6%;}
+	.col-lg-4-as{width: 38%;}
+	.col-lg-1-dx{width: 9.2%;}
+	.col-lg-4-pl{width: 40.47%;}
+	.col-lg-1-x{width: 3%;}
+	.col-lg-2-adac{width: 11.7%;}
+	.col-lg-3-ar{width: 21%;}
+	.col-lg-3-ret{width: 20%;}
+	#summarysheet .esum .einfo .hdr .btn, #summarysheet #sec_wv_sum .tallft .btn, .assesment .btn {padding : 2px 5px; margin-right:10px;}
+	#summarysheet #ref_surg .hdr label:first-child{width:57%;}
+	#summarysheet .formCDRV input{width:40px;margin-left:5px;}
+	.dis-mr-cog{display:inline-block;}
+	.dis-mr-btn-glprism, .dis-mr-btn-cyl, .dis-mr-btn-print, .dis-mr-btn-clr{display:none;}
+	#Vision .header .pctab .btn-sm{ padding-left:5px; padding-right:5px;}
+}
+
+@media (min-width: 1280px) {
+	.dis-mr-btn-print{display:inline-block;}
+}
+@media (min-width: 1300px) {
+	#Vision .header .pctab .btn-sm{ padding-left:10px; padding-right:10px;}
+}
+
+@media (min-width: 1500px) {
+	#Distance .col-lg-3-hd{width: 18.7%;}
+	#Distance .col-lg-2-adac{width: 10%;}
+	#Distance .col-lg-1-hd{width: 15%;}
+	#Distance .col-lg-3-ar{width: 18.9%;}
+	#Distance .col-lg-3-ret{width: 18.9%;}
+	#elem_visPam{width:80px!important;}
+	#div_rvs{ width:70%; }
+	#div_rvs .subSec{ margin-bottom:15px; }
+	#div_rvs  #header{ padding-bottom:10px; margin-bottom:10px;}
+	.subSec h2{ padding:0px 0px 10px 0px; margin:0px 0px 10px 0px; }
+	.subSec b{ padding:5px; }
+	#detailDesc1 li label, #detailDesc2 li label { padding:0px 2px 0px 2px; }
+	#detailDesc1 .table td, #detailDesc2 .table td{padding:4px 8px!important;}
+	.tstlst label{margin-bottom:3px;}
+	.tstlst ul li{margin:0px 0px 10px 0px;}
+	#detailDesc2 .table td{ padding: 2px!important }
+	#detailDesc2 .header{ line-height: 25px; }
+	#detailDesc2 li#dd2selLocOther{width:20%;}
+	#Vision .examsectbox .header .mrtab span.glyphicon-ok-circle,
+	#Vision .examsectbox .header .pctab span.glyphicon-ok-circle {margin-right:45px;}
+	#Vision .mrtab .dropdown .btn-sm {padding-left:5px;padding-right:5px;}
+	#detailDesc1, #detailDesc2 {height:auto;width:80%; left:5%;}
+	#detailDesc1 .table-responsive, #detailDesc2 .table-responsive{height:auto;}
+	#detailDesc1 textarea.form-control, #detailDesc2 textarea.form-control{height:auto!important;}
+	.dis-mr-cog{display:none;}
+	.dis-mr-btn-glprism, .dis-mr-btn-cyl, .dis-mr-btn-print, .dis-mr-btn-clr{display:inline-block;padding-left:3px; padding-right:3px;}
+
+}
+@media (min-width: 1680px) {
+	#PC .col-lg-ovr-ref-hd{width: 55%;}
+	#PC .col-lg-prism-hd{width: 45%;}
+	#MR .col-lg-mr-main-hd{width: 60%;}
+	#MR .col-lg-glph-hd{width: 10%;display:block;}
+	#MR .col-lg-mr-prsm-hd{width: 30%;display:block;}
+	#MR .col-lg-mr-main-hd .head-icons input[type=text]{width:80px;}
+	.hdn-hd, #Vision #MR .header .dropdown li.hdn-hd{display:none!important;}
+	.swn-hd{display:inline;}
+	#detailDesc2 li#dd2selLocOther{width:30%;}
+	#detailDesc2 li#dd2selLocOther textarea{width:95%;}
+	.dis-mr-cog{display:inline-block;} .dis-mr-btn-print{display:inline-block;}
+	.dis-mr-btn-glprism, .dis-mr-btn-cyl, .dis-mr-btn-clr{display:none;}
+	#Vision .examsectbox .header .mrtab span.glyphicon-ok-circle{margin-right:5px;}
+	#Vision .header .mrtab select[id*=elem_mr_type]{width:60px;}
+}
+@media (min-width: 1920px) {
+	#detailDesc2 li#dd2selLocOther{width:40%;}
+	#Vision .header .mrtab select[id*=elem_mr_type]{width:auto;}
+	.dis-mr-btn-print{display:inline-block;}
+
+}
+@media (min-width: 2260px) { .dis-mr-cog{display:none;}  .dis-mr-btn-cyl, .dis-mr-btn-print, .dis-mr-btn-clr{display:inline-block;} }
+

@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+.opthead{ padding:10px; border-bottom:1px solid #CCCCCC; margin-bottom:10px;}
+.opthead h2{ padding:0px; margin:0px; font-size:22px; color:#393939 }
+.opthead select.minimal{ width:150px;}
+.optselct{ text-align:right}
+.optselct label{ font-weight:normal; font-size:16px;}
+.ordtable label{ font-weight:normal; font-size:14px!important;}
+.ordtable td{ vertical-align:middle!important}
+
+.prism select.minimal{ width:60px; margin:0px 5px}
+
+.lensopt{ padding:10px;}
+.lensopt label{ font-weight:normal; font-size:16px; color:#fff}
+.lensopt .form-inline .form-group{ display:block; margin-bottom:4px;}
+.lensopt .form-group{ margin-bottom:4px;}
+.lenstype{ background-color:#673782; padding:5px; margin-bottom:10px; min-height:75px;}
+.lenstype .form-control{ width:100%!important}
+.lensmater{ background-color:#1b9e95; padding:5px; margin-bottom:10px; min-height:75px;}
+.lenstint{ background-color:#8bc34a; padding:5px; margin-bottom:10px; min-height:75px;}
+.lnsopchk{ background-color:#e1e1e1; padding:24px 15px 5px 15px; margin-bottom:10px; min-height:75px;}
+.lnsopchk label{ color: #3F3F3F; margin-right:10px;}
+.lnsopchk .control {display: inline-block;}
+
+
+.costbox{ border:1px solid #e1e1e1; margin-bottom:10px; min-height:280px;}
+.costbox .head{ border-bottom:2px solid #ff6b6b; padding:10px; margin-bottom:10px; position:relative }
+.costbox .head figure{ position:absolute; top:5px; right:4px;}
+
+.costbox .head h2{ padding:0px; margin:0px; color:#616161; text-transform:uppercase; font-size:20px; font-weight:normal; font-family: 'robotobold'; }
+.costbox  label{ font-weight:normal}
+
+.costbox .form-group {
+    margin-bottom: 5px;
+}
+
+
+.ordadva{ background-color:#1b9e95; padding:20px; margin-bottom:10px; }
+.ordadva label{ color:#fff; font-size:16px; font-weight:normal}
+.paidby .form-control {
+    width: 100% !important;
+}
+
+.contptdtl{ min-height:60px; position:relative; padding:8px 0px 0px 70px;}
+.contptdtl img{ position:absolute; top:4px; left:8px;}
+.contptdtl h2{ font-size:24px; color:#fff; padding:0px; margin:0px; }
+.contptdtl h2 span{ font-size:16px; color:#fff; padding:0px; margin:0px; text-transform:uppercase; display:block }
+.ptinfo{ background-color:#673782}
+.ptid{ background-color:#1b9e95}
+.ptdob{ background-color:#8bc34a}
+.ptcontdtl{ background-color:#5d5c5d}
+
+@media (min-width:768px) and (max-width:991px){
+
+.table-responsive{overflow-x:scroll;}
+
+}

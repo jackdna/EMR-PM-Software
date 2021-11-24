@@ -1,0 +1,23 @@
+{
+    "name": "getClinicalData/vitalSigns",
+    "description": "This call will provide data for CCDS category Vital Signs.",
+    "parameters": [
+        {
+	    "name": "patientId",
+	    "type": "Integer",
+	    "description": "Patient MRN in IMW.",
+	    "required": true
+	},{
+            "name": "startDate",
+	    "type": "Date",
+	    "description": "Format YYYY-MM-DD Based on Range entry date",
+	    "required": false
+        },{
+            "name": "endDate",
+	    "type": "Date",
+	    "description": "Format YYYY-MM-DD",
+	    "required": false
+        }
+    ],
+    "accessToken": true
+}

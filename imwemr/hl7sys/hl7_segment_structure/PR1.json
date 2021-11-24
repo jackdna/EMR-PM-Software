@@ -1,0 +1,44 @@
+{
+    "segment_id": "PR1",
+    "setId_PR1": "",
+    "procedure_coding_method": "",
+    "procedure_code": "",
+    "procedure_description": "",
+    "date_time": "",
+    "functional_type": "",
+    "procedure_minutes": "",
+    "anethesiologist": {
+        "id": "",
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "anesthesia_code": "",
+    "anesthesia_minutes": "",
+    "surgeon": {
+        "id": "",
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "procedure_practitioner": {
+        "id": "",
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "consent_code": "",
+    "procedure_priority": "",
+    "associated_diagnosis_code": "",
+    "procedure_code_modifier": "",
+    "procedure_drg_type": "",
+    "tissue_type_code": "",
+    "procedure_identifier": "",
+    "procedure_action_code": ""
+}

@@ -1,0 +1,58 @@
+{
+    "name": "updateClinicalData/medications",
+    "description": "This call is used to update Patient Clinical information ( <strong>Medications</strong> ) in iDoc. Changes done through the API call require approval on iDoc side. Blank parameters will be ignored in this api Call. <strong>Parameters with input value provided will be updated.</strong>",
+    "parameters": [
+        {
+			"name": "patientId",
+			"type": "Integer",
+			"description": "If user is not patient, then <strong>this input is required</strong>",
+			"required": true
+		},{
+			"name": "PtMedicationId",
+			"type": "Integer",
+			"description": "Use '<strong>/getClinicalData/medications</strong>' to get Patient Medication Id",
+			"required": false
+		},{
+			"name": "MedicationId",
+			"type": "Integer",
+			"description": "Medication name (ID). Use '<strong>/getMedications</strong>' to get Medication Id",
+			"required": false
+		},{
+			"name": "Strength",
+			"type": "String",
+			"description": "Medication dose.",
+			"required": false
+		},{
+			"name": "Site",
+			"type": "Integer",
+			"description": " 1 = 'OS', 2 = 'OD', 3 = 'OU', 4 = 'PO'",
+			"required": false
+		},{
+			"name": "BeginDate",
+			"type": "Date",
+			"description": "Format YYYY-MM-DD.",
+			"required": false
+		},{
+			"name": "EndDate",
+			"type": "Date",
+			"description": "Format YYYY-MM-DD.",
+			"required": false
+		},{
+			"name": "Comments",
+			"type": "String",
+			"description": "Reaction / Comments",
+			"required": false
+		},{
+			"name": "Direction",
+			"type": "String",
+			"description": "Direction",
+			"required": false
+		},{
+			"name": "Route",
+			"type": "Integer",
+			"description": "Route for medication. <br />Use '<strong>/getMedRoutes</strong>' to get Route ID.",
+			"required": false
+		}
+    ],
+    "accessToken": true
+}

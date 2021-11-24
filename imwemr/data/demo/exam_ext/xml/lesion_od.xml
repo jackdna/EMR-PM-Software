@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+// Under MIT License
+// Distribute, Modify and Contribute under MIT License.
+// Use of Software under MIT License.
+-->
+<!--
+File: lesion_od.xml
+Coded in PHP7
+Purpose: This file defines exam options of Lession OD.
+Access Type : Include file
+-->
+<lesion>
+	<od>
+		<chalazion examname="Chalazion">
+			<negative elem_name="elem_chalazionOd_neg"></negative>			
+			<pos4 elem_name="elem_chalazionOd_pos4"></pos4>
+			<pos3 elem_name="elem_chalazionOd_pos3"></pos3>
+			<pos2 elem_name="elem_chalazionOd_pos2"></pos2>
+			<pos1 elem_name="elem_chalazionOd_pos1"></pos1>
+			<t elem_name="elem_chalazionOd_T"></t>			
+			<rul elem_name="elem_chalazionOd_rul"></rul>
+			<rll elem_name="elem_chalazionOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_chalazionOd_Location" ></location>
+			<horizontal_size elem_name="elem_chalazionOd_HoriSize" ></horizontal_size>
+			<vertical_size elem_name="elem_chalazionOd_VertiSize" ></vertical_size>
+			<punctal_involvement elem_name="elem_chalazionOd_PunIn" ></punctal_involvement>
+			<loss_of_lashes elem_name="elem_chalazionOd_LossLash"  ></loss_of_lashes>
+			<raised elem_name="elem_chalazionOd_Raised"></raised>
+			<ulcerated elem_name="elem_chalazionOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_chalazionOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_chalazionOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_chalazionOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_chalazionOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_chalazionOd_TelV" ></telangiatatic_vessels>
+			<cystic elem_name="elem_chalazionOd_Cyst"></cystic>
+			<solid elem_name="elem_chalazionOd_Solid"></solid>
+			<color elem_name="elem_chalazionOd_Color"></color>
+			<comments elem_name="elem_chalazionOd_Comments"></comments>	
+			</modifiers>
+			
+		</chalazion>
+		<hordeolum examname="Hordeolum">
+			<negative elem_name="elem_hordeolumOd_neg"></negative>			
+			<pos4 elem_name="elem_hordeolumOd_pos4"></pos4>
+			<pos3 elem_name="elem_hordeolumOd_pos3"></pos3>
+			<pos2 elem_name="elem_hordeolumOd_pos2"></pos2>
+			<pos1 elem_name="elem_hordeolumOd_pos1"></pos1>
+			<t elem_name="elem_hordeolumOd_T"></t>			
+			<rul elem_name="elem_hordeolumOd_rul"></rul>
+			<rll elem_name="elem_hordeolumOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_hordeolumOd_Location"></location>
+			<horizontal_size elem_name="elem_hordeolumOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_hordeolumOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_hordeolumOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_hordeolumOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_hordeolumOd_Raised"></raised>
+			<ulcerated elem_name="elem_hordeolumOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_hordeolumOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_hordeolumOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_hordeolumOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_hordeolumOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_hordeolumOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_hordeolumOd_Cyst"></cystic>
+			<solid elem_name="elem_hordeolumOd_Solid"></solid>
+			<color elem_name="elem_hordeolumOd_Color"></color>
+			<comments elem_name="elem_hordeolumOd_Comments"></comments>
+			</modifiers>
+			
+		</hordeolum>
+		<papilloma examname="Papilloma">
+			<negative elem_name="elem_papillomaOd_neg"></negative>			
+			<pos4 elem_name="elem_papillomaOd_pos4"></pos4>
+			<pos3 elem_name="elem_papillomaOd_pos3"></pos3>
+			<pos2 elem_name="elem_papillomaOd_pos2"></pos2>
+			<pos1 elem_name="elem_papillomaOd_pos1"></pos1>
+			<t elem_name="elem_papillomaOd_T"></t>			
+			<rul elem_name="elem_papillomaOd_rul"></rul>
+			<rll elem_name="elem_papillomaOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_papillomaOd_Location"></location>
+			<horizontal_size elem_name="elem_papillomaOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_papillomaOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_papillomaOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_papillomaOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_papillomaOd_Raised"></raised>
+			<ulcerated elem_name="elem_papillomaOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_papillomaOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_papillomaOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_papillomaOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_papillomaOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_papillomaOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_papillomaOd_Cyst"></cystic>
+			<solid elem_name="elem_papillomaOd_Solid"></solid>
+			<color elem_name="elem_papillomaOd_Color"></color>
+			<comments elem_name="elem_papillomaOd_Comments"></comments>
+			</modifiers>
+			
+		</papilloma>
+		<cyst examname="Cyst">
+			<text elem_name="elem_cystOd_text"></text>
+			<modifiers modifiers="1">
+			<location elem_name="elem_cystOd_Location"></location>
+			<horizontal_size elem_name="elem_cystOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_cystOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_cystOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_cystOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_cystOd_Raised"></raised>
+			<ulcerated elem_name="elem_cystOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_cystOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_cystOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_cystOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_cystOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_cystOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_cystOd_Cyst"></cystic>
+			<solid elem_name="elem_cystOd_Solid"></solid>
+			<color elem_name="elem_cystOd_Color"></color>
+			<comments elem_name="elem_cystOd_Comments"></comments>
+			</modifiers>
+			
+			<inclusion examname="Inclusion">
+				<negative elem_name="elem_inclusionOd_neg"></negative>				
+				<pos4 elem_name="elem_inclusionOd_pos4"></pos4>
+				<pos3 elem_name="elem_inclusionOd_pos3"></pos3>
+				<pos2 elem_name="elem_inclusionOd_pos2"></pos2>
+				<pos1 elem_name="elem_inclusionOd_pos1"></pos1>
+				<t elem_name="elem_inclusionOd_T"></t>				
+				<rul elem_name="elem_inclusionOd_rul"></rul>
+				<rll elem_name="elem_inclusionOd_rll"></rll>	
+			</inclusion>
+			<psuediferous examname="Sudoriferous">
+				<negative elem_name="elem_psuedOd_neg"></negative>				
+				<pos4 elem_name="elem_psuedOd_pos4"></pos4>
+				<pos3 elem_name="elem_psuedOd_pos3"></pos3>
+				<pos2 elem_name="elem_psuedOd_pos2"></pos2>
+				<pos1 elem_name="elem_psuedOd_pos1"></pos1>
+				<t elem_name="elem_psuedOd_T"></t>				
+				<rul elem_name="elem_psuedOd_rul"></rul>
+				<rll elem_name="elem_psuedOd_rll"></rll>	
+			</psuediferous>
+			
+		</cyst>
+		<neoplasia examname="Neoplasia">
+			<basal_cell elem_name="elem_neoplasOd_bcell" pv="Basal Cell"></basal_cell>
+			<squamous_cell elem_name="elem_neoplasOd_sqcell" pv="Squamous Cell"></squamous_cell>
+			<neoother elem_name="elem_neoplasOd_other"></neoother>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_neoplasOd_Location"></location>
+			<horizontal_size elem_name="elem_neoplasOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_neoplasOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_neoplasOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_neoplasOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_neoplasOd_Raised"></raised>
+			<ulcerated elem_name="elem_neoplasOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_neoplasOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_neoplasOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_neoplasOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_neoplasOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_neoplasOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_neoplasOd_Cyst"></cystic>
+			<solid elem_name="elem_neoplasOd_Solid"></solid>
+			<color elem_name="elem_neoplasOd_Color"></color>
+			<comments elem_name="elem_neoplasOd_Comments"></comments>
+			</modifiers>
+			
+		</neoplasia>
+		
+		<hemangioma examname="Hemangioma">
+			<negative elem_name="elem_HemanOd_neg"></negative>			
+			<pos4 elem_name="elem_HemanOd_pos4"></pos4>
+			<pos3 elem_name="elem_HemanOd_pos3"></pos3>
+			<pos2 elem_name="elem_HemanOd_pos2"></pos2>
+			<pos1 elem_name="elem_HemanOd_pos1"></pos1>
+			<t elem_name="elem_HemanOd_T"></t>			
+			<rul elem_name="elem_HemanOd_rul"></rul>
+			<rll elem_name="elem_HemanOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_HemanOd_Location"></location>
+			<horizontal_size elem_name="elem_HemanOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_HemanOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_HemanOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_HemanOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_HemanOd_Raised"></raised>
+			<ulcerated elem_name="elem_HemanOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_HemanOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_HemanOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_HemanOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_HemanOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_HemanOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_HemanOd_Cyst"></cystic>
+			<solid elem_name="elem_HemanOd_Solid"></solid>
+			<color elem_name="elem_HemanOd_Color"></color>
+			<comments elem_name="elem_HemanOd_Comments"></comments>
+			</modifiers>
+			
+		</hemangioma>
+		
+		<seborrheic_keratitis examname="Seborrheic Keratosis">
+			<negative elem_name="elem_SeboKeraOd_neg"></negative>			
+			<pos4 elem_name="elem_SeboKeraOd_pos4"></pos4>
+			<pos3 elem_name="elem_SeboKeraOd_pos3"></pos3>
+			<pos2 elem_name="elem_SeboKeraOd_pos2"></pos2>
+			<pos1 elem_name="elem_SeboKeraOd_pos1"></pos1>
+			<t elem_name="elem_SeboKeraOd_T"></t>			
+			<rul elem_name="elem_SeboKeraOd_rul"></rul>
+			<rll elem_name="elem_SeboKeraOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_SeboKeraOd_Location"></location>
+			<horizontal_size elem_name="elem_SeboKeraOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_SeboKeraOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_SeboKeraOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_SeboKeraOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_SeboKeraOd_Raised"></raised>
+			<ulcerated elem_name="elem_SeboKeraOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_SeboKeraOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_SeboKeraOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_SeboKeraOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_SeboKeraOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_SeboKeraOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_SeboKeraOd_Cyst"></cystic>
+			<solid elem_name="elem_SeboKeraOd_Solid"></solid>
+			<color elem_name="elem_SeboKeraOd_Color"></color>
+			<comments elem_name="elem_SeboKeraOd_Comments"></comments>
+			</modifiers>
+			
+		</seborrheic_keratitis>
+		
+		<intradermal_nevus examname="Intradermal Nevus">
+			<negative elem_name="elem_InNevusOd_neg"></negative>			
+			<pos4 elem_name="elem_InNevusOd_pos4"></pos4>
+			<pos3 elem_name="elem_InNevusOd_pos3"></pos3>
+			<pos2 elem_name="elem_InNevusOd_pos2"></pos2>
+			<pos1 elem_name="elem_InNevusOd_pos1"></pos1>
+			<t elem_name="elem_InNevusOd_T"></t>			
+			<rul elem_name="elem_InNevusOd_rul"></rul>
+			<rll elem_name="elem_InNevusOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_InNevusOd_Location"></location>
+			<horizontal_size elem_name="elem_InNevusOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_InNevusOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_InNevusOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_InNevusOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_InNevusOd_Raised"></raised>
+			<ulcerated elem_name="elem_InNevusOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_InNevusOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_InNevusOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_InNevusOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_InNevusOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_InNevusOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_InNevusOd_Cyst"></cystic>
+			<solid elem_name="elem_InNevusOd_Solid"></solid>
+			<color elem_name="elem_InNevusOd_Color"></color>
+			<comments elem_name="elem_InNevusOd_Comments"></comments>
+			</modifiers>
+			
+		</intradermal_nevus>
+		
+		<hydrocystoma examname="Hidrocystoma">
+			<negative elem_name="elem_HydCysOd_neg"></negative>			
+			<pos4 elem_name="elem_HydCysOd_pos4"></pos4>
+			<pos3 elem_name="elem_HydCysOd_pos3"></pos3>
+			<pos2 elem_name="elem_HydCysOd_pos2"></pos2>
+			<pos1 elem_name="elem_HydCysOd_pos1"></pos1>
+			<t elem_name="elem_HydCysOd_T"></t>			
+			<rul elem_name="elem_HydCysOd_rul"></rul>
+			<rll elem_name="elem_HydCysOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_HydCysOd_Location"></location>
+			<horizontal_size elem_name="elem_HydCysOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_HydCysOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_HydCysOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_HydCysOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_HydCysOd_Raised"></raised>
+			<ulcerated elem_name="elem_HydCysOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_HydCysOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_HydCysOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_HydCysOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_HydCysOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_HydCysOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_HydCysOd_Cyst"></cystic>
+			<solid elem_name="elem_HydCysOd_Solid"></solid>
+			<color elem_name="elem_HydCysOd_Color"></color>
+			<comments elem_name="elem_HydCysOd_Comments"></comments>
+			</modifiers>
+			
+		</hydrocystoma>
+		
+		<xantholasma examname="Xanthelasma">
+			<negative elem_name="elem_XanthaOd_neg"></negative>			
+			<pos4 elem_name="elem_XanthaOd_pos4"></pos4>
+			<pos3 elem_name="elem_XanthaOd_pos3"></pos3>
+			<pos2 elem_name="elem_XanthaOd_pos2"></pos2>
+			<pos1 elem_name="elem_XanthaOd_pos1"></pos1>
+			<t elem_name="elem_XanthaOd_T"></t>			
+			<rul elem_name="elem_XanthaOd_rul"></rul>
+			<rll elem_name="elem_XanthaOd_rll"></rll>
+			
+			<modifiers modifiers="1">
+			<location elem_name="elem_XanthaOd_Location"></location>
+			<horizontal_size elem_name="elem_XanthaOd_HoriSize"></horizontal_size>
+			<vertical_size elem_name="elem_XanthaOd_VertiSize"></vertical_size>
+			<punctal_involvement elem_name="elem_XanthaOd_PunIn"></punctal_involvement>
+			<loss_of_lashes elem_name="elem_XanthaOd_LossLash" ></loss_of_lashes>
+			<raised elem_name="elem_XanthaOd_Raised"></raised>
+			<ulcerated elem_name="elem_XanthaOd_Ulcerated"></ulcerated>
+			<crusted elem_name="elem_XanthaOd_Crusted"></crusted>
+			<hemorrhagic elem_name="elem_XanthaOd_Hemo"></hemorrhagic>
+			<pigmented elem_name="elem_XanthaOd_Pigm"></pigmented>
+			<hyperkeratotic elem_name="elem_XanthaOd_Hyker"></hyperkeratotic>
+			<telangiatatic_vessels elem_name="elem_XanthaOd_TelV"></telangiatatic_vessels>
+			<cystic elem_name="elem_XanthaOd_Cyst"></cystic>
+			<solid elem_name="elem_XanthaOd_Solid"></solid>
+			<color elem_name="elem_XanthaOd_Color"></color>
+			<comments elem_name="elem_XanthaOd_Comments"></comments>
+			</modifiers>
+			
+		</xantholasma>		
+		
+		<advanceoptions elem_name="elem_lesionAdOptionsOd"></advanceoptions>
+	</od>
+</lesion>

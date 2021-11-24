@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<confrontation_field>
+	<os>
+		<full elem_type="CB" elem_name="elem_fullOs" label="Full"></full>
+		<constriction examname="Constriction">
+			<value elem_type="CB" elem_name="elem_constrictionOs" label="Constriction"></value>
+			<defect elem_type="CB" elem_name="elem_constrictionDefectOs" label="Defect"></defect>
+		</constriction>
+		<superotemporal examname="Superotemporal Defect">
+			<value elem_type="CB" elem_name="elem_sTempOs" label="Superotemporal Defect"></value>
+			<defect elem_type="CB" elem_name="elem_sTempDefectOs" label="Defect"></defect>
+		</superotemporal>
+		<inferotemporal examname="Inferotemporal Defect">
+			<value elem_type="CB" elem_name="elem_infTempOs" label="Inferotemporal Defect"></value>
+			<defect elem_type="CB" elem_name="elem_infTempDefectOs" label="Defect"></defect>
+		</inferotemporal>
+		<supranasal examname="Superonasal Defect">
+			<value elem_type="CB" elem_name="elem_sNasalOs" label="Superonasal Defect"></value>
+			<defect elem_type="CB" elem_name="elem_sNasalDefectOs" label="Defect"></defect>
+		</supranasal>
+		<inferonasal examname="Inferonasal Defect">
+			<value elem_type="CB" elem_name="elem_infNasalOs" label="Inferonasal Defect"></value>
+			<defect elem_type="CB" elem_name="elem_infNasalDefectOs" label="Defect"></defect>
+		</inferonasal>
+		<superior_half examname="Superior Half Defect">
+			<value elem_type="CB" elem_name="elem_superHalfOs" label="Superior Half Defect"></value>
+			<defect elem_type="CB" elem_name="elem_superHalfDefectOs" label="Defect"></defect>
+		</superior_half>
+		<inferior_half examname="Inferior Half Defect">
+			<value elem_type="CB" elem_name="elem_infHalfOs" label="Inferior Half Defect"></value>
+			<defect elem_type="CB" elem_name="elem_infHalfDefectOs" label="Defect"></defect>
+		</inferior_half>
+		<advanceoptions elem_type="TA" elem_name="elem_confrontAdOptionsOs"></advanceoptions>
+	</os>
+</confrontation_field>

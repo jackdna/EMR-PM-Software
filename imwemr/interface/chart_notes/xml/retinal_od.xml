@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<retinal>
+	<od>
+		<macular_edema examname="Macular edema">
+			<absent elem_name="elem_retOd_ME_Absent"></absent>
+			<focal elem_name="elem_retOd_ME_Focal"></focal>
+			<diffuse elem_name="elem_retOd_ME_Diffuse"></diffuse>
+			<cystoid elem_name="elem_retOd_ME_Cystoid"></cystoid>
+		</macular_edema>
+
+		<drusen examname="Drusen">
+			<abesnt elem_name="elem_retOd_drusen_Absent"></abesnt>
+			<t elem_name="elem_retOd_drusen_T"></t>
+			<pos1 elem_name="elem_retOd_drusen_pos1"></pos1>
+			<pos2 elem_name="elem_retOd_drusen_pos2"></pos2>
+			<pos3 elem_name="elem_retOd_drusen_pos3"></pos3>
+			<pos4 elem_name="elem_retOd_drusen_pos4"></pos4>
+
+			<f elem_name="elem_retOd_drusen_F"></f>
+			<pf elem_name="elem_retOd_drusen_foveal" pv="PF"></pf>
+			<ef elem_name="elem_retOd_drusen_EF" pv="EF"></ef>
+			<hard elem_name="elem_retOd_drusen_hard"></hard>
+		</drusen>
+
+		<dryamd examname="AMD">
+			<text elem_name="elem_retOd_armd_text"></text>
+			<drusen examname="Drusen">
+				<absent elem_name="elem_retOd_armd_drusen_neg"></absent>
+				<pos4 elem_name="elem_retOd_armd_drusen_pos4"></pos4>
+				<pos3 elem_name="elem_retOd_armd_drusen_pos3"></pos3>
+				<pos2 elem_name="elem_retOd_armd_drusen_pos2"></pos2>
+				<pos1 elem_name="elem_retOd_armd_drusen_pos1"></pos1>
+				<t elem_name="elem_retOd_armd_drusen_T"></t>
+				<f elem_name="elem_retOd_armd_drusen_F"></f>
+				<pf elem_name="elem_retOd_armd_drusen_foveal" pv="PF"></pf>
+				<ef elem_name="elem_retOd_armd_drusen_EF" pv="EF"></ef>
+				<hard elem_name="elem_retOd_armd_drusen_hard"></hard>
+				<soft elem_name="elem_retOd_armd_drusen_soft"></soft>
+			</drusen>
+
+			<rpe_changes examname="RPE Changes">
+				<absent elem_name="elem_retOd_armd_rpeCh_neg"></absent>
+				<pos4 elem_name="elem_retOd_armd_rpeCh_pos4"></pos4>
+				<pos3 elem_name="elem_retOd_armd_rpeCh_pos3"></pos3>
+				<pos2 elem_name="elem_retOd_armd_rpeCh_pos2"></pos2>
+				<pos1 elem_name="elem_retOd_armd_rpeCh_pos1"></pos1>
+				<t elem_name="elem_retOd_armd_rpeCh_T"></t>
+				<f elem_name="elem_retOd_armd_rpeCh_F"></f>
+				<pf elem_name="elem_retOd_armd_rpeCh_foveal" pv="PF"></pf>
+				<ef elem_name="elem_retOd_armd_rpeCh_EF" pv="EF"></ef>
+			</rpe_changes>
+
+			<geographic_atrophy examname="Geographic Atrophy">
+				<absent elem_name="elem_retOd_armd_geoAtro_neg"></absent>
+				<pos4 elem_name="elem_retOd_armd_geoAtro_pos4"></pos4>
+				<pos3 elem_name="elem_retOd_armd_geoAtro_pos3"></pos3>
+				<pos2 elem_name="elem_retOd_armd_geoAtro_pos2"></pos2>
+				<pos1 elem_name="elem_retOd_armd_geoAtro_pos1"></pos1>
+				<t elem_name="elem_retOd_armd_geoAtro_T"></t>
+				<f elem_name="elem_retOd_armd_geoAtro_F"></f>
+				<pf elem_name="elem_retOd_armd_geoAtro_foveal" pv="PF"></pf>
+				<ef elem_name="elem_retOd_armd_geoAtro_EF" pv="EF"></ef>
+			</geographic_atrophy>
+			<rped examname="Retinal Pigment Epithelial Detachment">
+				<absent elem_name="elem_retOd_armd_rped_Absent" ></absent>
+				<present elem_name="elem_retOd_armd_rped_Present" ></present>
+			</rped>
+			<cnvm examname="CNVM">
+				<absent elem_name="elem_retOd_armd_cnvm_Absent" ></absent>
+				<present elem_name="elem_retOd_armd_cnvm_Present" ></present>
+				<subfoveal elem_name="elem_retOd_armd_cnvm_Subfoveal" ></subfoveal>
+				<perifoveal elem_name="elem_retOd_armd_cnvm_Perifoveal" ></perifoveal>
+				<extrafoveal elem_name="elem_retOd_armd_cnvm_Extrafoveal" ></extrafoveal>
+				<juxtapapillary elem_name="elem_retOd_armd_cnvm_Juxtapapillary"></juxtapapillary>
+			</cnvm>
+			<srh examname="SRH">
+				<absent elem_name="elem_retOd_armd_srh_Absent"></absent>
+				<present elem_name="elem_retOd_armd_srh_Present"></present>
+				<mild elem_name="elem_retOd_armd_srh_Mild"></mild>
+				<moderate elem_name="elem_retOd_armd_srh_Moderate"></moderate>
+				<massive elem_name="elem_retOd_armd_srh_Massive"></massive>
+			</srh>
+			<subret examname="Subretinal Fluid">
+				<absent elem_name="elem_retOd_armd_subret_Absent"></absent>
+				<present elem_name="elem_retOd_armd_subret_Present"></present>
+			</subret>
+		</dryamd>
+
+		<erm examname="ERM">
+			<absent elem_name="elem_retOd_erm_neg"></absent>
+			<pos4 elem_name="elem_retOd_erm_pos4"></pos4>
+			<pos3 elem_name="elem_retOd_erm_pos3"></pos3>
+			<pos2 elem_name="elem_retOd_erm_pos2"></pos2>
+			<pos1 elem_name="elem_retOd_erm_pos1"></pos1>
+			<t elem_name="elem_retOd_erm_T"></t>
+			<suptemp elem_name="elem_retOd_erm_Superotemporal"></suptemp>
+			<inftemp elem_name="elem_retOd_erm_Inferotemporal"></inftemp>
+			<supnasal elem_name="elem_retOd_erm_Superonasal"></supnasal>
+			<infnasal elem_name="elem_retOd_erm_Inferonasal"></infnasal>
+		</erm>
+
+		<rped examname="Retinal Pigment Epithelial Detachment">
+			<present elem_name="elem_retOd_rped_Present"></present>
+			<absent elem_name="elem_retOd_rped_Absent"></absent>
+		</rped>
+
+		<cws examname="Cotton Wool Spot">
+			<absent elem_name="elem_retOd_cws_Absent"></absent>
+			<macula elem_name="elem_retOd_cws_Macula"></macula>
+			<suptemp elem_name="elem_retOd_cws_st"></suptemp>
+			<inftemp elem_name="elem_retOd_cws_it"></inftemp>
+			<supnasal elem_name="elem_retOd_cws_sn"></supnasal>
+			<infnasal elem_name="elem_retOd_cws_in"></infnasal>
+		</cws>
+
+		<diabetes examname="Diabetes">
+			<no_ret elem_name="elem_retOd_diabetes_noRetino" pv="No Retinopathy"></no_ret>
+		</diabetes>
+
+		<dr examname="DR">
+			<text elem_name="elem_retOd_dr_text"></text>
+			<npdr examname="NPDR">
+				<absent elem_name="elem_retOd_dr_npdr_Absent"></absent>
+				<t elem_name="elem_retOd_dr_npdr_T"></t>
+				<mild elem_name="elem_retOd_dr_npdr_Mild"></mild>
+				<moderate elem_name="elem_retOd_dr_npdr_Moderate"></moderate>
+				<severe elem_name="elem_retOd_dr_npdr_Severe"></severe>
+			</npdr>
+			<csme examname="Diabetic macular edema">
+				<absent elem_name="elem_retOd_dr_CSME_Absent"></absent>
+				<present elem_name="elem_retOd_dr_CSME_Present"></present>
+				<center_involving elem_name="elem_retOd_dr_CSME_cenInvlv" pv="Center involving"></center_involving>
+				<center_sparing elem_name="elem_retOd_dr_CSME_cenSpar" pv="Center Sparing"></center_sparing>
+			</csme>
+			<exudate examname="Hard Exudate">
+				<absent elem_name="elem_retOd_dr_exu_Absent"></absent>
+				<pos4 elem_name="elem_retOd_dr_exu_pos4"></pos4>
+				<pos3 elem_name="elem_retOd_dr_exu_pos3"></pos3>
+				<pos2 elem_name="elem_retOd_dr_exu_pos2"></pos2>
+				<pos1 elem_name="elem_retOd_dr_exu_pos1"></pos1>
+				<t elem_name="elem_retOd_dr_exu_T"></t>
+			</exudate>
+			<cws examname="Cotton Wool Spots">
+				<absent elem_name="elem_retOd_dr_cws_Absent"></absent>
+				<pos4 elem_name="elem_retOd_dr_cws_pos4"></pos4>
+				<pos3 elem_name="elem_retOd_dr_cws_pos3"></pos3>
+				<pos2 elem_name="elem_retOd_dr_cws_pos2"></pos2>
+				<pos1 elem_name="elem_retOd_dr_cws_pos1"></pos1>
+				<t elem_name="elem_retOd_dr_cws_T"></t>
+			</cws>
+			<focal_laser examname="Focal Laser">
+				<absent elem_name="elem_retOd_dr_fLaser_Absent"></absent>
+				<present elem_name="elem_retOd_dr_fLaser_Present"></present>
+				<comment elem_name="elem_retOd_dr_fLaser_comment"></comment>
+			</focal_laser>
+			<prp examname="PRP">
+				<absent elem_name="elem_retOd_dr_prp_Absent"></absent>
+				<partial elem_name="elem_retOd_dr_prp_Partial"></partial>
+				<complete elem_name="elem_retOd_dr_prp_Complete"></complete>
+				<comment elem_name="elem_retOd_dr_prp_comment"></comment>
+			</prp>
+			<neo_vasc examname="Neovascularization">
+				<absent elem_name="elem_retOd_dr_Neovasc_Absent"></absent>
+				<present elem_name="elem_retOd_dr_Neovasc_Present"></present>
+			</neo_vasc>
+		</dr>
+
+		<vas_occ examname="Vascular Occlusion">
+			<text elem_name="elem_retOd_vasocc_text"></text>
+			<brvo examname="BRVO">
+				<suptemp elem_name="elem_retOd_vasocc_brvo_st"></suptemp>
+				<inftemp elem_name="elem_retOd_vasocc_brvo_it"></inftemp>
+				<supnasal elem_name="elem_retOd_vasocc_brvo_sn"></supnasal>
+				<infnasal elem_name="elem_retOd_vasocc_brvo_in"></infnasal>
+				<macular_edema examname="Macular edema">
+				<present elem_name="elem_retOd_vasocc_brvo_MEPresent" ></present>
+				<absent elem_name="elem_retOd_vasocc_brvo_MEAbsent" ></absent>
+				<text elem_name="elem_retOd_vasocc_brvo_text"></text>
+				</macular_edema>
+			</brvo>
+			<crvo examname="CRVO">
+				<present elem_name="elem_retOd_vasocc_crvo_Present"></present>
+				<macular_edema examname="Macular edema">
+				<present elem_name="elem_retOd_vasocc_crvo_MEPresent" ></present>
+				<absent elem_name="elem_retOd_vasocc_crvo_MEAbsent" ></absent>
+				</macular_edema>
+			</crvo>
+			<brao examname="BRAO">
+				<suptemp elem_name="elem_retOd_vasocc_brao_st"></suptemp>
+				<inftemp elem_name="elem_retOd_vasocc_brao_it"></inftemp>
+				<supnasal elem_name="elem_retOd_vasocc_brao_sn"></supnasal>
+				<infnasal elem_name="elem_retOd_vasocc_brao_in"></infnasal>
+			</brao>
+			<crao examname="CRAO">
+				<present elem_name="elem_retOd_vasocc_crao_Present"></present>
+				<cas examname="Ciliary Artery Sparing">
+				<present elem_name="elem_retOd_vasocc_crao_CRSPresent" ></present>
+				<absent elem_name="elem_retOd_vasocc_crao_CRSAbsent" ></absent>
+				</cas>
+			</crao>
+		</vas_occ>
+
+		<vas_sheath examname="Vascular Sheathing">
+			<measure elem_name="elem_retOd_vasshth_Measure"></measure>
+			<suptemp elem_name="elem_retOd_vasshth_supTemp"></suptemp>
+			<inftemp elem_name="elem_retOd_vasshth_infTemp"></inftemp>
+			<supnasal elem_name="elem_retOd_vasshth_supNasal"></supnasal>
+			<infnasal elem_name="elem_retOd_vasshth_infNasal"></infnasal>
+			<text elem_name="elem_retOd_vasshth_comment"></text>
+		</vas_sheath>
+
+		<nevus examname="Nevus">
+			<disc_area_verti elem_name="elem_retOd_nevus_discarea_verti" pv="Disc Area" opt="0.5-5.5"></disc_area_verti>
+			<disc_area elem_name="elem_retOd_nevus_discarea" pv="Disc Area" opt="0.5-5.5"></disc_area>
+			<suptemp elem_name="elem_retOd_nevus_supTemp"></suptemp>
+			<inftemp elem_name="elem_retOd_nevus_infTemp"></inftemp>
+			<supnasal elem_name="elem_retOd_nevus_supNasal"></supnasal>
+			<infnasal elem_name="elem_retOd_nevus_Inferonasal"></infnasal>
+		</nevus>
+
+		<peri_deg examname="Peripheral Degeneration">
+			<atro_chng examname="Atrophic changes">
+				<measure elem_name="elem_retOd_perideg_atroChan_Measure"></measure>
+				<suptemp elem_name="elem_retOd_perideg_atroChan_supTemp"></suptemp>
+				<inftemp elem_name="elem_retOd_perideg_atroChan_infTemp"></inftemp>
+				<supnasal elem_name="elem_retOd_perideg_atroChan_supNasal"></supnasal>
+				<infnasal elem_name="elem_retOd_perideg_atroChan_infNasal"></infnasal>
+				<comment elem_name="elem_retOd_perideg_atroChan_comment"></comment>
+			</atro_chng>
+			<eqdru examname="Equatorial Drusen">
+				<measure elem_name="elem_retOd_perideg_EqDru_Measure"></measure>
+				<suptemp elem_name="elem_retOd_perideg_EqDru_supTemp"></suptemp>
+				<inftemp elem_name="elem_retOd_perideg_EqDru_infTemp"></inftemp>
+				<supnasal elem_name="elem_retOd_perideg_EqDru_supNasal"></supnasal>
+				<infnasal elem_name="elem_retOd_perideg_EqDru_infNasal"></infnasal>
+				<comment elem_name="elem_retOd_perideg_EqDru_comment"></comment>
+			</eqdru>
+			<latt_deg examname="Lattice Degeneration">
+				<measure elem_name="elem_retOd_perideg_LatDeg_Measure"></measure>
+				<suptemp elem_name="elem_retOd_perideg_LatDeg_supTemp"></suptemp>
+				<inftemp elem_name="elem_retOd_perideg_LatDeg_infTemp"></inftemp>
+				<supnasal elem_name="elem_retOd_perideg_LatDeg_supNasal"></supnasal>
+				<infnasal elem_name="elem_retOd_perideg_LatDeg_infNasal"></infnasal>
+				<comment elem_name="elem_retOd_perideg_LatDeg_comment"></comment>
+			</latt_deg>
+			<reti_chng examname="Reticular Changes">
+				<measure elem_name="elem_retOd_perideg_RetiCh_Measure"></measure>
+				<suptemp elem_name="elem_retOd_perideg_RetiCh_supTemp"></suptemp>
+				<inftemp elem_name="elem_retOd_perideg_RetiCh_infTemp"></inftemp>
+				<supnasal elem_name="elem_retOd_perideg_RetiCh_supNasal"></supnasal>
+				<infnasal elem_name="elem_retOd_perideg_RetiCh_infNasal"></infnasal>
+				<comment elem_name="elem_retOd_perideg_RetiCh_comment"></comment>
+			</reti_chng>
+			<rtchs examname="Retinoschisis">
+				<measure elem_name="elem_retOd_perideg_Rtchs_Measure"></measure>
+				<suptemp elem_name="elem_retOd_perideg_Rtchs_supTemp"></suptemp>
+				<inftemp elem_name="elem_retOd_perideg_Rtchs_infTemp"></inftemp>
+				<supnasal elem_name="elem_retOd_perideg_Rtchs_supNasal"></supnasal>
+				<infnasal elem_name="elem_retOd_perideg_Rtchs_infNasal"></infnasal>
+				<comment elem_name="elem_retOd_perideg_Rtchs_comment"></comment>
+			</rtchs>
+			<wwp examname="WWP">
+				<measure elem_name="elem_retOd_perideg_wwp_Measure"></measure>
+				<suptemp elem_name="elem_retOd_perideg_wwp_supTemp"></suptemp>
+				<inftemp elem_name="elem_retOd_perideg_wwp_infTemp"></inftemp>
+				<supnasal elem_name="elem_retOd_perideg_wwp_supNasal"></supnasal>
+				<infnasal elem_name="elem_retOd_perideg_wwp_infNasal"></infnasal>
+				<comment elem_name="elem_retOd_perideg_wwp_comment"></comment>
+			</wwp>
+		</peri_deg>
+
+		<pih examname="Peripheral Retinal Hemorrhage">
+			<absent elem_name="elem_retOd_pih_Absent"></absent>
+			<suptemp elem_name="elem_retOd_pih_supTemp"></suptemp>
+			<inftemp elem_name="elem_retOd_pih_infTemp"></inftemp>
+			<supnasal elem_name="elem_retOd_pih_supNasal"></supnasal>
+			<infnasal elem_name="elem_retOd_pih_infNasal"></infnasal>
+			<comment elem_name="elem_retOd_pih_comment"></comment>
+		</pih>
+
+		<pnv examname="Peripheral Neovascularization">
+			<absent elem_name="elem_retOd_pnv_Absent"></absent>
+			<suptemp elem_name="elem_retOd_pnv_supTemp"></suptemp>
+			<inftemp elem_name="elem_retOd_pnv_infTemp"></inftemp>
+			<supnasal elem_name="elem_retOd_pnv_supNasal"></supnasal>
+			<infnasal elem_name="elem_retOd_pnv_infNasal"></infnasal>
+			<comment elem_name="elem_retOd_pnv_comment"></comment>
+		</pnv>
+
+		<ret_tear examname="Retinal Tear">
+			<absent elem_name="elem_retOd_retinalTear_Absent"></absent>
+			<single elem_name="elem_retOd_retinalTear_Single"></single>
+			<multiple elem_name="elem_retOd_retinalTear_Multiple"></multiple>
+			<time elem_name="elem_retOd_retinalTear_time"></time>
+			<comment elem_name="elem_retOd_retinalTear_comment"></comment>
+		</ret_tear>
+
+		<ret_det examname="Retinal Detachment">
+			<absent elem_name="elem_retOd_retinalDetach_Absent"></absent>
+			<present elem_name="elem_retOd_retinalDetach_Present"></present>
+			<mac_on elem_name="elem_retOd_retinalDetach_macon" pv="Macula on"></mac_on>
+			<mac_off elem_name="elem_retOd_retinalDetach_macoff" pv="Macula off"></mac_off>
+			<suptemp elem_name="elem_retOd_retinalDetach_st"></suptemp>
+			<inftemp elem_name="elem_retOd_retinalDetach_it"></inftemp>
+			<supnasal elem_name="elem_retOd_retinalDetach_sn"></supnasal>
+			<infnasal elem_name="elem_retOd_retinalDetach_in"></infnasal>
+			<comment elem_name="elem_retOd_retinalDetach_comment"></comment>
+		</ret_det>
+
+		<advanceoptions elem_name="elem_retinalAdOptionsOd"></advanceoptions>
+	</od>
+</retinal>

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#Find the Process ID for syncapp running instance
+PID=`ps -eaf | egrep "/var/www/html/bsc_asc/hl7sys/old/data_receiver/directory_read_inbound.php" |grep -v grep |awk '{print $2}'`
+if [[ "" != "$PID" ]]; then
+	echo "Stoping HL7 Receiver Service..."
+	kill -9 $PID
+else
+	echo "No such service is running"
+fi

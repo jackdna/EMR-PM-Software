@@ -1,0 +1,121 @@
+#!/bin/bash
+#Name : HL7 Inbound Service
+#Desc : Starts/stop HL7 Inbound services for iMW on reboot
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+DAEMON="/usr/bin/php"
+DAEMON_OPTS="$SCRIPTPATH/receiver_master.php"
+NAME="HL7 Inbound Service"
+DESC="HL7 Inbound Service"
+
+usage() {
+  echo -n "Usage: $0 [arg1] [arg2] [arg3]
+
+ where:
+        "arg1"          start|stop|restart|status
+        "arg2"          Name of R8 site, for which HL7 is configured.
+        "arg3"          connection ID (compulsary value.)
+
+"
+}
+
+if [ ! -d "$SCRIPTPATH/../../config/$2" ] || [ "$2" = '' ] || [ "$3" = '' ]; then
+	if [ "$2" = '' ]; then
+		echo -e "Please provide a practice name"
+		usage
+	else
+		echo "$2 Practice does not exists"
+	fi
+	
+	if [ "$3" = '' ]; then
+		echo -e "Please provide Connection ID"
+		usage
+	fi
+	
+	exit
+fi
+
+getPid() {
+	PID=`ps -eaf |egrep "$DAEMON_OPTS" |grep "$2 $3" |grep -v grep |awk '{print $2}'`
+	echo "$PID"
+}
+
+start() {
+if [[ "" != "$( getPid $1 $2 $3)" ]];
+then
+        echo "$2 Inbound is already running with PID $( getPid $1 $2 $3)"
+else
+        echo -e "${NAME}: Starting..."
+        `nohup $DAEMON $DAEMON_OPTS "$2" "$3" > /dev/null 2>&1 &`
+        sleep 1
+        
+	if [[ "" != "$( getPid $1 $2 $3)" ]]; then
+	        echo -e "Inbound Started"
+	else
+		echo -e "Unable to start Inbound"
+	fi
+fi
+}
+
+stop() {
+if [[ "" != "$( getPid $1 $2 $3)" ]]; then
+        echo -e "${NAME}: Stopping..."
+
+        #Capture Service PORT
+        PORT=`netstat -tanp | grep "LISTEN.*$( getPid $1 $2 $3)/php\s*" | awk '{print $4}' | grep -oP '[0-9]{5}$'`
+        kill -9 $( getPid $1 $2 $3)
+        sleep 1
+
+        while [[ $PORT != "" && "" != `netstat -tanp | grep "$PORT.*_WAIT.*"` ]];
+        do 
+        	printf "\r\033[0;31mCleaning service cache"
+        	temp_cnt=6
+        	while [[ $temp_cnt -gt 0 ]];
+        	do
+        		printf "."
+        		sleep 1
+        		temp_cnt=`expr $temp_cnt - 1`
+        	done
+
+        	printf "\033[0m\r"
+        done
+
+	if [[ "" ==  "$( getPid $1 $2 $3)" ]]; then
+	        echo -e "Inbound Stopped"
+	else
+		echo -e "Unable to stop Inbound"
+	fi
+else
+        echo "Inbound not running"
+fi
+}
+
+status() {
+if [[ "" != "$( getPid $1 $2 $3)" ]]; then
+	echo "$2 Inbound is running with PID $( getPid $1 $2 $3)"
+else
+        echo "Inbound not running"
+fi
+}
+
+case "$1" in
+start)
+	start $1 $2 $3
+        ;;
+stop)
+        stop $1 $2 $3
+        ;;
+status)
+        status $1 $2 $3
+        ;;
+restart)
+        stop $1 $2 $3
+	sleep 1
+        start $1 $2 $3
+        ;;
+*)
+        usage
+        exit 1
+        ;;
+esac
+exit 0

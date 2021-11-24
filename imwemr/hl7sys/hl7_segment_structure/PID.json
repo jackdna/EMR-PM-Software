@@ -1,0 +1,84 @@
+{
+    "segment_id": "PID",
+    "setId_PID": "",
+    "patient_external_id": {
+        "ioPtId": "",
+        "ioPtWtId": ""
+    },
+    "patient_internal_id": "",
+    "patient_alternate_id": "",
+    "patient_name": {
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "mother_maiden_name": {
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "dob": "",
+    "sex": "",
+    "patient_alias": {
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "race": "",
+    "patient_address": {
+        "street": "",
+        "other_designation": "",
+        "city": "",
+        "state_province": "",
+        "zip": "",
+        "country": "",
+        "address_type": "",
+        "address_type2": "",
+        "county": ""
+    },
+    "country_code": "",
+    "phone_home": {
+        "telephone_number": {
+            "home": "",
+            "cell": ""
+        },
+        "telComm_useCode": "",
+        "telComm_equipType": "",
+        "email": ""
+    },
+    "phone_business": {
+        "telephone_number": "",
+        "telComm_useCode": "",
+        "telComm_equipType": "",
+        "email": ""
+    },
+    "primary_language": "",
+    "marital_status": "",
+    "religion": "",
+    "patient_account_number": "",
+    "ssn": "",
+    "driver_licence": "",
+    "mothers_identifier": {
+        "id": "",
+        "check_digit": "",
+        "check_digit_scheme": "",
+        "assigning_authority": "",
+        "identifier_type": "",
+        "assigning_facility": ""
+    },
+    "ethnic_group": "",
+    "birth_place": "",
+    "multiple_bith_indicator": "",
+    "birth_order": "",
+    "citizonship": "",
+    "veterans_militry_status": "",
+    "nationality": "",
+    "death_date_ime": "",
+    "death_indicator": ""
+}

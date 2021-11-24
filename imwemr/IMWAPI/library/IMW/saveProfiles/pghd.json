@@ -1,0 +1,25 @@
+{
+    "healthInformation":{
+		"patientIdColName": "",
+		"tb_name": "user_messages",
+		"title_msg": "PGHD - Patient Health Information - API ",
+		"col_name": "PGHD",
+		"col_lbl": "PGHD",
+		"pri_col_name": "",
+		"col_pri_id": "",
+		"old_val": "",
+		"new_val": "",
+		"old_val_lbl": "",
+		"new_val_lbl": {"parameter":"healthInformation"},
+		"new_val_arr": "",
+		"new_val_type": "",
+		"log_query": "",
+		"action": "add",
+		"is_approved": "0",
+		"resp_id": "0",
+		"reqDateTime": true,
+		"operator_action": "0",
+		"operator_id": "0",
+		"del_status": "0"
+	}
+}

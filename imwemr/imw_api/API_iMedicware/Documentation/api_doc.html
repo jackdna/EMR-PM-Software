@@ -1,0 +1,3286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.2">
+<title>imwemr API Documentation</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>imwemr API Documentation</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_overview">1. Overview</a>
+<ul class="sectlevel2">
+<li><a href="#_uri_auth">1.4. Authorization</a></li>
+</ul>
+</li>
+<li><a href="#_paths">2. Methods</a>
+<ul class="sectlevel2">
+	<li><a href="#_support_methods">2.1. Support Methods</a>
+<ul class="sectlevel3">
+    <li><a href="#_get_doctors">2.1.1 Get Doctors</a></li>
+    <li><a href="#_get_locations">2.1.2 Get Locations</a></li>
+    <li><a href="#_get_appointment_types">2.1.3 Get Appointment Types</a></li>
+    <li><a href="#_get_marketing_sources">2.1.4 Get Marketing Sources</a></li>
+</ul></li>
+
+<li><a href="#_patient_methods">2.2. Patient Methods</a>
+<ul class="sectlevel3">
+    <li><a href="#_create_patient">2.2.1 Create Patient</a></li>
+    <li><a href="#_get_patient_details">2.2.2 Get Patient Details</a></li>
+</ul>
+</li>
+
+<li><a href="#_appointment_methods">2.3. Appointment Methods</a>
+<ul class="sectlevel3">
+	<li><a href="#_get_appointments">2.3.1 Get Appointments</a></li>
+    <li><a href="#_book_appointments">2.3.2 Book Appointment</a></li>
+    <li><a href="#_get_available_times">2.3.3 Get Available Times</a></li>
+    <li><a href="#_get_doctors_availability">2.3.4 Get Doctors Availability</a></li>
+    <li><a href="#_get_appointments_info">2.3.5 Get Appointments Info</a></li>
+    <li><a href="#_update_appointment">2.3.6 Update Appointment</a></li>
+</ul>
+</li>
+
+<li><a href="#_financials_methods">2.4. Financials</a>
+<ul class="sectlevel3">
+	<li><a href="#_get_statement">2.4.1 Get Statement</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li><a href="#error_codes_list">3. Error Codes List</a>
+
+</li>
+
+
+</ul>
+</div>
+</div>
+
+<div id="content">
+<div class="sect1">
+<h2 id="_overview">1. Overview</h2>
+<div class="sectionbody">
+
+<div class="sect2">
+<h3 id="_uri_auth">1.1. Authorization</h3>
+<div class="paragraph">
+<p>
+You will need these parameters : <br>
+USER_KEY : User Key to connect (provided by imwemr);<br>
+SECRET_KEY : Secret Key phrase to connect  (provided by imwemr);<br>
+USER_AGENT : Static value (iMedicWareApiclient) ;<br><br>
+
+You need to post 3 header variables for every API request. <br>
+User-Agent, X-Key parameters and sec_code for secure Authorization. <br>
+sec_code is md5 value<br><br>
+Please see the example for Authorization code preparation. <br>
+
+Example Authorization code for PHP : 
+<pre>
+&lt;?php
+$data_to_sign = self::USER_KEY.self::USER_AGENT.self::SECRET_KEY;
+$secure_code = md5($data_to_sign);
+
+$headers = array();
+$headers[] = "User-Agent: " . self::USER_AGENT;
+$headers[] = 'X-Key: '.self::USER_KEY;
+$headers[] = 'sec_code: '.$secure_code;
+
+//using headers in  CURL OPTIONS
+curl_setopt($curl_session, CURLOPT_HTTPHEADER, $headers);
+
+?&gt;
+</pre>
+
+</div>
+</div>
+
+
+</div>
+</div>
+
+<div class="sect1">
+<h2 id="_paths">2. Methods</h2>
+<div class="sectionbody">
+<div class="sect2">
+
+<h3 id="_support_methods">2.1. Support Methods</h3>
+
+<div class="sect2">
+<h3 id="_get_doctors">2.1.1 Get Doctors</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all doctors</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<div class="paragraph">
+<p>No parameter required.</p>
+</div>
+
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields=array();
+$response = $IMEDIC_API_CALL_OBJ->post('get_doctors',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+
+
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of record</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dcotor's first name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dcotor's last name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">middle_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dcotor's middle name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"doctor_id":"29","first_name":"John","last_name":"Carry","middle_name":"S"}]}
+</pre>
+</div>
+</div>
+
+<!-- LOCATAIONS -->
+<div class="sect2">
+<h3 id="_get_locations">2.1.2 Get Locations</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all locations</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<div class="paragraph">
+<p>No parameter required.</p>
+</div>
+
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields=array();
+$response = $IMEDIC_API_CALL_OBJ->post('get_locations',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of record</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"location_id":"35","name":"Location 1"}]}
+</pre>
+</div>
+</div>
+
+<!-- APPOINTMENT TYPES -->
+<div class="sect2">
+<h3 id="_get_appointment_types">2.1.3 Get Appointment Types</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all locations</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<div class="paragraph">
+<p>No parameter required.</p>
+</div>
+
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields=array();
+$response = $IMEDIC_API_CALL_OBJ->post('get_appointment_types',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of record</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of appointment type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">acronym</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acronym of appointment type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"type_id":"35","name":"Type 1","acronym":"TP1"}]}
+</pre>
+</div>
+</div>
+
+<!-- MARKETING SOURCE -->
+<div class="sect2">
+<h3 id="_get_marketing_sources">2.1.4 Get Marketing Sources</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all marketing sources</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<div class="paragraph">
+<p>No parameter required.</p>
+</div>
+
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields=array();
+$response = $IMEDIC_API_CALL_OBJ->post('get_marketing_source',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of marketing sources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":["Newspaper","TV","Friends"]}
+</pre>
+</div>
+</div>
+
+<!-- Patient Methods -->
+<h3 id="_patient_methods">2.2. Patient Methods</h3>
+
+<!-- CREATE PATIENT -->
+<div class="sect2">
+<h3 id="_create_patient">2.2.1 Create Patient</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>To create new patient</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">md_patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Id of patient created in MD Prospects database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">middle_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">1980-05-26</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">male/female</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zip code of patient address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient's contact number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email id of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">marketing_source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marketing source of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields = array(
+		'md_patient_id' => 20359
+        ,'first_name' => 'Fist 1'
+		,'last_name' => 'Last 1'
+		,'middle_name' => 'Middle 1' 	//optional
+		,'dob' => '1987-05-16'
+		,'gender'=>'male'
+		,'zip'=>'025698'
+        ,'phone'=>'9855460844'			//optional
+        ,'email'=>'ab@gmail.com'		//optional
+        ,'address'=>'Street 1'			//optional
+        ,'marketing_source'=>''			//optional
+		);
+$response = $IMEDIC_API_CALL_OBJ->post('create_patient',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id recorded in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">md_patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id MD Prospects mapped in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">middle_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of patient (male, female)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zip code of patient address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"imw_patient_id":"6024","md_patient_id":"20359","first_name":"First 1","last_name":"Last 1","middle_name":"Middle 1","dob":"1987-05-16","gender":"male","zip":"025698"}]}
+</pre>
+</div>
+</div>
+
+<!-- GET PATIENT DETAILS -->
+<div class="sect2">
+<h3 id="_get_patient_details">2.2.2 Get Patient Details</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all doctors</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id recorded in IMW database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if other parameters not provided.<br>If patient id provided then all other parameters will avoided.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">6205</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if patient id not provided.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">char</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if patient id not provided.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">1980-05-26</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if patient id not provided.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">male, female</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zip code of patient address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if patient id not provided.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields = array(
+        'patient_id' => ''
+        ,'first_name' => 'Test'
+        ,'last_name' => 'Doe'
+        ,'dob' => '1975-05-08'
+        ,'gender'=>'male'
+        ,'zip'=>'01002hngh'
+        );
+$response = $IMEDIC_API_CALL_OBJ->post('get_patient_details',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of record of imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">md_patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MD Prospects id mapped in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of patient (male, female)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zip code of patient address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact phone number of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address of patient.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reminder_choices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reminder choices set preferred by patient like "postal email", "email", "phone" etc..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">suitable_voice_timings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suitable times set to call patient.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time (24 Hours Format)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">heard_by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marketing source id.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">heard_by_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If marketing source id has further information then it will display.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">occupation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occupation of patient.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_referral</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of referring physician.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">co_managed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of co-managed physician.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appointment_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment status sent in codes sent by MD Prospectes. This is the last previous appointment from current date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display next recall date from current date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diagnoses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display DX codes of assessment and plan.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"patient_id":"6024","first_name":"Richard","last_name":"Smith","dob":"1975-05-19","gender":"male","zip":"08345"}]}
+</pre>
+</div>
+</div>
+
+<!-- APPOINTMENTS -->
+<h3 id="_appointment_methods">2.3. Appointments Methods</h3>
+
+<div class="sect2">
+<h3 id="_get_appointments">2.3.1 Get Appointments</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all appointments</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id recorded in IMW database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">6205</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id recorded in IMW database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment start date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-22</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment end date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-22</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of location of appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top">Toms river</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modified_date_start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modified start date of appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-22</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifed_date_end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modified end date of appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-22</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifed_time_start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modified start time of appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H:i - 24 Hours format</p></td>
+<td class="tableblock halign-left valign-top">13:20</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifed_time_end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modified end time of appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H:i - 24 Hours format</p></td>
+<td class="tableblock halign-left valign-top">16:00</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort_order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort order accordint to appointment date and appointment time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asc for ascending/desc for descending</p></td>
+<td class="tableblock halign-left valign-top">asc/desc</td>
+<td class="tableblock halign-left valign-top">asc</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the limit of records display by function. By default is 1000.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asc for ascending/desc for descending</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top">1000</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">page_number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display records only for given page number. Number of records per page are divided based on limit paramerter.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields = array(
+        'patient_id' => '',	
+        'doctor_id' => '',	
+        'location' => '',	
+        'start_date' => '2017-05-01',	
+        'end_date' => '2017-05-22',		
+        'modified_date_start' => '',	
+        'modified_date_end' => '',		
+        'modified_time_start' => '13:00',	//(H:i - 24 HOURS FORMAT)
+        'modified_time_end' => '16:30',		//(H:i - 24 HOURS FORMAT)
+        'sort_order' => 'asc',	// (asc/desc)
+        'limit' => '0',			// (Default-1000)
+        'page_number' => 0
+        );
+$response = $IMEDIC_API_CALL_OBJ->post('get_appointments',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appointment_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of recorded appointment in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of patient id in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">md_patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MD Prospects id mapped in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last name of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of patient (male, female)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zip code of patient address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact phone number of patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address of patient.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reminder_choices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reminder choices set preferred by patient like "postal email", "email", "phone" etc..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">suitable_voice_timings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suitable times set to call patient.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time (24 Hours Format)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">heard_by</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marketing source id.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">heard_by_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If marketing source id has further information then it will display.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">occupation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occupation of patient.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_referral</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of referring physician.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">co_managed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of co-managed physician.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appointment_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment status sent in codes sent by MD Prospectes. This is the last previous appointment from current date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display next recall date from current date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">diagnoses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display DX codes of assessment and plan.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's end date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's end time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visit_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visity type of appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id of MDProspectes database that is mapped in imwemr.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of appointment's location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"appointment_id":"124","start_date":"2016-10-22","start_date":"2016-10-22", "start_time":"10:20:00", "start_time":"10:50:00", "visit_type":"Catract", "doctor_id":"25","location":"Tomes River"}]}
+</pre>
+</div>
+</div>
+
+
+<!-- BOOK APPOINTMENT-->
+<div class="sect2">
+<h3 id="_book_appointments">2.3.2 Book Appointment</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all appointments</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id recorded in MDProspectes database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">6205</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-22</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H:m</p></td>
+<td class="tableblock halign-left valign-top">05:22</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visit_type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visit type(procedure) of appointment's</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id for appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">Toms river</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id for appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields = array(
+       'patient_id' => '6024',
+        'appt_start_date' => '2013-01-11',
+        'appt_start_time' => '13:45:00',	
+        'visit_type_id' => '76',
+        'location_id' => '110',
+        'doctor_id' => '25'
+        );
+$response = $IMEDIC_API_CALL_OBJ->post('book_appointment',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_appt_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary key id of recorded appointment id in imwemr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id scheduled for appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id for which appoitment added.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id for which appointment added.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visit_type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visit type id(procedure id) for appointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_end_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's end date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_end_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's end time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"imw_appt_id":"124","patient_id":"20125","doctor_id":"25", "location_id":"30", "visit_type_id":"19", "appt_start_date":"2016-10-25", "appt_end_date":"2016-10-25", "appt_start_time":"13:20:00", "appt_end_time":"13:50:00"}]}
+</pre>
+</div>
+</div>
+
+<!-- GET AVAILABLE TIMES-->
+<div class="sect2">
+<h3 id="_get_available_times">2.3.3 Get Available Times</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all available time slots</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id recorded in IMW database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">6205</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id recorded in IMW database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">110</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_from_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schedule from date for which available times searching</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_to_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schedule to date for which available times searching</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields = array(
+        'doctor_id' => '15',
+        'location_id' => '25',
+        'schedule_from_date' => '2016-10-13',
+        'schedule_to_date' => '2016-10-16'
+        );
+        
+$response = $IMEDIC_API_CALL_OBJ->post('get_available_times',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id(recorded in MDProspects) for which available times slots displaying.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id(recorded in IMW application) for available times slots displaying.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of doctor.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last name first name</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id for which looking for available times.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's end time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":{"2013-01-11":{"25":[{"md_doctor_id":"25","imw_doctor_id":"105","doctor_name":"Helpdesk iMW","location_id":"110", "location_name":"North Shore Eye","start_date":"2013-01-11","start_time":"09:00","end_time":"09:15"}, {"md_doctor_id":"25","imw_doctor_id":"105","doctor_name":"Helpdesk iMW","location_id":"110","location_name":"North Shore Eye","start_date":"2013-01-11","start_time":"09:15","end_time":"09:30"}]}}}
+</pre>
+</div>
+</div>
+
+
+<!-- GET DOCTORS AVAILABILITY-->
+<div class="sect2">
+<h3 id="_get_doctors_availability">2.3.4 Get Doctors Availability</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists all available doctors for given location and doctor.</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id recorded in MDProspectes database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">110</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schedule date for which doctors availability is searching.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top">2016-10-25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+$fields = array(
+        'location_id' => '25',
+        'schedule_date' => '2016-10-13'
+        );
+        
+$response = $IMEDIC_API_CALL_OBJ->post('get_doctors_availability',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id recorded in IMW application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of doctor.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last name first name</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id for which looking for available times.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schedule date of doctor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yyyy-mm-dd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start time of doctor's schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String (H:i)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_end_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End time of doctor's schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String (H:i)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"imw_doctor_id":"25","doctor_name":"Helpdesk iMW","location_id":"110","location_name":"North Shore Eye","schedule_date":"2013-01-11","schedule_start_time":"09:00","schedule_end_time":"09:15"}]}
+</pre>
+</div>
+</div>
+
+<!-- GET APPOINTMENTS INFORMATION-->
+<div class="sect2">
+<h3 id="_get_appointments_info">2.3.5 Get Appointments Info</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Lists appointments information between given date range.</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_from_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's start date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top">2016-10-25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">schedule_to_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment's end date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top">2016-10-25</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">procedures</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Practice can give list of specific procedures for which call can be done.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top">2016-10-25</td>
+<td class="tableblock halign-left valign-top">Assign value "all" if no specific procedures list given. Empty value means there is some global list of procedures provided.</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+    $fields = array(
+            'schedule_from_date' => '2013-01-11',
+            'schedule_to_date' => '2013-01-31',
+            );
+        
+$response = $IMEDIC_API_CALL_OBJ->post('get_appointments_info',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id recorded in IMW application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_appt_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment id recorded in IMW application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">old_start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old start date of appointment. Displays if start date of appointment is changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Its old start date of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">old_start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old start time of appointment. Displays if start time of appointment is changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start_time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start time of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_old_doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old doctor id of appointment. Displays if doctor id of appointment is changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_doctor_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String (H:i)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doctor_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor name of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_old_location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old location id of appointment. Displays if location id of appointment is changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_location_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location name of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">old_procedure_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old procedure id of appointment. Displays if procedure id of appointment is changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">procedure_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Procedure id of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">old_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Old status of appointment. Displays if status of appointment is changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current status of appointment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">
+A=>Pending (New Appointment),<br>B=>Bumped/Deleted,<br>C=>Confirmed,<br>X=>Cancelled,<br> N=>No Show,<br>W=>Wait Listed,<br>S=>Scheduled (Re-scheduled),<br>D=>Completed
+</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outstanding_amount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total patient outstanding amount.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Float</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":[{"imw_doctor_id":"25","doctor_name":"Helpdesk iMW","location_id":"110","location_name":"North Shore Eye","schedule_date":"2013-01-11","schedule_start_time":"09:00","schedule_end_time":"09:15"}]}
+{"success":1,"result":[{"imw_patient_id":"426188","imw_appt_id":"25698","old_start_date":"2016-12-20",
+"start_date":"2016-12-26",
+"old_start_time":"09:00:00","start_time":"13:30:00","imw_doctor_id":"148","doctor_name":"John Albert","imw_location_id":"1","location_name":"North Shore Eye",
+"procedure_id":"26","old_status":"A","status":"X"}]}
+
+</pre>
+</div>
+</div>
+
+<!-- UPDATE APPOINTMENT-->
+<div class="sect2">
+<h3 id="_update_appointment">2.3.6 Update Appointment</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Update status of an appointment.</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imwemr patient id.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imw_appt_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imwemr appointment id to which being update.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Either imw_appt_id or appt_date required.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date for which appoitmnet scheduled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Either imw_appt_id or appt_date required.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top">2016-10-15</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appt_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status to which appointment has to updated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character</p></td>
+<td class="tableblock halign-left valign-top">A=>Pending (New Appointment),<br>B=>Bumped/Deleted,<br>C=>Confirmed,<br>X=>Cancelled,<br> N=>No Show,<br>W=>Wait Listed,<br>S=>Scheduled (Re-scheduled),<br>D=>Completed</td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+    $fields = array(
+		'patient_id' => '6024',
+		'imw_appt_id' => '25',
+		'appt_date' => '2013-01-11', 
+		'appt_status' => 'D'
+        );
+        
+$response = $IMEDIC_API_CALL_OBJ->post('update_appointment',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</tbody>
+</table>
+</div>
+
+<!-- FINANCIALS -->
+<h3 id="_financials_methods">2.4. Financial Methods</h3>
+
+<!-- GET STATEMENT-->
+<div class="sect2">
+<h3 id="_get_statement">2.4.1 Get Statement</h3>
+<div class="listingblock">
+<div class="content">
+</div>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_description">Description</h4>
+<div class="paragraph">
+<p>Get latest satement for given patient id.</p>
+</div>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters">Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imwemr patient id.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Example Code</h4>
+<div class="paragraph">
+<pre>
+require_once '../imedicware_api.php';
+$IMEDIC_API_CALL_OBJ=new iMedicApiClient();
+    $fields = array(
+            'patient_id' => '1026466',
+            );
+        
+$response = $IMEDIC_API_CALL_OBJ->post('get_statement',$fields);
+$responseArray=json_decode($response, true);
+print_r($responseArray);
+</pre>
+</div>
+</div>
+
+
+<div class="sect3">
+<h4 id="_responses">Response Parameters</h4>
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If query successfully run this parameter will be always 1. If error occurs success value will be 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">0, 1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Result data in JSON format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please view the <a href="#error_code_list">Error Codes List</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_parameters2">Result Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id recorded in IMW application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">statement_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when statement is generated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outstanding_amount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total patient balance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Float</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pdf_file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base64 encoded code of pdf file of generated statement.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sect3">
+<h4 id="_description">Response Code (JSON)</h4>
+<div class="paragraph">
+<pre>
+{"success":1,"result":{"patient_id":"146832","statement_date":"2020-07-29","outstanding_amount":"25.00","pdf_file":"JVBERi0xLjcKJeLjz9MKMTkgMCBvYmoKPDwgL1R5cG...."}}
+
+</pre>
+</div>
+</div>
+
+<!-- method ends -->
+
+<!-- method starts -->
+
+
+<!-- method ends -->
+
+<div class="sect1">
+<h2 id="error_codes_list">3. Error Codes List</h2>
+<div class="sectionbody">
+<div class="sect2">
+
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 55%;">
+
+
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error Code</th>
+<th class="tableblock halign-left valign-top">Description</th>
+
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authorization failed</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">201</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameters required.</p></td>
+
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">202</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped ids not found</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">204</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id is not mapped</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">205</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter patient id required</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">206</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doctor id not mapped</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">207</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter doctor id required</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">208</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location id not mapped</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">209</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter location id required</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">210</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visit type id not mapped</p></td>
+</tr>
+
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">211</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter visit type id required</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">212</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appointment slot is not available</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">213</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter schedule date required</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">214</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schedule not available for given doctor, location and for given date range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">215</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No doctor schedule available for given date and location</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">216</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Schedule from date" should be less than "schedule to date"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">217</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date difference should not greater than 90 days</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">218</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Already exist</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">219</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No record found</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">220</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No appointment procedures list available</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">221</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Patient id, appointment date or imw appointment id required</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">222</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid appointment status required</p></td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+    "segment_id": "SCH",
+    "placer_appointment_id": {
+        "entity_identifier": "",
+        "namespace_id": ""
+    },
+    "filler_appointment_id": {
+        "entity_identifier": "",
+        "namespace_id": ""
+    },
+    "occurence_number": "",
+    "placer_group_number": "",
+    "schedule_id": "",
+    "event_reason": "",
+    "appointment_reason": {
+        "identifier": "",
+        "text": ""
+    },
+    "appointment_type": "",
+    "appointment_duration": "",
+    "appointment_duration_units": "",
+    "appointment_timing_quantity": {
+        "quantity": "",
+        "interval": "",
+        "duration": "",
+        "start_date_time": "",
+        "end_date_time": ""
+    },
+    "placer_contact_person": "",
+    "placer_contact_phone": {
+        "number": "",
+        "telCom_use_code": "",
+        "telCom_equip_type": "",
+        "email": ""
+    },
+    "placer_contact_address": {
+        "street": "",
+        "other_designation": "",
+        "city": "",
+        "state_province": "",
+        "zip": "",
+        "country": "",
+        "address_type": ""
+    },
+    "placer_contat_location": "",
+    "filler_contact_person": {
+        "id_number": "",
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "suffix": "",
+        "prefix": ""
+    },
+    "filler_contact_phone": {
+        "number": "",
+        "telCom_use_code": "",
+        "telCom_equip_type": "",
+        "email": ""
+    },
+    "filler_contact_address": {
+        "street": "",
+        "other_designation": "",
+        "city": "",
+        "state_province": "",
+        "zip": "",
+        "country": "",
+        "address_type": ""
+    },
+    "filler_contact_location": "",
+    "entered_by": "",
+    "entered_by_phone": "",
+    "entered_by_location": "",
+    "parent_placer_appointment_id": "",
+    "parent_filler_appointment_id": "",
+    "filler_status_code": ""
+}

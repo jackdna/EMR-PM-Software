@@ -1,0 +1,28 @@
+{
+    "name": "patientAppointment/getTimeSlots",
+    "description": "This call will provide physician's available time slots for booking appointment.",
+    "parameters": [
+         {
+             "name": "patientId",
+             "type": "Integer",
+             "description": "Patient MRN in IMW.",
+             "required": true
+         },{
+             "name": "physicianId",
+             "type": "Integer",
+             "description": "Time slot for physician. Use <strong>'/getProvidersList'</strong> to get physician id.",
+             "required": false
+         },{
+             "name": "StartDate",
+             "type": "Date",
+             "description": "Get time slots from.<strong>Should be greater or equal to current date.</strong> Format : YYYY-MM-DD",
+             "required": false
+         },{
+             "name": "EndDate",
+             "type": "Date",
+             "description": "Get time slots up to. Format : YYYY-MM-DD",
+             "required": false
+         }
+     ],
+    "accessToken": true
+}

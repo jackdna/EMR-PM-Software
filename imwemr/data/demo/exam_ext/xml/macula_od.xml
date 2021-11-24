@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+// Under MIT License
+// Distribute, Modify and Contribute under MIT License.
+// Use of Software under MIT License.
+-->
+<!--
+File: macula_od.xml
+Coded in PHP7
+Purpose: This file defines exam options of Macula OD.
+Access Type : Include file
+-->
+<macula>
+	<od>
+
+		<macular_edema examname="Macular edema" commonexam="1">
+			<absent elem_name="elem_macOd_ME_Absent"></absent>
+			<focal elem_name="elem_macOd_ME_Focal"></focal>
+			<diffuse elem_name="elem_macOd_ME_Diffuse"></diffuse>
+			<cystoid elem_name="elem_macOd_ME_Cystoid"></cystoid>
+		</macular_edema>
+
+		<drusen examname="Drusen" commonexam="1">
+			<abesnt elem_name="elem_macOd_drusen_Absent"></abesnt>
+			<t elem_name="elem_macOd_drusen_T"></t>
+			<pos1 elem_name="elem_macOd_drusen_pos1"></pos1>
+			<pos2 elem_name="elem_macOd_drusen_pos2"></pos2>
+			<pos3 elem_name="elem_macOd_drusen_pos3"></pos3>
+			<pos4 elem_name="elem_macOd_drusen_pos4"></pos4>
+
+			<f elem_name="elem_macOd_drusen_F"></f>
+			<pf elem_name="elem_macOd_drusen_foveal" pv="PF"></pf>
+			<ef elem_name="elem_macOd_drusen_EF" pv="EF"></ef>
+			<hard elem_name="elem_macOd_drusen_hard"></hard>
+		</drusen>
+
+		<dryamd examname="AMD" commonexam="1">
+			<text elem_name="elem_macOd_armd_text"></text>
+			<drusen examname="Drusen" commonexam="1">
+				<absent elem_name="elem_macOd_armd_drusen_neg"></absent>
+				<pos4 elem_name="elem_macOd_armd_drusen_pos4"></pos4>
+				<pos3 elem_name="elem_macOd_armd_drusen_pos3"></pos3>
+				<pos2 elem_name="elem_macOd_armd_drusen_pos2"></pos2>
+				<pos1 elem_name="elem_macOd_armd_drusen_pos1"></pos1>
+				<t elem_name="elem_macOd_armd_drusen_T"></t>
+				<f elem_name="elem_macOd_armd_drusen_F"></f>
+				<pf elem_name="elem_macOd_armd_drusen_foveal" pv="PF"></pf>
+				<ef elem_name="elem_macOd_armd_drusen_EF" pv="EF"></ef>
+				<hard elem_name="elem_macOd_armd_drusen_hard"></hard>
+				<soft elem_name="elem_macOd_armd_drusen_soft"></soft>
+			</drusen>
+
+			<rpe_changes examname="RPE Changes" commonexam="1">
+				<absent elem_name="elem_macOd_armd_rpeCh_neg"></absent>
+				<pos4 elem_name="elem_macOd_armd_rpeCh_pos4"></pos4>
+				<pos3 elem_name="elem_macOd_armd_rpeCh_pos3"></pos3>
+				<pos2 elem_name="elem_macOd_armd_rpeCh_pos2"></pos2>
+				<pos1 elem_name="elem_macOd_armd_rpeCh_pos1"></pos1>
+				<t elem_name="elem_macOd_armd_rpeCh_T"></t>
+				<f elem_name="elem_macOd_armd_rpeCh_F"></f>
+				<pf elem_name="elem_macOd_armd_rpeCh_foveal" pv="PF"></pf>
+				<ef elem_name="elem_macOd_armd_rpeCh_EF" pv="EF"></ef>
+			</rpe_changes>
+
+			<geographic_atrophy examname="Geographic Atrophy" commonexam="1">
+				<absent elem_name="elem_macOd_armd_geoAtro_neg"></absent>
+				<pos4 elem_name="elem_macOd_armd_geoAtro_pos4"></pos4>
+				<pos3 elem_name="elem_macOd_armd_geoAtro_pos3"></pos3>
+				<pos2 elem_name="elem_macOd_armd_geoAtro_pos2"></pos2>
+				<pos1 elem_name="elem_macOd_armd_geoAtro_pos1"></pos1>
+				<t elem_name="elem_macOd_armd_geoAtro_T"></t>
+				<f elem_name="elem_macOd_armd_geoAtro_F"></f>
+				<pf elem_name="elem_macOd_armd_geoAtro_foveal" pv="PF"></pf>
+				<ef elem_name="elem_macOd_armd_geoAtro_EF" pv="EF"></ef>
+			</geographic_atrophy>
+			<rped examname="Retinal Pigment Epithelial Detachment" commonexam="1">
+				<absent elem_name="elem_macOd_armd_rped_Absent" ></absent>
+				<present elem_name="elem_macOd_armd_rped_Present" ></present>
+			</rped>
+			<cnvm examname="CNVM" commonexam="1">
+				<absent elem_name="elem_macOd_armd_cnvm_Absent" ></absent>
+				<present elem_name="elem_macOd_armd_cnvm_Present" ></present>
+				<subfoveal elem_name="elem_macOd_armd_cnvm_Subfoveal" ></subfoveal>
+				<perifoveal elem_name="elem_macOd_armd_cnvm_Perifoveal" ></perifoveal>
+				<extrafoveal elem_name="elem_macOd_armd_cnvm_Extrafoveal" ></extrafoveal>
+				<juxtapapillary elem_name="elem_macOd_armd_cnvm_Juxtapapillary"></juxtapapillary>
+			</cnvm>
+			<srh examname="SRH" commonexam="1">
+				<absent elem_name="elem_macOd_armd_srh_Absent"></absent>
+				<present elem_name="elem_macOd_armd_srh_Present"></present>
+				<mild elem_name="elem_macOd_armd_srh_Mild"></mild>
+				<moderate elem_name="elem_macOd_armd_srh_Moderate"></moderate>
+				<massive elem_name="elem_macOd_armd_srh_Massive"></massive>
+			</srh>
+			<subret examname="Subretinal Fluid" commonexam="1">
+				<absent elem_name="elem_macOd_armd_subret_Absent"></absent>
+				<present elem_name="elem_macOd_armd_subret_Present"></present>
+			</subret>
+		</dryamd>
+
+		<erm examname="ERM" commonexam="1">
+			<absent elem_name="elem_macOd_erm_neg"></absent>
+			<pos4 elem_name="elem_macOd_erm_pos4"></pos4>
+			<pos3 elem_name="elem_macOd_erm_pos3"></pos3>
+			<pos2 elem_name="elem_macOd_erm_pos2"></pos2>
+			<pos1 elem_name="elem_macOd_erm_pos1"></pos1>
+			<t elem_name="elem_macOd_erm_T"></t>
+			<suptemp elem_name="elem_macOd_erm_Superotemporal"></suptemp>
+			<inftemp elem_name="elem_macOd_erm_Inferotemporal"></inftemp>
+			<supnasal elem_name="elem_macOd_erm_Superonasal"></supnasal>
+			<infnasal elem_name="elem_macOd_erm_Inferonasal"></infnasal>
+		</erm>
+
+		<rped examname="Retinal Pigment Epithelial Detachment" commonexam="1">
+			<present elem_name="elem_macOd_rped_Present"></present>
+			<absent elem_name="elem_macOd_rped_Absent"></absent>
+		</rped>
+
+		<cws examname="Cotton Wool Spot" commonexam="1">
+			<absent elem_name="elem_macOd_cws_Absent"></absent>
+			<macula elem_name="elem_macOd_cws_Macula"></macula>
+			<suptemp elem_name="elem_macOd_cws_st"></suptemp>
+			<inftemp elem_name="elem_macOd_cws_it"></inftemp>
+			<supnasal elem_name="elem_macOd_cws_sn"></supnasal>
+			<infnasal elem_name="elem_macOd_cws_in"></infnasal>
+		</cws>
+		<advanceoptions elem_name="elem_maculaAdOptionsOd"></advanceoptions>
+	</od>
+</macula>

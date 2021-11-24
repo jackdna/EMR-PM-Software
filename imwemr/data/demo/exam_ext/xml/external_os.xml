@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+// Under MIT License
+// Distribute, Modify and Contribute under MIT License.
+// Use of Software under MIT License.
+-->
+<!--
+File: external_os.xml
+Coded in PHP7
+Purpose: This file defines exam options of External OS.
+Access Type : Include file
+-->
+<external_exam main_exam="External">
+	<os>
+		<pre_auricular examname="Pre-auricular">
+			<lymph_node elem_name="elem_preAuriOs_lymphNode"></lymph_node>
+			<negative elem_name="elem_preAuriOs_neg"></negative>
+			<positive elem_name="elem_preAuriOs_pos"></positive>
+		</pre_auricular>
+		<dacryocystitis examname="Dacryocystitis">
+			<lymph_node elem_name="elem_dacryOs_lymphNode"></lymph_node>
+			<negative elem_name="elem_dacryOs_neg"></negative>
+			<positive elem_name="elem_dacryOs_pos"></positive>
+		</dacryocystitis>
+		<hzv_dermatitis examname="HZV Dermatitis">
+			<v1 elem_name="elem_hzvDerOs_v1"></v1>
+			<v2 elem_name="elem_hzvDerOs_v2"></v2>
+			<v3 elem_name="elem_hzvDerOs_v3"></v3>
+			<text elem_name="elem_hzvDerOs_text"></text>
+		</hzv_dermatitis>
+		<proptosis examname="Proptosis">
+			<negative elem_name="elem_proptosisOs_neg"></negative>
+			<mild elem_name="elem_proptosisOs_mild"></mild>
+			<moderate elem_name="elem_proptosisOs_moderate"></moderate>
+			<severe elem_name="elem_proptosisOs_severe"></severe>
+			<text elem_name="elem_proptosisOs_text"></text>
+		</proptosis>
+		<ecchymosis examname="Ecchymosis">
+			<rul elem_name="elem_ecchymosisOs_lul"></rul>
+			<rll elem_name="elem_ecchymosisOs_lll"></rll>
+		</ecchymosis>
+		<edema examname="Edema" commonexam="1">
+			<rul elem_name="elem_edemaOs_lul"></rul>
+			<rll elem_name="elem_edemaOs_lll"></rll>
+		</edema>
+		
+		<roseacea examname="Rosacea">
+			<mild elem_name="elem_roseaceaOs_mild"></mild>
+			<moderate elem_name="elem_roseaceaOs_mod"></moderate>
+			<severe elem_name="elem_roseaceaOs_severe"></severe>
+			<rul elem_name="elem_roseaceaOs_lul"></rul>
+			<rll elem_name="elem_roseaceaOs_lll"></rll>
+			<text elem_name="elem_roseaceaOs_txt"></text>
+		</roseacea>
+		
+		<nerve5th examname="5th Nerve">
+		
+			<pin examname="Pin">
+				<decreased elem_name="elem_5thNerve_pinOs_decreased"></decreased>
+				<v1 elem_name="elem_5thNerve_pinOs_v1"></v1>
+				<v2 elem_name="elem_5thNerve_pinOs_v2"></v2>
+				<v3 elem_name="elem_5thNerve_pinOs_v3"></v3>
+				<text elem_name="elem_5thNerve_pinOs_txt"></text>
+			</pin>
+			
+			<touch examname="Touch">
+				<decreased elem_name="elem_5thNerve_touchOs_decreased"></decreased>
+				<v1 elem_name="elem_5thNerve_touchOs_v1"></v1>
+				<v2 elem_name="elem_5thNerve_touchOs_v2"></v2>
+				<v3 elem_name="elem_5thNerve_touchOs_v3"></v3>
+				<text elem_name="elem_5thNerve_touchOs_txt"></text>
+			</touch>
+			
+			<cor_sen examname="Cornea Sensation">
+				<decreased elem_name="elem_5thNerve_corsenOs_decreased"></decreased>
+				<v1 elem_name="elem_5thNerve_corsenOs_v1"></v1>
+				<v2 elem_name="elem_5thNerve_corsenOs_v2"></v2>
+				<v3 elem_name="elem_5thNerve_corsenOs_v3"></v3>
+				<text elem_name="elem_5thNerve_corsenOs_txt"></text>
+			</cor_sen>
+			
+			<messeter examname="Masseter">
+				<decreased elem_name="elem_5thNerve_masseterOs_decreased"></decreased>
+				<v1 elem_name="elem_5thNerve_masseterOs_v1"></v1>
+				<v2 elem_name="elem_5thNerve_masseterOs_v2"></v2>
+				<v3 elem_name="elem_5thNerve_masseterOs_v3"></v3>
+				<text elem_name="elem_5thNerve_masseterOs_txt"></text>
+			</messeter>
+			
+		</nerve5th>
+		
+		<nerve7thparesis examname="7th Nerve Paresis">			
+			
+			<cra_nerv_abn examname="Cranial Nerve Abnormalities">
+				<decreased_upper elem_name="elem_7thNerveParesisOs_cna_decUpr"></decreased_upper>
+				<lower elem_name="elem_7thNerveParesisOs_cna_lower"></lower>
+				<synkinesis elem_name="elem_7thNerveParesisOs_cna_synkinesis"></synkinesis>
+				<spasm elem_name="elem_7thNerveParesisOs_cna_spasm"></spasm>	
+			</cra_nerv_abn>
+			
+		</nerve7thparesis>
+		
+		<trauma examname="Trauma" commonexam="1">
+			<text elem_name="elem_traumaOs_text"></text>
+			<tenderness examname="Tenderness">
+				<mild elem_name="elem_traumaOs_tender_mild"></mild>
+				<moderate elem_name="elem_traumaOs_tender_moderate"></moderate>
+				<severe elem_name="elem_traumaOs_tender_severe"></severe>				
+			</tenderness>
+			<palpable_fracture examname="Palpable Fracture">
+				<negative elem_name="elem_traumaOs_palpable_neg"></negative>
+				<positive elem_name="elem_traumaOs_palpable_pos"></positive>
+				<sup elem_name="elem_traumaOs_palpable_sup"></sup>
+				<inf elem_name="elem_traumaOs_palpable_inf"></inf>
+				<tmp elem_name="elem_traumaOs_palpable_tmp"></tmp>				
+			</palpable_fracture>
+			<crepitus examname="Crepitus">
+				<negative elem_name="elem_traumaOs_crepitus_neg"></negative>
+				<positive elem_name="elem_traumaOs_crepitus_pos"></positive>
+				<sp elem_name="elem_traumaOs_crepitus_sp"></sp>
+				<if elem_name="elem_traumaOs_crepitus_if"></if>
+			</crepitus>
+			<exophthalmus examname="Exophthalmos">
+				<negative elem_name="elem_traumaOs_exoph_neg"></negative>
+				<positive elem_name="elem_traumaOs_exoph_pos"></positive>
+			</exophthalmus>
+			<enophthalmus examname="Enophthalmos">
+				<negative elem_name="elem_traumaOs_enoph_neg"></negative>
+				<positive elem_name="elem_traumaOs_enoph_pos"></positive>
+			</enophthalmus>
+			<pares_anes_thesia examname="Paresthesia/Anesthesia">
+				<negative elem_name="elem_traumaOs_pares_neg"></negative>
+				<positive elem_name="elem_traumaOs_pares_pos"></positive>
+				<text elem_name="elem_traumaOs_pares_text"></text>
+			</pares_anes_thesia>
+			<edema examname="Edema" commonexam="1">
+				<negative elem_name="elem_traumaOs_edema_neg"></negative>
+				<positive elem_name="elem_traumaOs_edema_pos"></positive>
+				<mild elem_name="elem_traumaOs_edema_mild"></mild>
+				<moderate elem_name="elem_traumaOs_edema_moderate"></moderate>
+				<severe elem_name="elem_traumaOs_edema_severe"></severe>
+				<sup elem_name="elem_traumaOs_edema_sup"></sup>
+				<inf elem_name="elem_traumaOs_edema_inf"></inf>
+				<tmp elem_name="elem_traumaOs_edema_tmp"></tmp>
+			</edema>
+			<laceration examname="Laceration">
+				<superficial elem_name="elem_traumaOs_laceration_super"></superficial>
+				<deep elem_name="elem_traumaOs_laceration_deep"></deep>
+				<text elem_name="elem_traumaOs_laceration_text"></text>
+			</laceration>
+			<dermal_adrasion examname="Dermal Abrasion">
+				<negative elem_name="elem_traumaOs_dermal_neg"></negative>
+				<positive elem_name="elem_traumaOs_dermal_pos"></positive>
+			</dermal_adrasion>
+			<eschar examname="Eschar">
+				<negative elem_name="elem_traumaOs_eschar_neg"></negative>
+				<positive elem_name="elem_traumaOs_eschar_pos"></positive>
+			</eschar>
+		</trauma>
+		<advanceoptions elem_name="elem_externalAdOptionsOs"></advanceoptions>
+	</os>
+</external_exam>

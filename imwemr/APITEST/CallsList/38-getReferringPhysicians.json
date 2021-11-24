@@ -1,0 +1,6 @@
+{
+    "name": "getReferringPhysicians",
+    "description": "This API call is used to list the Referring Physicians in iDoc",
+    "parameters": [],
+    "accessToken": true
+}

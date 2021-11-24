@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+// Under MIT License
+// Distribute, Modify and Contribute under MIT License.
+// Use of Software under MIT License.
+-->
+<!--
+File: diplopia_od.xml
+Coded in PHP7
+Purpose: This file defines exam options of Diplopia OD.
+Access Type : Include file
+-->
+<diplopia>
+	<od>
+		<binocular examname="Binocular" elem_type="CB" elem_name="elem_binocularOd" label="Binocular"></binocular>
+		<intermittent examname="Intermittent" elem_type="CB" elem_name="elem_intermittentOd" label="Intermittent"></intermittent>
+		<horizontal examname="Horizontal" elem_type="CB" elem_name="elem_horizontalOd" label="Horizontal"></horizontal>
+		<vertical examname="Vertical" elem_type="CB" elem_name="elem_verticalOd" label="Vertical"></vertical>
+		<diagonal examname="Diagonal" elem_type="CB" elem_name="elem_diagonalOd" label="Diagonal"></diagonal>
+		<distance examname="Distance">
+			<distance_value elem_type="CB" elem_name="elem_distanceOd" label="Distance"></distance_value>
+			<near elem_type="CB" elem_name="elem_nearOd" label="Near"></near>
+			<far elem_type="CB" elem_name="elem_farOd" label="Far"></far>
+			<far_near elem_type="CB" elem_name="elem_farNearOd" label="Far and Near"></far_near>
+		</distance>
+		<monocular examname="Monocular" elem_type="CB" elem_name="elem_monocularOd" label="Monocular"></monocular>
+		<advanceoptions elem_type="TA" elem_name="elem_dipAdOptionsOd"></advanceoptions>
+	</od>
+</diplopia>

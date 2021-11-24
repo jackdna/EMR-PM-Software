@@ -1,0 +1,120 @@
+#!/bin/bash
+#Name : HL7 receiver Service
+#Desc : Starts/stop HL7 receiver services for imwemr on reboot
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+DAEMON="/usr/bin/php"
+DAEMON_OPTS="$SCRIPTPATH/receiver_socket.php"
+NAME="HL7 Receiver Service"
+DESC="HL7 Receiver Service"
+
+usage() {
+  echo -n "Usage: $0 [arg1] [arg2] [arg3]
+
+ where:
+        "arg1"          start|stop|restart|status
+        "arg2"          Name of R8 site, for which HL7 is configured.
+        "arg3"          0|1|2, arg3 is optional and in-case of Multi-port service only. If no value is passed, by default value is 0
+
+"
+}
+
+if [ ! -d "$SCRIPTPATH/../../config/$2" ] || [ "$2" = '' ]; then
+	if [ "$2" = '' ]; then
+		usage
+	else
+		echo "$2 Practice does not exists"
+	fi
+	
+	exit
+fi
+
+getPid() {
+if [ "$3" = '' ]; then
+		PID=`ps -eaf |egrep "$DAEMON_OPTS" |grep "$2" |grep -v grep |awk '{print $2}'`
+	else
+		PID=`ps -eaf |egrep "$DAEMON_OPTS" |grep "$2 $3" |grep -v grep |awk '{print $2}'`
+	fi
+	
+	echo "$PID"
+}
+
+start() {
+if [[ "" != "$( getPid $1 $2 $3)" ]];
+then
+        echo "$2 receiver is already running with PID $( getPid $1 $2 $3)"
+else
+        echo -e "${NAME}: Starting..."
+        `nohup $DAEMON $DAEMON_OPTS "$2" "$3" > /dev/null 2>&1 &`
+        sleep 1
+        
+	if [[ "" != "$( getPid $1 $2 $3)" ]]; then
+	        echo -e "Receiver Started"
+	else
+		echo -e "Unable to start receiver"
+	fi
+fi
+}
+
+stop() {
+if [[ "" != "$( getPid $1 $2 $3)" ]]; then
+        echo -e "${NAME}: Stopping..."
+
+        #Capture Service PORT
+        PORT=`netstat -tanp | grep "LISTEN.*$( getPid $1 $2 $3)/php\s*" | awk '{print $4}' | grep -oP '[0-9]{5}$'`
+        kill -9 $( getPid $1 $2 $3)
+        sleep 1
+
+        while [[ $PORT != "" && "" != `netstat -tanp | grep "$PORT.*_WAIT.*"` ]];
+        do 
+        	printf "\r\033[0;31mCleaning service cache"
+        	temp_cnt=6
+        	while [[ $temp_cnt -gt 0 ]];
+        	do
+        		printf "."
+        		sleep 1
+        		temp_cnt=`expr $temp_cnt - 1`
+        	done
+
+        	printf "\033[0m\r"
+        done
+
+	if [[ "" ==  "$( getPid $1 $2 $3)" ]]; then
+	        echo -e "Receiver Stopped"
+	else
+		echo -e "Unable to stop receiver"
+	fi
+else
+        echo "Receiver not running"
+fi
+}
+
+status() {
+if [[ "" != "$( getPid $1 $2 $3)" ]]; then
+	echo "$2 receiver is running with PID $( getPid $1 $2 $3)"
+else
+        echo "Receiver not running"
+fi
+}
+
+case "$1" in
+start)
+	start $1 $2 $3
+        ;;
+stop)
+        stop $1 $2 $3
+        ;;
+status)
+        status $1 $2 $3
+        ;;
+restart)
+        stop $1 $2 $3
+	sleep 1
+        start $1 $2 $3
+        ;;
+*)
+        usage
+        exit 1
+        ;;
+esac
+exit 0

@@ -1,0 +1,32 @@
+{
+    "segment_id": "OBX",
+    "setId_OBX": "",
+    "value_type": "",
+    "obx_identifier": {
+        "identifier": "",
+        "text": "",
+        "coding_system": "",
+        "alternate_identifier": ""
+    },
+    "sub_id": "",
+    "obx_value": {
+        "mime_type": "",
+        "cda": "",
+        "mime_version": "",
+        "content_type": "",
+        "doc_data": "",
+        "doc_data1": ""
+    },
+    "units": "",
+    "reference_range": "",
+    "abnormal_flags": "",
+    "probability": "",
+    "nature_of_abnormal_test": "",
+    "obx_result_status": "",
+    "date_last_obx_normal_values": "",
+    "user_defined_access_check": "",
+    "date_observation": "",
+    "procedure_id": "",
+    "responsible_observer": "",
+    "obx_method": ""
+}

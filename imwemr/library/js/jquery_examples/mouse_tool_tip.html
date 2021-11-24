@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Tool Tip Demo</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <script src="../jquery.min.1.12.4.js"></script>
+        <style>
+			.tool_tip
+			{
+				color: #666666;
+				text-decoration: none;
+				background: #FDCD5E;
+				display: none;
+				font-size: 8;
+				z-index: 800;
+				padding-left: 1px;
+				padding-top: 1px;
+				border: 1px solid #cccccc;
+				position: absolute;	
+			}
+		</style>
+    </head>
+    <body class="container" onkeypress="keyPressHandler();">
+        <div class="row">
+        	<a href="index.html"> &laquo; Back to Listing  </a>
+        </div>
+        
+       
+        <br>
+		<br>
+		<br>
+        <table class="table table-inverse"> 
+        <thead>
+    <tr>
+      <th>#</th>
+      <th>Event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td> <a href="#" onClick="drag_name();">Click here to show mouse tool tip</a></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td> <a href="#" onClick="hide_tool_tip();">Click here to hide mouse tool tip</a></td>
+    </tr>
+   
+  </tbody>
+</table>
+
+<div id="appt_drag"></div>
+<script type="text/javascript">
+			
+function drag_name(){
+
+	var e = window.event || event;	
+	
+	$("#appt_drag").addClass("tool_tip");
+	$("#appt_drag").css("backgroundColor", "");			
+	$("#appt_drag").width("320");
+	$("#appt_drag").css("top", e.clientY);
+	$("#appt_drag").css("left", e.clientX);
+			
+	$("#appt_drag").html("Hi! User, how are you");
+	$("#appt_drag").css("display", "block");
+	//document.attachEvent('onmousemove', move_trail);
+	$(document).bind("mousemove", move_trail);
+	
+}
+
+function move_trail(){
+	window.status = window.event.clientX + "," + window.event.clientY
+	$("#appt_drag").css("top", window.event.clientY - 5);
+	$("#appt_drag").css("left", window.event.clientX + 20);
+}
+function keyPressHandler(){
+	if(event.keyCode==27){
+		hide_tool_tip();
+	}
+}
+function hide_tool_tip(){
+	$(document).unbind("mousemove", move_trail);
+	$("#appt_drag").css("display", "none");
+}
+		</script>
+        </body>
+</html>

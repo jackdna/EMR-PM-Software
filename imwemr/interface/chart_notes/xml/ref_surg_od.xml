@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<ref_surg>
+<od>
+<target_ref examname="Target Refraction" elem_name="elem_trgtRefOd"></target_ref>
+<spherical_eq examname="Spherical equivalent" elem_name="elem_sphericalEqOd"></spherical_eq>
+
+<adjnomo>
+<adjtppp examname="Adjustment % per Nomo" elem_name="elem_adjstpppOd" examname_summary="Adj % per Nomo"></adjtppp>
+<phypadj examname="Phy % Adj" elem_name="elem_phypadjstOd"></phypadj>
+<phydioadj examname="Phy Diopter Adj" elem_name="elem_phydioadjstOd" examname_summary="Phy Diop Adj"></phydioadj>
+</adjnomo>
+
+<cap_dia examname="Cap Diameter" elem_name="elem_capDiaOd"></cap_dia>
+<capthick examname="Cap Thickness" elem_name="elem_capthickOd"></capthick>
+
+<ablat>
+<rsb examname="Residual Stromal Bed" elem_name="elem_RSBOd" examname_summary="RSB"></rsb>
+<ablation examname="Ablation zone" elem_name="elem_ablationOd" examname_summary="Ab. zone"></ablation>
+<ablation_depth examname="Ablation depth" elem_name="elem_abDepthOd" examname_summary="Ab. depth"></ablation_depth>
+</ablat>
+
+<laser_info>
+<laser_entry examname="Laser Entry" elem_name="elem_laserEntryOd"></laser_entry>
+<laserEnPhypadjst examname="Phy % Adj" elem_name="elem_laserEnPhypadjstOd"></laserEnPhypadjst>
+<laserEnPhydioadjst examname="Phy Diopter Adj" elem_name="elem_laserEnPhydioadjstOd" examname_summary="Phy Diop Adj"></laserEnPhydioadjst>
+</laser_info>
+
+<mr_s examname="S" elem_name="elem_mr_sOd" hidden="1"></mr_s>
+<mr_c examname="C" elem_name="elem_mr_cOd" hidden="1"></mr_c>
+<mr_a examname="A" elem_name="elem_mr_aOd" hidden="1"></mr_a>
+<corr examname="Pachy" elem_name="elem_corrOd" hidden="1"></corr>
+
+<cle examname="Custom Laser Entry" elem_name="elem_CLEOd"></cle>
+<advanceoptions elem_name="elem_refSxAdvanceOptionOd"></advanceoptions>
+</od>
+</ref_surg>

@@ -1,0 +1,31 @@
+{
+    "name": "searchPatient",
+    "description": "This API call provides ability to search patient records in iDoc database. It will list all the matching records with maximum threshold value passed.",
+    "parameters": [{
+	    "name": "fname",
+	    "type": "String",
+	    "description": "First Name of the patient.",
+	    "required": false
+	}, {
+	    "name": "lname",
+	    "type": "String",
+	    "description": "Last Name of the patient.",
+	    "required": false
+	}, {
+	    "name": "dob",
+	    "type": "Date",
+	    "description": "Patient's date of birth. Format <strong>YYYY-MM-DD</strong>. If value is not as per the desired format, then it will not yield correct result.",
+	    "required": false
+	}, {
+	    "name": "id",
+	    "type": "Integer",
+	    "description": "Patient's MRN. It can be either Patient's iDoc ID or External MRN ID",
+	    "required": false
+	}, {
+	    "name": "maxRecords",
+	    "type": "Integer",
+	    "description": "Number of maximum records to be pulled in the search result. Maximum records threshold value. If data type is not Integer, then this field will be ignored.",
+	    "required": false
+	}],
+    "accessToken": true
+}

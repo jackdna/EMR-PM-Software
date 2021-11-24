@@ -1,0 +1,44 @@
+{
+    "segment_id": "STF",
+    "primary_key_value": {
+		"id": "",
+		"text": ""
+	},
+    "id_code": "",
+    "name": {
+		"family_name": "",
+		"given_name": "",
+		"middle_name": "",
+		"suffix": "",
+		"prefix": "",
+		"degree": "",
+		"type_code": "",
+		"repress_code": ""
+	},
+    "staff_type": "",
+    "sex": "",
+    "dob": "",
+	"active_inactive_flag": "",
+	"department": "",
+	"hospic_service": "",
+	"phone": {
+		"number": "",
+		"telecom_use_code": "",
+		"telecom_equipment_type": "",
+		"email_address": "",
+		"country_code": "",
+		"area_city_code": "",
+		"phone_number": ""
+	},
+	"address": {
+		"street": "",
+		"other_designation": "",
+		"city": "",
+		"state_province": "",
+		"zip": "",
+		"country": "",
+		"address_type": "",
+		"other_geographic_designation": "",
+		"county_patish_code": ""
+	}
+}
