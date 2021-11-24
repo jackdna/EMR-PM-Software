@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<pupil>
+	<od>
+		<surgi_alt elem_name="elem_Od_surgiAlt"></surgi_alt>
+		<size examname="Scotopic">
+			<mm1 elem_name="elem_sizeOd_mm1"></mm1>
+			<mm2 elem_name="elem_sizeOd_mm2"></mm2>
+			<mm3 elem_name="elem_sizeOd_mm3"></mm3>
+			<mm4 elem_name="elem_sizeOd_mm4"></mm4>
+			<mm5 elem_name="elem_sizeOd_mm5"></mm5>
+			<mm6 elem_name="elem_sizeOd_mm6"></mm6>
+			<mm7 elem_name="elem_sizeOd_mm7"></mm7>
+			<mm8 elem_name="elem_sizeOd_mm8"></mm8>
+			<mm9 elem_name="elem_sizeOd_mm9"></mm9>
+		</size>
+		<size2 examname="Photopic">
+			<mm1 elem_name="elem_size2Od_mm1"></mm1>
+			<mm2 elem_name="elem_size2Od_mm2"></mm2>
+			<mm3 elem_name="elem_size2Od_mm3"></mm3>
+			<mm4 elem_name="elem_size2Od_mm4"></mm4>
+			<mm5 elem_name="elem_size2Od_mm5"></mm5>
+			<mm6 elem_name="elem_size2Od_mm6"></mm6>
+			<mm7 elem_name="elem_size2Od_mm7"></mm7>
+			<mm8 elem_name="elem_size2Od_mm8"></mm8>
+			<mm9 elem_name="elem_size2Od_mm9"></mm9>
+		</size2>
+		<dilated examname="Dilated">
+			<mm1 elem_name="elem_dilatedOd_mm1"></mm1>
+			<mm2 elem_name="elem_dilatedOd_mm2"></mm2>
+			<mm3 elem_name="elem_dilatedOd_mm3"></mm3>
+			<mm4 elem_name="elem_dilatedOd_mm4"></mm4>
+			<mm5 elem_name="elem_dilatedOd_mm5"></mm5>
+			<mm6 elem_name="elem_dilatedOd_mm6"></mm6>
+			<mm7 elem_name="elem_dilatedOd_mm7"></mm7>
+			<mm8 elem_name="elem_dilatedOd_mm8"></mm8>
+			<mm9 elem_name="elem_dilatedOd_mm9"></mm9>
+		</dilated>
+		<shape examname="Shape">
+			<round elem_name="elem_shapeOd_round"></round>
+			<irregular elem_name="elem_shapeOd_irregular"></irregular>
+		</shape>
+		<rl examname="RL">
+			<trace elem_name="elem_rlOd_trace"></trace>
+			<pos_1 elem_name="elem_rlOd_pos1"></pos_1>
+			<pos_2 elem_name="elem_rlOd_pos2"></pos_2>
+			<pos_3 elem_name="elem_rlOd_pos3"></pos_3>
+			<pos_4 elem_name="elem_rlOd_pos4"></pos_4>
+			<none elem_name="elem_rlOd_none"></none>
+		</rl>
+		<ra examname="RA">
+			<trace elem_name="elem_raOd_trace"></trace>
+			<pos_1 elem_name="elem_raOd_pos1"></pos_1>
+			<pos_2 elem_name="elem_raOd_pos2"></pos_2>
+			<pos_3 elem_name="elem_raOd_pos3"></pos_3>
+			<pos_4 elem_name="elem_raOd_pos4"></pos_4>
+			<none elem_name="elem_raOd_none"></none>
+		</ra>
+		<apd examname="APD">
+			<negative elem_name="elem_apdOd_neg"></negative>
+			<trace elem_name="elem_apdOd_trace"></trace>
+			<pos_1 elem_name="elem_apdOd_pos1"></pos_1>
+			<pos_2 elem_name="elem_apdOd_pos2"></pos_2>
+			<pos_3 elem_name="elem_apdOd_pos3"></pos_3>
+			<pos_4 elem_name="elem_apdOd_pos4"></pos_4>
+			<rapd elem_name="elem_apdOd_rapd"></rapd>
+		</apd>
+		<pupil_desc elem_name="elem_pupilDescOd"></pupil_desc>		
+	</od>
+</pupil>

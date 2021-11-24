@@ -1,0 +1,23 @@
+#==============================================================================#
++----------------------------------+
+| phpFile - File Abstraction Class |
++----------------------------------+
+
+Author	:	Mike Leigh
+Email	:	mike@mikeleigh.com
+Website	:	http://www.mikeleigh.com/scripts/phpcode128/
+Support	:	http://www.mikeleigh.com/forum
+Licence	:	GNU GPL - see LICENCE file
+Version	:	0.1
+
+phpCode128 is a Code 128 barcode generation class.
+
+Incorporating phpCode128 into your application is as simple as including the class 
+file like so:
+	include('path/to/code128.class.php');
+
+For installation instructions see the INSTALL file.
+For license details see the LICENSE file.
+For development history see the CHANGELOG file.
+
+#==============================================================================#

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<lens>
+	<os>
+		<nuclear_sclerosis examname="Nuclear Sclerosis">
+			<negative elem_name="elem_nuclearScOs_neg"></negative>			
+			<pos_4 elem_name="elem_nuclearScOs_pos4"></pos_4>
+			<pos_3 elem_name="elem_nuclearScOs_pos3"></pos_3>
+			<pos_2 elem_name="elem_nuclearScOs_pos2"></pos_2>
+			<pos_1 elem_name="elem_nuclearScOs_pos1"></pos_1>
+			<t elem_name="elem_nuclearScOs_T"></t>
+		</nuclear_sclerosis>
+		<cortical examname="Cortical">
+			<negative elem_name="elem_corticalOs_neg"></negative>			
+			<pos_4 elem_name="elem_corticalOs_pos4"></pos_4>
+			<pos_3 elem_name="elem_corticalOs_pos3"></pos_3>
+			<pos_2 elem_name="elem_corticalOs_pos2"></pos_2>
+			<pos_1 elem_name="elem_corticalOs_pos1"></pos_1>
+			<t elem_name="elem_corticalOs_T"></t>
+		</cortical>
+		<psc examname="PSC">
+			<negative elem_name="elem_pscOs_neg"></negative>			
+			<pos_4 elem_name="elem_pscOs_pos4"></pos_4>
+			<pos_3 elem_name="elem_pscOs_pos3"></pos_3>
+			<pos_2 elem_name="elem_pscOs_pos2"></pos_2>
+			<pos_1 elem_name="elem_pscOs_pos1"></pos_1>
+			<t elem_name="elem_pscOs_T"></t>
+		</psc>
+		<pxf examname="PSX" commonexam="1">
+			<negative elem_name="elem_pxfOs_neg"></negative>			
+			<pos_4 elem_name="elem_pxfOs_pos4"></pos_4>
+			<pos_3 elem_name="elem_pxfOs_pos3"></pos_3>
+			<pos_2 elem_name="elem_pxfOs_pos2"></pos_2>
+			<pos_1 elem_name="elem_pxfOs_pos1"></pos_1>
+			<t elem_name="elem_pxfOs_T"></t>
+		</pxf>
+		<pco examname="PCO/Secondary Membrane">
+			<pcoOpen elem_name="elem_pcoOs_Open" pv="Open"></pcoOpen>
+			<pcoPos elem_name="elem_pcoOs_Pos" pv="Present"></pcoPos>
+			<pos_4 elem_name="elem_pcoOs_4"></pos_4>
+			<pos_3 elem_name="elem_pcoOs_3"></pos_3>
+			<pos_2 elem_name="elem_pcoOs_2"></pos_2>
+			<pos_1 elem_name="elem_pcoOs_1"></pos_1>
+			<t elem_name="elem_pcoOs_T"></t>
+		</pco>
+		
+		<pciol examname="IOL">			
+			<Ve_CapsuleOs examname="IOL">				
+				<pciol elem_name="elem_pciolOs_pciol" pv="PC"></pciol>
+				<aciol elem_name="elem_aciolOs_pciol" pv="AC"></aciol>
+				<toriciol elem_name="elem_toriciolOs_pciol" pc="Toric"></toriciol>
+				<iolaxis elem_name="elem_iolAxisOs_pciol" pv="IOL Axis"></iolaxis>
+				<centered elem_name="elem_CenteredOs_pciol" ></centered>
+				<capsuleBag elem_name="elem_CapsuleBagOs_pciol" pv="Capsule Bag"></capsuleBag>
+				<sulcus elem_name="elem_SulcusOs_pciol"></sulcus>
+				<aphakia elem_name="elem_AphakiaOs_pciol"></aphakia>
+				<multifocal elem_name="elem_mfocalOs_pciol"></multifocal>
+				<mfocal_opts elem_name="elem_mfocalOs_pciol_opts" pv="Restor/technis/Other"></mfocal_opts>
+				<symfony elem_name="elem_symfonyOs_pciol"></symfony>
+			</Ve_CapsuleOs>
+			
+			<de_centered examname="De-centered">
+				<sup elem_name="elem_deCenteredOs_sup"></sup>
+				<inf elem_name="elem_deCenteredOs_inf"></inf>
+				<nasal elem_name="elem_deCenteredOs_nasal"></nasal>
+				<temp elem_name="elem_deCenteredOs_temp"></temp>
+				<iolgoodpos elem_name="elem_deCenteredOs_iolgoodpos" pv="IOL in good position"></iolgoodpos>
+				<negative elem_name="elem_deCenteredOs_neg"></negative>				
+				<pos_4 elem_name="elem_deCenteredOs_pos4"></pos_4>
+				<pos_3 elem_name="elem_deCenteredOs_pos3"></pos_3>
+				<pos_2 elem_name="elem_deCenteredOs_pos2"></pos_2>
+				<pos_1 elem_name="elem_deCenteredOs_pos1"></pos_1>
+				<t elem_name="elem_deCenteredOs_T"></t>
+			</de_centered>
+		</pciol>
+		<pchaze examname="PC Haze">			
+			<pos_4 elem_name="elem_pcHazeOs_pos4"></pos_4>
+			<pos_3 elem_name="elem_pcHazeOs_pos3"></pos_3>
+			<pos_2 elem_name="elem_pcHazeOs_pos2"></pos_2>
+			<pos_1 elem_name="elem_pcHazeOs_pos1"></pos_1>
+			<t elem_name="elem_pcHazeOs_T"></t>
+		</pchaze>
+		<advanceoptions elem_name="elem_lensAdvanceOptionsOs"></advanceoptions>
+	</os>
+</lens>

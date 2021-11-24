@@ -1,0 +1,13 @@
+new_html2pdf/
+html2pdf/
+xml/
+SigPlus_images/
+sx_grid_images/
+pdf/
+html2pdfnew/
+testPdf.html
+white.jpg
+crons/logs/
+admin/pdfFiles/
+common/conDb.php
+connect_imwemr.php

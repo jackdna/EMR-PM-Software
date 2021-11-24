@@ -1,0 +1,565 @@
+
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>IMWEMR API Test Ground</title>
+		
+		<!--StyleSheets-->
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap-grid.css" />
+		<link rel="stylesheet" type="text/css" href="./css/custom.css" />
+		
+		<!--Scripts-->
+		<script type="text/javascript" src="./js/sha256.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<script type="text/javascript" src="./js/custom.js"></script>
+	</head>
+	
+	<body>
+		
+		<div class="container-fluid">
+			<div class="row logo-row">
+				<!--imwemr Logo-->
+				<div class="col-sm-6">
+					<img class="logo" src="./images/logo.png" alt="IMWEMR &copy" />
+				</div>
+				<div class="col-sm-6 text-right">
+					<p class="head-title">
+						<span class="font-hoew">i</span>Doc API
+					</p>
+				</div>
+			</div>
+			
+			<div class="row title-row align-content-center">
+				<div class="col-sm-10">
+					Application Authentication
+				</div>
+				<div class="col-sm-2">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalRequestLog">
+					  API Request Log
+					</button>
+				</div>
+			</div>
+			
+			<div class="row authentication">
+				
+				<div class="col-sm-8">
+					<div class="row">
+						<div class="col-sm-12">
+							iDoc URL
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input class="form-control" type="text" id="applicationURL" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<div class="row">
+						<div class="col-sm-12">
+							Access Token
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input class="form-control" type="text" id="accessToken" disabled="disabled" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="clearfix"></div>
+				
+				<div class="col-sm-4">
+					<div class="row">
+						<div class="col-sm-12">
+							User ID
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input class="form-control" type="text" id="userId" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<div class="row">
+						<div class="col-sm-12">
+							Password
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input class="form-control" type="password" id="password" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<div class="row">
+						<div class="col-sm-12">
+							<span>User Access</span>
+						</div>
+						<div class="clearfix"></div>	
+						<div class="col-sm-5">
+							<div class="radio radio-inline">
+								<input type="radio" name="userType" value="1" id="iDocUsr"/>
+								<label for="iDocUsr">iDoc User</label>
+							</div>
+						</div>	
+						<!-- <div class="col-sm-4">
+							<div class="radio radio-inline">
+								<input type="radio" name="userType" value="fmh" id="fmhUsr"/>
+								<label for="fmhUsr">FMH</label>
+							</div>
+						</div>	-->
+						<div class="col-sm-3">
+							<div class="radio radio-inline">
+								<input type="radio" name="userType" value="2" id="iPortalUsr"/>
+								<label for="iPortalUsr">Patient</label>
+							</div>
+						</div>	
+						
+						<div class="col-sm-4 text-right">
+							<label data-toggle="tooltip" title="If nothing selected, then user will be treated as patient">
+								<img src="images/info_button.png">
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--Generate Token-->
+			<div class="row apiList">
+				<div class="col-sm-5 apiName" apiDiv="getToken">
+					getToken
+				</div>
+				<div class="col-sm">GET</div>
+				
+				<div class="clearfix"></div>
+				
+				<div class="col-sm-12 apiDetails">
+					<div class="row" id="getToken" style="display: none;">
+						<div class="col-sm-12">
+							This API call will generate API access token to vlidate the API requests made to the server.<br/>User ID and Password from Application Authentication parameters will be used for this API call.
+						</div>
+						
+						<div class="col-sm-12"><span class="hr"></span></div>
+						
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-1">
+									<button type="button" class="btn btn-success" onclick="generateToken();/*triggerCall('getToken');*/">Try It</button>
+								</div>
+								<div class="col-sm-1">
+									<button type="button" class="btn btn-danger" onclick="generateToken();/*clearData('getToken');*/">Clear</button>
+								</div>
+								<div class="col-sm"></div>
+							</div>
+						</div>
+						
+						<div class="clearfix"></div>
+						
+						<div class="col-sm-12">
+							<div class="row requestData" style="display:none;">
+								<div class="col-sm-12">
+									Request URL: 
+								</div>
+								<div class="col-sm-12">
+									<pre class="rquestURL"></pre>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+								<div class="col-sm-12">
+									Request Parameters: 
+								</div>
+								<div class="col-sm-12">
+									<pre class="rquestParameters"></pre>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+								<div class="col-sm-12">
+									Response Code: 
+								</div>
+								<div class="col-sm-12">
+									<pre class="responseCode"></pre>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+								<div class="col-sm-12">
+									Response Data: 
+								</div>
+								<div class="col-sm-12">
+									<pre class="responseData"></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--SearchPatient API Call-->
+			<div class="row apiList" data-apiCallFile="1-searchPatient" data-method="GET"></div>
+			
+			<!--Get Demographics - All-->
+                        <div class="row apiList" data-apiCallFile="2-getDemographics" data-method="GET"></div>
+                        
+			<!--Get Demographics - demographicsOnly-->
+			<div class="row apiList" data-apiCallFile="3-getDemographics-demographicsOnly" data-method="GET"></div>
+			
+			<!--Update Demographics - demographicsOnly-->
+			<div class="row apiList" data-apiCallFile="3.1-updateDemographics-demographicsOnly" data-method="POST"></div>
+                        
+			<!--Get Demographics - Insurance-->
+                        <div class="row apiList" data-apiCallFile="4-getDemographics-insurance" data-method="GET"></div>
+						
+			<!--Post Update Demographics - Insurance-->
+                        <div class="row apiList" data-apiCallFile="4.1-updateDemographics-insurance" data-method="POST"></div>				
+                        
+			<!--Get Demographics - Guarantor-->
+                        <div class="row apiList" data-apiCallFile="5-getDemographics-guarantor" data-method="GET"></div>
+						
+			<!--Update Demographics - demographicsOnly-->
+			<div class="row apiList" data-apiCallFile="5.1-updateDemographics-guarantor" data-method="POST"></div>
+                        
+			<!--Get Demographics - Family-->
+                        <div class="row apiList" data-apiCallFile="6-getDemographics-family" data-method="GET"></div>
+			
+			<!--Post Update Demographics - Family-->
+                        <div class="row apiList" data-apiCallFile="6.1-updateDemographics-family" data-method="POST"></div>						
+                        
+			<!--Get Clinical Data - Smoking Status-->
+                        <div class="row apiList" data-apiCallFile="7-getClinicalData-smokingStatus" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Problems-->
+                        <div class="row apiList" data-apiCallFile="8-getClinicalData-problemList" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Medications-->
+                        <div class="row apiList" data-apiCallFile="9-getClinicalData-medications" data-method="GET"></div>
+						
+			<!--POST Clinical Data - Medications-->
+                        <div class="row apiList" data-apiCallFile="9.1-updateClinicalData-medications" data-method="POST"></div>
+			
+			<!--Get Clinical Data - Ocular-->			
+                        <div class="row apiList" data-apiCallFile="9.2-getClinicalData-ocular" data-method="GET"></div>
+						
+			<!--Get Clinical Data - General Health-->			
+                        <div class="row apiList" data-apiCallFile="9.3-getClinicalData-generalHealth" data-method="GET"></div>			
+                        
+			<!--Get Clinical Data - Allergies-->
+                        <div class="row apiList" data-apiCallFile="10-getClinicalData-allergies" data-method="GET"></div>
+						
+			<!--Get Clinical Data - Allergies-->
+                        <div class="row apiList" data-apiCallFile="10.1-updateClinicalData-allergies" data-method="POST"></div>
+                        
+			<!--Get Clinical Data - lab Results (Laboratory Tests & Laboratory Value(s)/Results(s) )-->
+                        <div class="row apiList" data-apiCallFile="11-getClinicalData-labResults" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Vital Signs-->
+                        <div class="row apiList" data-apiCallFile="12-getClinicalData-vitalSigns" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Surgeries (Procedures)-->
+                        <div class="row apiList" data-apiCallFile="13-getClinicalData-surgeries" data-method="GET"></div>
+						
+			<!--POST Clinical Data - Surgeries (Procedures)-->
+                        <div class="row apiList" data-apiCallFile="13.1-updateClinicalData-surgeries" data-method="POST"></div>
+                         
+			<!--Get Care Team Members-->
+                        <div class="row apiList" data-apiCallFile="14-getCareTeamMembers" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Immunizations-->
+                        <div class="row apiList" data-apiCallFile="15-getClinicalData-immunizations" data-method="GET"></div>
+			
+			<!--Get Clinical Data - Udi (Unique Deice Identifier(s) for a Patient's Implantable Device(s))-->
+                        <div class="row apiList" data-apiCallFile="16-getClinicalData-udi" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - assessmentPlan (Assessment and Plan of Treatment)-->
+                        <div class="row apiList" data-apiCallFile="17-getClinicalData-assessmentPlan" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Patient Goals (Goals)-->
+                        <div class="row apiList" data-apiCallFile="18-getClinicalData-patientGoals" data-method="GET"></div>
+                        
+			<!--Get Clinical Data - Health Concerns-->
+                        <div class="row apiList" data-apiCallFile="19-getClinicalData-healthConcerns" data-method="GET"></div>
+						
+			<!--Get Clinical Data - Health Concerns-->
+                        <div class="row apiList" data-apiCallFile="39-getClinicalData-ComplaintHistory" data-method="GET"></div>
+                        
+			<!--Get Visit Dates - Get Visit DOS-->
+                        <div class="row apiList" data-apiCallFile="20-getVisitDOS" data-method="GET"></div>
+                        
+			<!--Get Patient CCDA - For the DOS Provided-->
+                        <div class="row apiList" data-apiCallFile="21-getCCDA" data-method="GET"></div>
+						
+			<!--Get Patient Registration Status-->
+                        <div class="row apiList" data-apiCallFile="22-getRegistrationStatus" data-method="GET"></div>
+
+			<!--Get Patient Modified Between a given date range -->
+                        <div class="row apiList" data-apiCallFile="23-getPatientsModified" data-method="GET"></div>	
+
+			<!--Get All providers from iMW -->
+                        <div class="row apiList" data-apiCallFile="24-getProvidersList" data-method="GET"></div>
+
+			<!--Get All procedures from iMW -->
+                        <div class="row apiList" data-apiCallFile="25-getProcedureList" data-method="GET"></div>	
+
+			<!--Get All appointments for the provided patient from iMW -->
+                        <div class="row apiList" data-apiCallFile="26-getAppointmentsList" data-method="GET"></div>
+
+			<!--Get All messages for provided patient from iMW -->
+                        <div class="row apiList" data-apiCallFile="27-getPatientMessages" data-method="GET"></div>
+
+			<!--Post messages for provided patient from iMW -->
+                        <div class="row apiList" data-apiCallFile="28-sendPatientMessage" data-method="POST"></div>	
+
+			<!--Get ROS document for provided patient from iMW -->
+                        <div class="row apiList" data-apiCallFile="29-getROS" data-method="GET"></div>
+
+			<!--Post Update registration status for provided patient from iMW -->
+                        <div class="row apiList" data-apiCallFile="30-updateRegistrationStatus" data-method="POST"></div>
+
+			<!--Get all facilities available in IMW -->
+                        <div class="row apiList" data-apiCallFile="31-getFacility" data-method="GET"></div>
+						
+			<!--Get all facilities available in IMW -->
+                        <div class="row apiList" data-apiCallFile="51-getLanguages" data-method="GET"></div>
+
+			<!--Post Request Appointment from iDoc -->
+                        <div class="row apiList" data-apiCallFile="32-requestAppointment" data-method="POST"></div>	
+
+			<!--Get Relationship values from iDoc -->
+                        <div class="row apiList" data-apiCallFile="33-getRelationship" data-method="GET"></div>	
+						
+			<!--Get Insurance Companies values from iDoc -->
+                        <div class="row apiList" data-apiCallFile="34-getInsuranceCompany" data-method="GET"></div>	
+
+			<!--Get Allergies from iDoc -->
+                        <div class="row apiList" data-apiCallFile="35-getAllergy" data-method="GET"></div>
+
+			<!--Get Medications from iDoc -->
+                        <div class="row apiList" data-apiCallFile="36-getMedications" data-method="GET"></div>
+
+			<!--Get Surgeries from iDoc -->
+                        <div class="row apiList" data-apiCallFile="37-getSurgeries" data-method="GET"></div>
+						
+			<!--Get Referring Physicians from iDoc -->
+                        <div class="row apiList" data-apiCallFile="38-getReferringPhysicians" data-method="GET"></div>	
+						
+			<!--Get Referring Physicians from iDoc -->
+                        <div class="row apiList" data-apiCallFile="40-getPatientStatements" data-method="GET"></div>
+
+			<!--GET Referring Physicians from iDoc -->
+                        <div class="row apiList" data-apiCallFile="41-getStatment" data-method="GET"></div>
+						
+			<!--GET Education material for patient from iDoc -->
+                        <div class="row apiList" data-apiCallFile="42-getPatientEducationMaterial" data-method="GET"></div>
+						
+			<!--GET Education material for patient from iDoc -->
+                        <div class="row apiList" data-apiCallFile="43-getEducationMaterial" data-method="GET"></div>
+
+			<!--GET PGHD for patient from iDoc -->
+                        <div class="row apiList" data-apiCallFile="44-getPGHD" data-method="GET"></div>
+
+			<!--POST request PGHD for patient from iDoc -->
+                        <div class="row apiList" data-apiCallFile="44.1-updatePGHD" data-method="POST"></div>
+						
+			<!--GET pending/approval status for patient from iDoc -->
+                        <div class="row apiList" data-apiCallFile="45-getApprovalStatus" data-method="GET"></div>
+
+			<!--POST delete/update approval status for patient -->
+                        <div class="row apiList" data-apiCallFile="46-updateApprovalStatus" data-method="POST"></div>
+
+			<!--GET Signed Consent for patient -->
+                        <div class="row apiList" data-apiCallFile="47-getPatientSignedConsent" data-method="GET"></div>
+
+			<!--GET Signed Consent for patient -->
+                        <div class="row apiList" data-apiCallFile="47.1-getConsent" data-method="GET"></div>
+
+			<!--GET Time slots for the provided physician -->
+                        <div class="row apiList" data-apiCallFile="48-patientAppointment-getTimeSlots" data-method="GET"></div>
+
+			<!--POST Book appointment for patient -->
+                        <div class="row apiList" data-apiCallFile="48.1-patientAppointment-bookAppointment" data-method="POST"></div>
+
+			<!--Get Access Logs for patient -->
+                        <div class="row apiList" data-apiCallFile="49-getPatientAccessLogs" data-method="GET"></div>
+	
+			<!--Get Last contact lens rx for patient -->
+                        <div class="row apiList" data-apiCallFile="50-patientContactLens-getLastRx" data-method="GET"></div>
+
+			<!--Get contact lens orders for patient -->
+                        <div class="row apiList" data-apiCallFile="50.1-patientContactLens-getOrders" data-method="GET"></div>
+
+			<!--Get disposable values for patient -->
+                        <div class="row apiList" data-apiCallFile="50.2-patientContactLens-getDisposable" data-method="GET"></div>
+						
+			<!--Get lens packages for patient -->
+                        <div class="row apiList" data-apiCallFile="50.3-patientContactLens-getLensPackages" data-method="GET"></div>
+
+			<!--Get supplies for patient -->
+                        <div class="row apiList" data-apiCallFile="50.4-patientContactLens-getSupplies" data-method="GET"></div>
+						
+			<!--Get supplies for patient -->
+                        <div class="row apiList" data-apiCallFile="50.7-patientContactLens-getBrands" data-method="GET"></div>			
+
+			<!--Get box for patient -->
+                        <div class="row apiList" data-apiCallFile="50.5-patientContactLens-calculateBoxes" data-method="GET"></div>
+						
+			<!--POST contact lens order for patient -->
+                        <!-- <div class="row apiList" data-apiCallFile="50.6-patientContactLens-orderContactLens" data-method="POST"></div> -->
+						
+			<!--Get Images used in iPortal -->
+                        <div class="row apiList" data-apiCallFile="52-getDataImages" data-method="GET"></div>	
+						
+			<!--Get Medications Routes -->
+                        <div class="row apiList" data-apiCallFile="53-getMedRoutes" data-method="GET"></div>
+
+			<!--Post Upload Pt Document -->
+                        <div class="row apiList" data-apiCallFile="54-uploadPtDocument" data-method="POST"></div>				
+			<!--Get getAppointmentStatus -->
+                        <div class="row apiList" data-apiCallFile="55-getAppointmentStatus" data-method="GET"></div>				
+			<!--Get modifyAppointmentStatus -->
+                        <div class="row apiList" data-apiCallFile="56-modifyAppointmentStatus" data-method="GET"></div>	
+			<!--Get modifyAppointmentStatus -->
+                        <div class="row apiList" data-apiCallFile="57-optical-getFrames" data-method="GET"></div>				
+		</div>
+<!--Loader-->
+<div id="loader" style="display:none;"><img src="./images/loading.gif" alt="Loading..." /></div>
+
+		
+<!--Modals-->
+	
+<!--URL Alert-->
+<div id="modalURL" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="head-title">
+					<span class="font-hoew">i</span>Doc API
+				</p>
+			</div>
+			<div class="modal-body">
+				<p>Pleae provide Valid URL.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--URL Alert-->
+<div id="modalTokenError" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="head-title">
+					<span class="font-hoew">i</span>Doc API - Token Error
+				</p>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--User ID Alert-->
+<div id="modalUserId" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="head-title">
+					<span class="font-hoew">i</span>Doc API
+				</p>
+			</div>
+			<div class="modal-body">
+				<p>Pleae provide Valid User ID.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--Password Alert-->
+<div id="modalPassword" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="head-title">
+					<span class="font-hoew">i</span>Doc API
+				</p>
+			</div>
+			<div class="modal-body">
+				<p>Pleae provide Valid Password.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--View CCD Modal-->
+<div id="modalCCDViewer" class="modal fade" tabindex="-10" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="head-title">
+					<span class="font-hoew">i</span>Doc API - View CCD
+				</p>
+			</div>
+			<div class="modal-body">
+				<iframe id="CCDFrame"></iframe>
+			</div>
+			<input type="hidden" id="modalRequestLogCounter" value="0" />
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+
+
+<!--Request(s) Log Modal-->
+<div id="modalRequestLog" class="modal fade" tabindex="-10" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p class="head-title">
+					<span class="font-hoew">i</span>Doc API - Request Log
+				</p>
+			</div>
+			<div class="modal-body" id="modalRequestLogData">
+				<p class="alert alert-warning">No Request made.</p>
+			</div>
+			<input type="hidden" id="modalRequestLogCounter" value="0" />
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+	
+	</body>
+</html>

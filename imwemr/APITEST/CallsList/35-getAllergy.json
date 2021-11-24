@@ -1,0 +1,6 @@
+{
+    "name": "getAllergy",
+    "description": "This API call is used to list the Allergies available in iDoc",
+    "parameters": [],
+    "accessToken": true
+}

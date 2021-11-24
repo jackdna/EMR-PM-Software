@@ -1,0 +1,6 @@
+{
+    "name": "getFacility",
+    "description": "This API call is used to list the facilities available",
+    "parameters": [],
+    "accessToken": true
+}

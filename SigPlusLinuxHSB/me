@@ -1,0 +1,8 @@
+# export CLASSPATH=/var/www/html/SigPlusLinuxHSB:/var/www/html/SigPlusLinuxHSB/com/topaz/sigplus
+# export CLASSPATH=/var/www/html/SigPlusLinuxHSB/com/topaz/sigplus:/var/www/html/SigPlusLinuxHSB/gnu/io
+# export CLASSPATH=/usr/java/default/jre/lib/ext/comm.jar
+# export CLASSPATH=/var/www/html/SigPlusLinuxHSB:/usr/java/default/jre/lib/ext/comm.jar
+echo $CLASSPATH
+read a
+# javac -noverify /var/www/html/SigPlusLinuxHSB/LoadSigString.java
+javac /var/www/html/SigPlusLinuxHSB/LoadSigString.java

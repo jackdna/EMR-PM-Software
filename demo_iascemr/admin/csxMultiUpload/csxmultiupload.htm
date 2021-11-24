@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Simple example of using csXMultiUpload</title>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// Notes
+// The Class ID in the OBJECT tag calls up the full version of csXMultiUpload.
+// A different Class ID is used from the trial version.
+// On a working web site the OCX or CAB file must be sent to the client by using the CODEBASE attribute
+// This example will work on a machine that has had the OCX installed with our installer but on public web site 
+// the Microsoft LPK File Generation Tool should be used to package the licence file so that clients 
+// can use the control without their own licence.
+// See the instructions for more details.
+// The code needed to use the LPK file is shown but the file needs to be created on the server.
+
+// This example shows the RemoteURL property being set using a PARAM tag.
+// This must be set to a valid URL before running this example.
+// An event handler is defined for the onStartFile event and this is used
+// to add a form variable to the last upload in the batch.
+
+
+//-->
+</script>
+<body>
+
+<!-- The following OBJECT tag calls the LPK file. The VALUE attribute must contain the path to the LPK file. -->
+<OBJECT classid="clsid:5220cb21-c88d-11cf-b347-00aa00a28331"><PARAM NAME="LPKPath" VALUE="csxmultiupload.lpk"></OBJECT>
+
+<!-- The following OBJECT tag calls the csXMultiUpload control -->
+<OBJECT id="upload" classid="CLSID:C5BD337E-B091-46B1-9D2E-AA8F5AF11929" CODEBASE="csxmultiupload.cab" width="0" height="0">
+<PARAM name="RemoteURL" Value="http://..ENTER THE URL OF THE SERVER SIDE SCRIPT..">
+</OBJECT>
+<SCRIPT LANGUAGE="JavaScript" FOR="upload" EVENT="onStartFile(FileNumber, FileTotal)">
+if (FileNumber == FileTotal)
+{
+upload.AddFormVariable('LastFile', 'true');
+}
+	
+</SCRIPT>
+</body>
+</html>

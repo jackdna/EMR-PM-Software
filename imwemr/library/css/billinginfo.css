@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+.mtb10 {
+    margin: 10px 0px 0px;
+}
+.filterbatchfile{ background-color:#9765c6; padding:10px; margin-bottom:10px;} 
+.filterbatchfile .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0 0 4px;
+    padding: 0 0 6px;
+}
+.filterbatchfile .header h2{ font-weight:normal; color:#fff; font-size:24px; position:relative; padding:0px 0px 0px 0px ; margin:0px 0px 0px 36px;  }
+.filterbatchfile .header h2 figure {
+    left: -38px;
+    position: absolute;
+    top: -5px;
+}
+.filterbatchfile .form-group {
+    margin-bottom: 0px;
+}
+
+
+.filterbatchfile label{ color:#fff; font-weight: normal; font-size:18px; margin-bottom:0px}
+.filterbatchfile .form-control{ border-radius:0px; border:1px solid rgba(103,55,130,0.80)}
+.filterbatchfile .searchbut{ background-color:#673782; border:1px solid rgba(255,255,255,0.40); border-radius:0px;  }
+.filterbatchfile .searchbut:hover{ background-color:#8bc34a; border:1px solid rgba(105,157,46,0.40); border-radius:0px;  }
+.srchpetient > .form-group > input.form-control{ width:74%}
+
+
+
+.showarchive{ background-color:#747474; padding:10px; font-size:16px; color:#fff}
+.shwcheck label{ font-weight:normal}
+.shwcheck .control{ margin-bottom:0px;}
+
+.batchlist_col1{width:15px;}
+.batchlist_col2{width:auto;}
+.batchlist_col3{width:95px;}
+.batchlist_col4{width:30px;}
+
+.bltabdat{ background-color:#ededed; padding:10px;}
+.bltabdat .control{ margin-bottom:0px; font-size:16px; font-weight:normal}
+.bltabdat th{ font-size:16px; font-weight:normal}
+.bltabdat td{ font-size:16px!important; color:#2B2A2A}
+
+.bltabdat th .control__indicator{ top:2px}
+.bltabdat td .control__indicator{ top:-10px}
+
+#right_banners{visibility:hidden;}
+
+
+.createbtch{ background-color:#f0f0f0; margin-bottom:10px;}
+.createbtch .bthead {
+    border-bottom: 1px solid #c8c8c8;
+    margin-bottom: 0;
+    min-height: 44px;
+    position: relative;
+}
+.createbtch .bthead h2 {
+    color: #000000;
+    font-size: 25px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 0 0 50px;
+    position: relative;
+}
+.createbtch h3{ font-size:14px; color:#4f4f4f; padding:0px; margin:0px 0px 5px 0px; font-family: 'robotobold'; text-transform:uppercase }
+.createbtch .bthead  h2 figure{ position:absolute; top:0px; left:0px;}
+
+
+.batcfrm{ padding:6px;} 
+.batcfrm .form-group {
+    margin-bottom: 7px;
+}
+
+.labbg { background-color:#737373; padding:0px 10px; margin:0px; font-size:14px; color: #fff; border-radius:0px; position:relative}
+.labbg:after{ position:absolute; top:3px; right:-6px; content:url(../images/rhtpoint.png); width:6px; height:19px; z-index:99999 } 
+
+.createbtch .input-group-addon .glyphicon{ font-size:16px; font-weight:normal; color:#474747}
+
+.bttype { font-size:16px; color:#4f4f4f; margin-top:12px}
+.bttype strong{ text-transform:uppercase}
+.bttype label{ font-weight:normal; font-size:16px!important}
+
+.validclaim{ background-color:#673782; margin-bottom:10px  }
+.claimara { padding:5px 0px 5px 60px; position:relative; }
+.claimara figure{ position:absolute; top:5px; left:10px;}
+.claimara h2{ font-size:30px; color:#fff; padding:0px; margin:0px; font-family: 'robotobold'; }
+.claimara h2 span{ font-size:15px; color:#fff; font-family: 'robotobold'; text-transform:uppercase; display:block }
+
+.validamt{ background-color:#1b9e95;  margin-bottom:10px }
+.invaildclaim{ background-color:#8bc34a;   margin-bottom:10px}
+.invaildamnt{ background-color:#737373;  margin-bottom:10px }
+
+.tdhdbar{ background-color:#e1e1e1; font-size:14px; color:#000000; text-transform:uppercase; font-family: 'robotobold'; text-align:center}
+.btchtabl th , .btchtabl td{ font-size:13px; vertical-align:middle!important; padding:3px 6px!important}
+.btchtabl td .form-control{ border-radius:0px;}
+
+.billingara .col-lg-9{ padding:0px 15px 0px 10px}
+
+
+
+
+.physbar{ background-color:#37aaa2; color:#fff; text-transform:uppercase; font-size:14px; text-transform:uppercase; font-family: 'robotobold';}
+.infobar{background:#e0e0e0 url(../../library/images/infoicon.png) left top no-repeat; color:#FF0004; padding-left:35px !important;}
+.showarchive .control{ margin-bottom:0px;}
+
+.btchtabl .grythead {font-size: 13px;}
+
+
+.grythead th{text-align:center}
+.grythead th.text-right{text-align:right;}
+/* Billing Report Css Start */
+
+.billreport{ background-color:#fff; margin:10px; -webkit-box-shadow: 1px -1px 12px -1px rgba(0,0,0,0.39);
+-moz-box-shadow: 1px -1px 12px -1px rgba(0,0,0,0.39);
+box-shadow: 1px -1px 12px -1px rgba(0,0,0,0.39); padding:5px;}
+
+.bilnghead{ border-bottom:1px solid #e0e0e0; margin-bottom:5px; padding-bottom:5px;}
+.bilnghead h2{ padding:5px 0px; margin:0px; font-size:24px;}
+
+.reporttabl td{ font-weight:normal !important; font-size:14px;}
+.reporttabl .col1{width:4%;}
+.reporttabl .col2{width:22%;}
+.reporttabl .col3{width:12%;}
+.reporttabl .col4{width:4%;}
+.reporttabl .col5{width:18%;}
+.reporttabl .col6{width:22%;}
+.reporttabl .col7{width:18%;}
+
+
+.reptrht{ text-align:right; margin-top:5px;}
+.reptrht .selectpicker{width:50% !important;}
+.butmb button{font-weight:bold; margin:5px;}
+#print_data{overflow-x:scroll; overflow-y:scroll;}
+.noshow_this{display:none;}
+
+.outstanding{background-color:#3f51b5;color:#fff;}
+.outtr{ background-color:#8bc34a;color:#fff;}
+.outbox{background-color:#7986CB;color:#fff;}
+.outboxbrd:not(:first-child){border-top:solid 5px #3f51b5;}

@@ -1,0 +1,89 @@
+<?php
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+?><?php 
+/*
+File: med_proc_dis_settings_ajax.php
+Purpose: Save.update,del scp records from database
+Access Type: Include
+*/
+require_once("../../../config/globals.php");
+
+$_REQUEST['so'] = xss_rem($_REQUEST['so'], 2, 'sanitize');	/* Sanitize arbitrary values - Security Fix */
+
+$task	= isset($_REQUEST['task']) ? trim($_REQUEST['task']) : '';
+$so		= isset($_REQUEST['so']) ? trim($_REQUEST['so']) : 'usr_name';
+$soAD	= (strtoupper($_REQUEST['soAD'])=='DESC') ? 'DESC' : 'ASC';	/* Prevent arbitrary values - Security Fix  */
+
+$table	= "med_proc_dis_setting";
+$pkId	= "id";
+$chkFieldAlreadyExist = "uid";
+switch($task){
+	case 'delete':
+		$del_tm = date("Y-m-d H:i:s");
+		$id = $_POST['pkId'];
+		$q 		= "UPDATE ".$table." SET del_by='".$_SESSION["authId"]."', del_tm='".$del_tm."' WHERE ".$pkId." IN (".$id.")";
+		$res 	= imw_query($q);
+		if($res){
+			echo '1';
+		}else{
+			echo '0';//.imw_error()."\n".$q;
+		}
+		break;
+	case 'save_update':
+		$id = $_POST[$pkId];
+		unset($_POST[$pkId]);
+		unset($_POST['task']);
+		$query_part = "";
+		foreach($_POST as $k=>$v){
+			$query_part .= $k."='".addslashes($v)."', ";
+		}
+		$query_part = substr($query_part,0,-2);
+		$qry_con = "";
+		if($id){$qry_con=" AND ".$pkId."!='".$id."'";}
+		$q_c="SELECT ".$pkId." from ".$table." WHERE ".$chkFieldAlreadyExist."='".$_POST[$chkFieldAlreadyExist]."'".$qry_con." AND del_by='0' ";
+		$r_c=imw_query($q_c);
+		if(imw_num_rows($r_c)==0){		
+		
+			if($id==''){
+				$q = "INSERT INTO ".$table." SET ".$query_part;
+			}else{
+				$q = "UPDATE ".$table." SET ".$query_part." WHERE ".$pkId." = '".$id."'";
+			}
+			$res = imw_query($q);
+			if($res){
+				echo 'Record Saved Successfully.';
+			}else{
+				echo 'Record Saving failed.'.imw_error()."\n".$q;
+			}
+		}else {
+			echo "enter_unique";	
+		}
+		break;
+	case 'show_list':
+		$q = "SELECT c1.id, c1.uid, CONCAT(c2.fname, ' ', c2.mname, ' ', c2.lname) AS usr_name, c1.proc_display FROM ".$table." c1 
+			LEFT JOIN users c2 ON c2.id = c1.uid  
+			WHERE c1.del_by='0' ORDER BY $so $soAD";		
+		$r = imw_query($q);
+		$rs_set = array();
+		if($r && imw_num_rows($r)>0){			
+			while($rs = imw_fetch_assoc($r)){
+				if(empty($rs["usr_name"])){ $rs["usr_name"]="All Users"; }
+				$rs_set[] = $rs;
+			}
+		}
+		echo json_encode(array('records'=>$rs_set));
+		break;
+	default: 
+}
+
+?>

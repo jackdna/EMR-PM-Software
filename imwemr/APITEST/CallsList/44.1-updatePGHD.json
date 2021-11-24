@@ -1,0 +1,18 @@
+{
+    "name": "updatePGHD",
+    "description": "This call is used to update PGHD (<strong>Patient General Health Information</strong>) in iDoc. Changes done through the API call require approval on iDoc side. Blank parameters will be ignored in this api Call. <strong>Parameters with input value provided will be updated.</strong>",
+    "parameters": [
+        {
+			"name": "patientId",
+			"type": "Integer",
+			"description": "If user is not patient, then <strong>this input is required</strong>",
+			"required": true
+		},{
+			"name": "healthInformation",
+			"type": "String",
+			"description": "Patient general health information ",
+			"required": false
+		}
+    ],
+    "accessToken": true
+}

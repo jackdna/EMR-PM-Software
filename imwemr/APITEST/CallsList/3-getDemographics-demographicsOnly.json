@@ -1,0 +1,13 @@
+{
+    "name": "getDemographics/demographicsOnly",
+    "description": "This call will provide access to the patient demographics. This will reurn data related to demographics only.",
+    "parameters": [
+        {
+	    "name": "patientId",
+	    "type": "Integer",
+	    "description": "Patient MRN in IMW.",
+	    "required": true
+	}
+    ],
+    "accessToken": true
+}

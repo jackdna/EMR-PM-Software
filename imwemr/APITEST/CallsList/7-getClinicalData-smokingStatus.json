@@ -1,0 +1,11 @@
+{
+    "name": "getClinicalData/smokingStatus",
+    "description": "This call will provide data for CCDS category Smoking Status.",
+    "parameters": [{
+	    "name": "patientId",
+	    "type": "Integer",
+	    "description": "Patient MRN in IMW.",
+	    "required": true
+	}],
+    "accessToken": true
+}

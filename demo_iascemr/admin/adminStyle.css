@@ -1,0 +1,18 @@
+/*
+The MIT License (MIT)
+Distribute, Modify and Contribute under MIT License
+Use this software under MIT License
+*/
+	td#tdReset{display:none;}
+	.text_10 { font-family:"verdana"; font-size:11px; color:#000000; font-weight:normal;}
+	.text_10b { font-family:"verdana"; font-size:11px; color:#000000; font-weight:bold;  }
+	.text_10b1 {font-family:"verdana"; font-size:11px; color:#000000; font-weight:bold;  }
+	.text_form { font-family:"verdana"; font-size:11px; color:#000000; margin:-1.55em 0 0 25px;}
+	.button	{ font-family:"verdana"; font-size:11px; color:#333333; border:1px solid #96AA8A; background-color:#fdfdff;}
+	/*Admin*/
+	.text_10Admin { font-family:"verdana"; font-size:11px; color:#000000; font-weight:normal;}
+	.text_10bAdmin { font-family:"verdana"; font-size:11px; color:#000000; font-weight:bold;  }
+	.text_10b1Admin {font-family:"verdana"; font-size:11px; color:#000000; font-weight:bold;  }
+	.text_smallbAdmin { font-family:"verdana"; font-size:10px; color:#000000; font-weight:bold;  }
+	
+	/*Admin*/

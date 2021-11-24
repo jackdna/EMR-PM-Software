@@ -1,0 +1,121 @@
+{
+    "name": "updateDemographics/family",
+    "description": "This call is used to update Patient Family information in iDoc. Changes done through the API call require approval on iDoc side. Blank parameters will be ignored in this api Call. Parameters with input value provided will be updated.",
+    "parameters": [
+		{
+			"name": "patientId",
+			"type": "Integer",
+			"description": "If user is not patient, then <strong>this input is required</strong>",
+			"required": false
+		},
+		{
+			"name": "MemberId",
+			"type": "Integer",
+			"description": "Use '/getDemographics/family' to get the Member ID ",
+			"required": true
+		},
+		{
+			"name": "Title",
+			"type": "Integer",
+			"description": "1= Mr., 2= Mrs., 3= Ms., 4= Dr.",
+			"required": false
+		},{
+			"name": "FirstName",
+			"type": "String",
+			"description": "First Name of Member",
+			"required": false
+		},
+		{
+			"name": "MiddleName",
+			"type": "String",
+			"description": "Middle Name of Member",
+			"required": false
+		},
+		{
+			"name": "LastName",
+			"type": "String",
+			"description": "Last Name of Member",
+			"required": false
+		},
+		{
+			"name": "Suffix",
+			"type": "String",
+			"description": "Suffix of Member",
+			"required": false
+		},
+		{
+			"name": "Relationship",
+			"type": "Integer",
+			"description": "Use '/getRelationship' to get relation ID",
+			"required": false
+		},
+		{
+			"name": "HippaInfo",
+			"type": "Integer",
+			"description": "0 = Not Release, 1 = Release ",
+			"required": false
+		}
+		,
+		{
+			"name": "Street1",
+			"type": "String",
+			"description": "Address Street 1.",
+			"required": false
+		},
+		{
+			"name": "Street2",
+			"type": "String",
+			"description": "Address Street 2.",
+			"required": false
+		},
+		{
+			"name": "City",
+			"type": "String",
+			"description": "Name of the City",
+			"required": false
+		},
+		{
+			"name": "State",
+			"type": "String",
+			"description": "Two Characters state code only.",
+			"required": false
+		},
+		{
+			"name": "Zip",
+			"type": "String",
+			"description": "Postal zip Code.",
+			"required": false
+		},
+		{
+			"name": "ZipExt",
+			"type": "String",
+			"description": "Postal zip extention Code.",
+			"required": false
+		},
+		{
+			"name": "HomePhone",
+			"type": "Integer",
+			"description": "Home Phone #.",
+			"required": false
+		},
+		{
+			"name": "WorkPhone",
+			"type": "Integer",
+			"description": "Work Phone #.",
+			"required": false
+		},
+		{
+			"name": "MobilePhone",
+			"type": "Integer",
+			"description": "Mobile Phone #",
+			"required": false
+		},
+		{
+			"name": "Email",
+			"type": "String",
+			"description": "Email",
+			"required": false
+		}
+    ],
+    "accessToken": true
+}

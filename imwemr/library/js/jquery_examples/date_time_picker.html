@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../css/jquery.datetimepicker.min.css"/></head>
+<body class="container">
+
+        <div class="row">
+        	<a href="index.html"> &laquo; Back to Listing  </a>
+        </div>
+	
+	<h3>Time Picker </h3>
+	<input type="text" id="datetimepicker1"/><br><br>
+	<h3>Date Picker </h3>
+	<input type="text" id="datetimepicker2"/><br><br>
+	<h3>DateTime Picker </h3>
+	<input type="text" id="datetimepicker0"/><br><br>
+<p><a href="http://xdsoft.net/jqplugins/datetimepicker/">For more information please visit xdsoft.net</a></p>
+</body>
+<script src="../jquery.min.1.12.4.js"></script>
+<script src="../jquery.datetimepicker.full.min.js"></script>
+<script>
+
+$.datetimepicker.setLocale('en');   
+$("#datetimepicker0").datetimepicker({
+	format:"m-d-Y H:i:s", 
+	step:10
+});
+
+$('#datetimepicker1').datetimepicker({
+	datepicker:false,
+	format:'H:i',
+	step:5
+});
+$('#datetimepicker2').datetimepicker({
+	timepicker:false,
+	format:'d/m/Y',
+	formatDate:'Y/m/d'
+	//minDate:'-1970/01/02', 
+	//maxDate:'+1970/01/02' 
+});
+</script>
+</html>

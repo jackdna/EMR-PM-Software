@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+// Under MIT License
+// Distribute, Modify and Contribute under MIT License.
+// Use of Software under MIT License.
+-->
+<!--
+File: cornea_od.xml
+Coded in PHP7
+Purpose: This file defines exam options of Cornea OD.
+Access Type : Include file
+-->
+<cornea>
+	<od>
+		<cornea_diameter examname="Cornea Diameter" >
+			<text elem_name="elem_corDiaOd"></text>
+		</cornea_diameter>
+		<dry_eyes examname="Dry Eyes">
+			<text elem_name="elem_dryEyesOd"></text>
+			<inc_tbit examname="Dec TBUT">
+				<textbox elem_name="elem_incTbitOd_text"></textbox>
+				<negative elem_name="elem_incTbitOd_neg"></negative>				
+				<pos_4 elem_name="elem_incTbitOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_incTbitOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_incTbitOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_incTbitOd_pos1"></pos_1>
+				<t elem_name="elem_incTbitOd_T"></t>
+			</inc_tbit>
+			<dec_tear_lake examname="Dec. Tear Lake">
+				<negative elem_name="elem_decTearLakeOd_neg"></negative>
+				<pos_4 elem_name="elem_decTearLakeOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_decTearLakeOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_decTearLakeOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_decTearLakeOd_pos1"></pos_1>
+				<t elem_name="elem_decTearLakeOd_T"></t>
+			</dec_tear_lake>
+			<spk examname="SPK">
+				<negative elem_name="elem_spkOd_neg"></negative>				
+				<pos_4 elem_name="elem_spkOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_spkOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_spkOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_spkOd_pos1"></pos_1>
+				<t elem_name="elem_spkOd_T"></t>
+			</spk>
+			<inc_tear_lake examname="Inc. Tear Lake">
+				<negative elem_name="elem_incTearLakeOd_neg"></negative>				
+				<pos_4 elem_name="elem_incTearLakeOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_incTearLakeOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_incTearLakeOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_incTearLakeOd_pos1"></pos_1>
+				<t elem_name="elem_incTearLakeOd_T"></t>
+			</inc_tear_lake>			
+		</dry_eyes>
+		<dystrophy examname="Dystrophy">
+			<text elem_name="elem_dystrophyOd"></text>
+			<abmd_mdf examname="ABMD/MDF">
+				<negative elem_name="elem_abmdMdfOd_neg"></negative>				
+				<pos_4 elem_name="elem_abmdMdfOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_abmdMdfOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_abmdMdfOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_abmdMdfOd_pos1"></pos_1>
+				<t elem_name="elem_abmdMdfOd_T"></t>
+			</abmd_mdf>
+			<stromal examname="Stromal">
+				<negative elem_name="elem_StromalOd_neg"></negative>
+				<positive elem_name="elem_StromalOd_pos"></positive>				
+				<pos_4 elem_name="elem_StromalOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_StromalOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_StromalOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_StromalOd_pos1"></pos_1>
+				<t elem_name="elem_StromalOd_T"></t>
+			</stromal>
+			<posterior examname="Posterior">
+				<negative elem_name="elem_posteriorOd_neg"></negative>
+				<guttata elem_name="elem_posteriorOd_Guttata" ></guttata>
+				<fuchs elem_name="elem_posteriorOd_Fuchs" ></fuchs>				
+				<pos_4 elem_name="elem_posteriorOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_posteriorOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_posteriorOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_posteriorOd_pos1"></pos_1>
+				<t elem_name="elem_posteriorOd_T"></t>
+				<ppd elem_name="elem_posteriorOd_PPD"></ppd>
+				<mild elem_name="elem_posteriorOd_Mild"></mild>
+				<mod elem_name="elem_posteriorOd_Md"></mod>
+				<severe elem_name="elem_posteriorOd_Severe"></severe>
+			</posterior>			
+			<bandkera examname="Band Keratopathy">			
+				<nasal elem_name="elem_bandKeraOd_Nasal"></nasal>				
+				<pos4 elem_name="elem_bandKeraOd_pos4"></pos4>
+				<pos3 elem_name="elem_bandKeraOd_pos3"></pos3>
+				<pos2 elem_name="elem_bandKeraOd_pos2"></pos2>
+				<pos1 elem_name="elem_bandKeraOd_pos1"></pos1>
+				<tempo elem_name="elem_bandKeraOd_Temp"></tempo>
+				<visax elem_name="elem_bandKeraOd_Visax"></visax>
+			</bandkera>
+			
+		</dystrophy>
+		<trauma examname="Trauma" commonexam="1">
+			<text elem_name="elem_TraumaOd_text"></text>
+			<abrasion examname="Abrasion">
+				<negative elem_name="elem_abrasionOd_neg"></negative>
+				<positive elem_name="elem_abrasionOd_pos"></positive>
+				<negInfiltrate elem_name="elem_abrasionOd_negInfiltrate" pv="-ve Infiltrate" ></negInfiltrate>
+			</abrasion>
+			<irragular_epithelium_m examname="Irregular Epithelium">
+				<irragular_epithelium elem_name="elem_irregularEpitheliumOd" pv="Irregular Epithelium"></irragular_epithelium>
+				<pseudo_dendrite elem_name="elem_irr_pseudo_DendriteOd" pv="Pseudo Dendrite"></pseudo_dendrite>
+			</irragular_epithelium_m>
+			<foreign_body examname="Foreign Body" commonexam="1">
+				<negative elem_name="elem_foreignOd_neg" ></negative>
+				<positive elem_name="elem_foreignOd_pos" ></positive>
+				<metallic elem_name="elem_foreignOd_Metallic" pv="Metallic w/rust run"></metallic>
+				<nonmetallic elem_name="elem_foreignOd_NonMetallic" pv="Non Metallic"></nonmetallic>
+				<suture elem_name="elem_foreignOd_Suture" ></suture>
+				<old elem_name="elem_foreignOd_Old" pv="Old w/o staining"></old>
+				<penetrating elem_name="elem_foreignOd_Penetrating" ></penetrating>
+				<nonpenetrating elem_name="elem_foreignOd_NonPenetrating" pv="Non-Penetrating"></nonpenetrating>
+			</foreign_body>
+			<part_laceration examname="Part. Thickness Laceration">
+				<superficial elem_name="elem_partLacerationOd_Sup" ></superficial>
+				<deep elem_name="elem_partLacerationOd_Deep" ></deep>
+				<negSiedel elem_name="elem_partLacerationOd_NegSiedel" pv="-ve Siedel"></negSiedel>
+			</part_laceration>
+			<full_laceration examname="Full Thickness Laceration">
+				<wprolapsed elem_name="elem_fulltLacerationOd_WProlapsed" pv="w/ uveal prolapsed" ></wprolapsed>
+				<woprolapsed elem_name="elem_fulltLacerationOd_WOProlapsed" pv="w/o uveal prolapsed"></woprolapsed>
+				<pos_siedel elem_name="elem_fulltLacerationOd_PosSiedel" pv="+ve Siedel"></pos_siedel>
+				<neg_siedel elem_name="elem_fulltLacerationOd_NegSiedel" pv="-ve Siedel"></neg_siedel>
+			</full_laceration>
+		</trauma>
+		<infection_inflammation examname="Infection/Inflammation">
+			<ulcer examname="Ulcer">
+				<text elem_name="elem_ulcerOd"></text>
+				<infectious elem_name="elem_infectiousOd"></infectious>
+				<infiltrate elem_name="elem_infiltrateOd"></infiltrate>
+				<haze elem_name="elem_hazeOd"></haze>
+				<neorotic elem_name="elem_neoroticOd" pv="Neurotrophic"></neorotic>
+				<kp_s elem_name="elem_kpsOd" pv="KP\'s"></kp_s>
+				<endothelial elem_name="elem_endothelialOd" pv="Endothelial Plaque"></endothelial>				
+				<sterile elem_name="elem_sterileOd"></sterile>
+				<peripheral_hypersensitivity_ulcer elem_name="elem_peripheralHypersensitivityUlcerOd" pv="Peripheral Hypersensitivity Ulcer"></peripheral_hypersensitivity_ulcer>
+				<location elem_name="elem_ulcerOd_Location" ></location>
+				<peripheral elem_name="elem_ulcerOd_Peripheral" ></peripheral>
+				<midperipheral elem_name="elem_ulcerOd_MidPeripheral" pv="Mid Peripheral"></midperipheral>
+				<central elem_name="elem_ulcerOd_Central" ></central>
+				<progression elem_name="elem_ulcerOd_Progression" ></progression>
+				<improving elem_name="elem_ulcerOd_Improving" ></improving>
+				<worsening elem_name="elem_ulcerOd_Worsening" ></worsening>
+				<nochange elem_name="elem_ulcerOd_NoChange" ></nochange>				
+			</ulcer>
+			<stromal_abscess examname="Stromal Abscess">
+				<negative elem_name="elem_stromalAbscessOd_neg" ></negative>
+			</stromal_abscess>			
+			<hsk examname="HSK">
+				<dendrite elem_name="elem_hskDendriteOd"></dendrite>
+				<geographic_ulcer elem_name="elem_hskGeoUlcerOd" pv="Geographic Ulcer"></geographic_ulcer>
+				<scar elem_name="elem_hskOd_Scar" ></scar>
+			</hsk>
+			<hzk examname="HZK">
+				<pseudo_dendrite elem_name="elem_hzkPseudo_DendriteOd" pv="Pseudo Dendrite"></pseudo_dendrite>
+				<geographic_ulcer elem_name="elem_hzkGeoUlcerOd" pv="Geographic Ulcer"></geographic_ulcer>
+				<scar elem_name="elem_hzkOd_Scar" ></scar>
+			</hzk>
+		</infection_inflammation>
+		<pterygium examname="Pterygium">
+			<mm1 elem_name="elem_pterygium1mmOd" pv="1 mm"></mm1>
+			<mm2 elem_name="elem_pterygium2mmOd" pv="2 mm"></mm2>
+			<mm3 elem_name="elem_pterygium3mmOd" pv="3 mm"></mm3>
+			<mm4 elem_name="elem_pterygium4mmOd" pv="4 mm"></mm4>
+			<mm5 elem_name="elem_pterygium5mmOd" pv="5 mm"></mm5>
+			<nasal elem_name="elem_pterygiumNasalOd"></nasal>
+			<temporal elem_name="elem_pterygiumTemporalOd"></temporal>
+			<encpup elem_name="elem_pterygiumEncPupOd" pv="Encroaching Pupil"></encpup>
+		</pterygium>
+		<edema examname="Edema" commonexam="1">
+			<text elem_name="elem_edemaOd_text"></text>
+			<negative elem_name="elem_edemaOd_neg"></negative>			
+			<pos_4 elem_name="elem_edemaOd_pos4"></pos_4>
+			<pos_3 elem_name="elem_edemaOd_pos3"></pos_3>
+			<pos_2 elem_name="elem_edemaOd_pos2"></pos_2>
+			<pos_1 elem_name="elem_edemaOd_pos1"></pos_1>
+			<t elem_name="elem_edemaOd_T"></t>
+			<epithelial examname="Epithelial (MCE)">
+				<negative elem_name="elem_epithelialOd_neg"></negative>				
+				<pos_4 elem_name="elem_epithelialOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_epithelialOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_epithelialOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_epithelialOd_pos1"></pos_1>
+				<t elem_name="elem_epithelialOd_T"></t>
+			</epithelial>
+			<stromal examname="Stromal">
+				<negative elem_name="elem_edemaStromalOd_neg"></negative>				
+				<pos_4 elem_name="elem_edemaStromalOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_edemaStromalOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_edemaStromalOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_edemaStromalOd_pos1"></pos_1>
+				<t elem_name="elem_edemaStromalOd_T"></t>
+			</stromal>
+			<folds_stria examname="Folds/Striae">
+				<negative elem_name="elem_foldsStriaOd_neg"></negative>				
+				<pos_4 elem_name="elem_foldsStriaOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_foldsStriaOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_foldsStriaOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_foldsStriaOd_pos1"></pos_1>
+				<t elem_name="elem_foldsStriaOd_T"></t>
+			</folds_stria>
+		</edema>
+		<pigmentary_depoits examname="Pigmentary deposits">
+			<text elem_name="elem_pigmentaryDepositsOd_text"></text>
+			<negative elem_name="elem_pigmentaryDepositsOd_neg"></negative>			
+			<pos_4 elem_name="elem_pigmentaryDepositsOd_pos4"></pos_4>
+			<pos_3 elem_name="elem_pigmentaryDepositsOd_pos3"></pos_3>
+			<pos_2 elem_name="elem_pigmentaryDepositsOd_pos2"></pos_2>
+			<pos_1 elem_name="elem_pigmentaryDepositsOd_pos1"></pos_1>
+			<t elem_name="elem_pigmentaryDepositsOd_T"></t>
+			<vortex examname="Vortex">
+				<negative elem_name="elem_vortexOd_neg"></negative>				
+				<pos_4 elem_name="elem_vortexOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_vortexOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_vortexOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_vortexOd_pos1"></pos_1>
+				<t elem_name="elem_vortexOd_T"></t>
+			</vortex>
+			<k_spindle examname="K-Spindle">
+				<negative elem_name="elem_kSpindleOd_neg"></negative>				
+				<pos_4 elem_name="elem_kSpindleOd_pos4"></pos_4>
+				<pos_3 elem_name="elem_kSpindleOd_pos3"></pos_3>
+				<pos_2 elem_name="elem_kSpindleOd_pos2"></pos_2>
+				<pos_1 elem_name="elem_kSpindleOd_pos1"></pos_1>
+				<t elem_name="elem_kSpindleOd_T"></t>
+			</k_spindle>
+		</pigmentary_depoits>
+		
+		<filamentary_keratitis examname="Filamentary Keratitis">
+			<mild elem_name="elem_filaKOd_mild"></mild>
+			<mod elem_name="elem_filaKOd_mod"></mod>
+			<severe elem_name="elem_filaKOd_severe"></severe>
+		</filamentary_keratitis>
+
+		<contact_lens examname="Contact Lens">
+			<scl elem_name="elem_sclOd" pv="SCL"></scl>
+			<bscl elem_name="elem_msclOd" pv="B-SCL"></bscl>
+			<gscl elem_name="elem_gsclOd" pv="GPCL"></gscl>
+		</contact_lens>
+		<surgery examname="Surgery">
+			<text elem_name="elem_surgeryOd"></text>			
+			<pk elem_name="elem_pkOd" pv="PK"></pk>
+			<epithelial_defect elem_name="elem_epithelialDefectOd" pv="Epithelial Defect"></epithelial_defect>
+			<prk elem_name="elem_PRKOd" pv="PRK"></prk>
+			<scar_haze elem_name="elem_scarHazeOd" pv="Scar/Haze"></scar_haze>
+			<lasik elem_name="elem_lasikOd"></lasik>
+			<vascularization elem_name="elem_vascularizationOd"></vascularization>
+			<rk elem_name="elem_RKOd" pv="RK"></rk>
+			<edema elem_name="elem_edemaOd"></edema>
+			<ak elem_name="elem_AKOd" pv="AK"></ak>
+			<sutures elem_name="elem_suturesOd"></sutures>
+			<lri elem_name="elem_LRIOd" pv="LRI"></lri>			
+			<flap_secure elem_name="elem_flapSecureOd" pv="Flap Secure"></flap_secure>
+			<wounds_ok elem_name="elem_corn_surg_woundsOd" pv="Wounds OK"></wounds_ok>	
+			<nostriae elem_name="elem_corn_surg_nostriaeOd" pv="No striae"></nostriae>
+			<interclear elem_name="elem_corn_surg_interclearOd" pv="Interface clear"></interclear>				
+		</surgery>
+		<scar examname="Scar" commonexam="1">
+			<stromal elem_name="elem_StromalOd"></stromal>
+			<anterior elem_name="elem_AnteriorOd"></anterior>
+			<mid elem_name="elem_MidOd"></mid>
+			<posterior elem_name="elem_PosteriorOd"></posterior>
+			<endothelial elem_name="elem_scarEndothelialOd"></endothelial>
+			<central elem_name="elem_CentralOd"></central>
+			<midPeripheral elem_name="elem_MidPeripheralOd" pv="Mid Peripheral"></midPeripheral>
+			<peripheral elem_name="elem_PeripheralOd"></peripheral>
+		</scar>
+		<Visualization examname="Vascularization">
+			<subepithelial elem_name="elem_vascOd_SubEpithelial" pv="Sub-epithelial"></subepithelial>
+			<stromal elem_name="elem_vascOd_Stromal"></stromal>
+			<superficial elem_name="elem_vascOd_Superficial"></superficial>
+			<deep elem_name="elem_vascOd_Deep" ></deep>
+			<endothelial elem_name="elem_vascOd_Endothelial"></endothelial>
+			<peripheral elem_name="elem_vascOd_Peripheral"></peripheral>
+			<central elem_name="elem_vascOd_Central"></central>
+			<pannus elem_name="elem_vascOd_Pannus"></pannus>
+			<ghostbv elem_name="elem_vascOd_GhostBV" pv="Ghost BV"></ghostbv>
+			<superior elem_name="elem_vascOd_Superior" ></superior>
+			<inferior elem_name="elem_vascOd_Inferior" ></inferior>
+			<nasal elem_name="elem_vascOd_Nasal" ></nasal>
+			<temporal elem_name="elem_vascOd_Temporal" ></temporal>
+		</Visualization>
+		<advanceoptions elem_name="elem_corneaAdvanceOptionOd"></advanceoptions>
+	</od>
+</cornea>

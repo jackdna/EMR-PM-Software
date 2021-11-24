@@ -1,0 +1,25 @@
+{
+    "name": "uploadPtDocument",
+    "description": "This API call is used to upload .pdf document to pt. docs in base64 encoded format.",
+    "parameters": [
+		{
+             "name": "patientId",
+             "type": "Integer",
+             "description": "Patient MRN in IMW.",
+             "required": true
+		},
+		{
+             "name": "date",
+             "type": "Integer",
+             "description": "Format: YYYY-MM-DD. Current date will be used, if parameter not provided",
+             "required": false
+		},
+		{
+			"name": "docData",
+			"type": "String",
+			"description": "Base64 encoded string of the pdf data. <strong>Data should be provided in REQUEST BODY</strong>",
+			"required": true
+		}
+	],
+    "accessToken": true
+}

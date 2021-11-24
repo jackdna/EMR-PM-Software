@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ssl.certifiedmail.com/CMv4" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ssl.certifiedmail.com/CMv4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ssl.certifiedmail.com/CMv4">
+      <s:element name="Logon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIDorEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxMIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Filter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MustHaveAttachments" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="MsIDs" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInboxMIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInboxMIDsResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="MsIDs" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxMIMEMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxMIMEMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInboxMIMEMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxMIMEMessageEncoded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxMIMEMessageEncodedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInboxMIMEMessageEncodedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMIMEMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMIMEMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMIMEMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMIMEMessageEncoded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMIMEMessageEncodedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMIMEMessageEncodedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailboxXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MailboxType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNum" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetRetractedMsgs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetInboxUnReadOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMailboxXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMailboxXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMIMEMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="WithCMHeaderXML" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WithTrackingXML" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WithSecurityEnvelope" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMIMEMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMIMEMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFolderList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFolderListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFolderListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFolderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PermanentlyDelete" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInTransit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInTransitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInTransitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteInboxMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteInboxMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFolderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MoveMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DestFID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetractMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetractMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetInTransit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InTransitValue" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetInTransitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LogonSoapIn">
+    <wsdl:part name="parameters" element="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="LogonSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxMIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInboxMIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxMIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInboxMIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxMIMEMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInboxMIMEMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxMIMEMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInboxMIMEMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxMIMEMessageEncodedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInboxMIMEMessageEncoded" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxMIMEMessageEncodedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInboxMIMEMessageEncodedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMIMEMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMIMEMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMIMEMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMIMEMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMIMEMessageEncodedSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMIMEMessageEncoded" />
+  </wsdl:message>
+  <wsdl:message name="SendMIMEMessageEncodedSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMIMEMessageEncodedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMailboxXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMailboxXML" />
+  </wsdl:message>
+  <wsdl:message name="GetMailboxXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMailboxXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMIMEMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMIMEMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMIMEMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMIMEMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolderList" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFolderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFolder" />
+  </wsdl:message>
+  <wsdl:message name="CreateFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMessage" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInTransitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInTransit" />
+  </wsdl:message>
+  <wsdl:message name="GetInTransitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInTransitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInboxMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteInboxMessage" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInboxMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteInboxMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFolder" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveMessage" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetractMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:RetractMessage" />
+  </wsdl:message>
+  <wsdl:message name="RetractMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:RetractMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetInTransitSoapIn">
+    <wsdl:part name="parameters" element="tns:SetInTransit" />
+  </wsdl:message>
+  <wsdl:message name="SetInTransitSoapOut">
+    <wsdl:part name="parameters" element="tns:SetInTransitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CMv4Soap">
+    <wsdl:operation name="Logon">
+      <wsdl:input message="tns:LogonSoapIn" />
+      <wsdl:output message="tns:LogonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIDs">
+      <wsdl:input message="tns:GetInboxMIDsSoapIn" />
+      <wsdl:output message="tns:GetInboxMIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIMEMessage">
+      <wsdl:input message="tns:GetInboxMIMEMessageSoapIn" />
+      <wsdl:output message="tns:GetInboxMIMEMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIMEMessageEncoded">
+      <wsdl:input message="tns:GetInboxMIMEMessageEncodedSoapIn" />
+      <wsdl:output message="tns:GetInboxMIMEMessageEncodedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMIMEMessage">
+      <wsdl:input message="tns:SendMIMEMessageSoapIn" />
+      <wsdl:output message="tns:SendMIMEMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMIMEMessageEncoded">
+      <wsdl:input message="tns:SendMIMEMessageEncodedSoapIn" />
+      <wsdl:output message="tns:SendMIMEMessageEncodedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailboxXML">
+      <wsdl:input message="tns:GetMailboxXMLSoapIn" />
+      <wsdl:output message="tns:GetMailboxXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMIMEMessage">
+      <wsdl:input message="tns:GetMIMEMessageSoapIn" />
+      <wsdl:output message="tns:GetMIMEMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderList">
+      <wsdl:input message="tns:GetFolderListSoapIn" />
+      <wsdl:output message="tns:GetFolderListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <wsdl:input message="tns:CreateFolderSoapIn" />
+      <wsdl:output message="tns:CreateFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <wsdl:input message="tns:DeleteMessageSoapIn" />
+      <wsdl:output message="tns:DeleteMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInTransit">
+      <wsdl:input message="tns:GetInTransitSoapIn" />
+      <wsdl:output message="tns:GetInTransitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <wsdl:input message="tns:GetAccountDetailsSoapIn" />
+      <wsdl:output message="tns:GetAccountDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInboxMessage">
+      <wsdl:input message="tns:DeleteInboxMessageSoapIn" />
+      <wsdl:output message="tns:DeleteInboxMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <wsdl:input message="tns:DeleteFolderSoapIn" />
+      <wsdl:output message="tns:DeleteFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessage">
+      <wsdl:input message="tns:MoveMessageSoapIn" />
+      <wsdl:output message="tns:MoveMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetractMessage">
+      <wsdl:input message="tns:RetractMessageSoapIn" />
+      <wsdl:output message="tns:RetractMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInTransit">
+      <wsdl:input message="tns:SetInTransitSoapIn" />
+      <wsdl:output message="tns:SetInTransitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CMv4Soap" type="tns:CMv4Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logon">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/Logon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIDs">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInboxMIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIMEMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInboxMIMEMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIMEMessageEncoded">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInboxMIMEMessageEncoded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMIMEMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/SendMIMEMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMIMEMessageEncoded">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/SendMIMEMessageEncoded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailboxXML">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetMailboxXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMIMEMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetMIMEMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderList">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetFolderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/CreateFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/DeleteMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInTransit">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInTransit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInboxMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/DeleteInboxMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/DeleteFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/MoveMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetractMessage">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/RetractMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInTransit">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/SetInTransit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="https://ssl.certifiedmail.com/CMv4/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CMv4Soap12" type="tns:CMv4Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logon">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/Logon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIDs">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInboxMIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIMEMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInboxMIMEMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxMIMEMessageEncoded">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInboxMIMEMessageEncoded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMIMEMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/SendMIMEMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMIMEMessageEncoded">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/SendMIMEMessageEncoded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailboxXML">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetMailboxXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMIMEMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetMIMEMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderList">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetFolderList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/CreateFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/DeleteMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInTransit">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetInTransit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/GetAccountDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInboxMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/DeleteInboxMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFolder">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/DeleteFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/MoveMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetractMessage">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/RetractMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInTransit">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/SetInTransit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="https://ssl.certifiedmail.com/CMv4/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CMv4">
+    <wsdl:port name="CMv4Soap" binding="tns:CMv4Soap">
+      <soap:address location="https://ssl.dmhisp.com/cmv4/cmv4.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CMv4Soap12" binding="tns:CMv4Soap12">
+      <soap12:address location="https://ssl.dmhisp.com/cmv4/cmv4.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

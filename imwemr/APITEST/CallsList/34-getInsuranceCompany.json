@@ -1,0 +1,6 @@
+{
+    "name": "getInsuranceCompany",
+    "description": "This API call is used to list the Insurance companies available in iDoc",
+    "parameters": [],
+    "accessToken": true
+}

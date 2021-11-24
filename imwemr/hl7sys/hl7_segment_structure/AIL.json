@@ -1,0 +1,21 @@
+{
+    "segment_id": "AIL",
+    "setId_AIL": "",
+    "segment_action_code": "",
+    "location_resource_id": {
+        "point_of_care": "",
+        "room": ""
+    },
+    "location_type_ail": {
+        "type_id": "",
+        "type_name": ""
+    },
+    "location_group": "",
+    "start_date_time": "",
+    "start_date_time_offset": "",
+    "start_date_time_offset_units": "",
+    "duration": "",
+    "duration_units": "",
+    "allow_substitution_code": "",
+    "filler_status_code": ""
+}

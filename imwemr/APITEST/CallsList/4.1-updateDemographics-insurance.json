@@ -1,0 +1,67 @@
+{
+    "name": "updateDemographics/insurance",
+    "description": "This call is used to update Patient Insurance information in iDoc. <strong>This endpoint is used to update the primary and secondary insurance of the patient for case Medical & Vision</strong>. Changes done through the API call require approval on iDoc side. Blank parameters will be ignored in this api Call. <strong>Parameters with input value provided will be updated.</strong>",
+    "parameters": [
+        {
+			"name": "patientId",
+			"type": "Integer",
+			"description": "If user is not patient, then <strong>this input is required</strong>",
+			"required": false
+		},
+		{
+			"name": "PatientInsId",
+			"type": "Integer",
+			"description": "Use '/getDemographics/insurance' to get Patient Insurance ID. Patient's Insurance ID",
+			"required": false
+		},
+		{
+			"name": "InsuranceType",
+			"type": "Integer",
+			"description": "0 => Primary, 1 => Secondary",
+			"required": false
+		},
+		{
+			"name": "CaseType",
+			"type": "Integer",
+			"description": "0 => Medical, 1 => Vision Plan",
+			"required": false
+		},
+		{
+			"name": "InsProvider",
+			"type": "Integer",
+			"description": "Use '/getInsuranceCompany' to get Insurance Provider ID",
+			"required": false
+		},
+		{
+			"name": "PolicyNo",
+			"type": "Integer",
+			"description": "Patient Policy Number",
+			"required": false
+		},
+		{
+			"name": "ActivationDate",
+			"type": "Date",
+			"description": "Insurance Activation Date",
+			"required": false
+		},
+		{
+			"name": "Group",
+			"type": "String",
+			"description": "Patient Group",
+			"required": false
+		},
+		{
+			"name": "Copay",
+			"type": "Integer",
+			"description": "Patient Copay",
+			"required": false
+		},
+		{
+			"name": "Relationship",
+			"type": "Integer",
+			"description": "Use '/getRelationship' to get Relation ID. Patient relation to insurance",
+			"required": false
+		}
+    ],
+    "accessToken": true
+}

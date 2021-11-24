@@ -1,0 +1,756 @@
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/*
+File: drawing.css
+Purpose: This file provides styles to drawing section.
+Access Type : Include file
+*/
+@charset "utf-8";
+/* CSS Document */
+.cCanvas{ 
+	position:absolute;
+	border: 1px solid #F60;
+	-webkit-user-select: none;	
+	display:inline-block;	
+}
+.canvasPrevBorder{	
+	position:absolute;
+	border:2px solid #CCC;
+	-webkit-user-select: none;
+}
+#cCanvasTemp { 
+	position:absolute;
+	border: 1px solid #F60;
+	opacity:0.5;
+	display:none;
+	-webkit-user-select: none;				
+}
+.no-copy {
+	-webkit-user-select: none;
+}
+.imgFaceCanvas {
+	background:url(../library/images/idoc_draw/face.jpg) no-repeat;
+}
+.imgOpticalCanvas {
+	background:url(../library/images/idoc_draw/optical.jpg) no-repeat;
+}
+.imgLaCanvas {
+	background:url(../library/images/idoc_draw/la.jpg) no-repeat;
+}
+.imgOphthaCanvas {
+	background:url(../library/images/idoc_draw/ophtha.jpg) no-repeat;
+}
+.imgPicConCanvas {
+	background:url(../library/images/idoc_draw/pic-con.jpg) no-repeat;
+}
+.imgGonioCanvas {
+	background:url(../library/images/idoc_draw/gonio.jpg) no-repeat;
+}
+.imgEOMCanvas {
+	background:url(../library/images/idoc_draw/eom.jpg) no-repeat;
+}
+.imgCorneaCanvas {
+	background:url(../library/images/idoc_draw/cornea.jpg) no-repeat;
+}
+.imgCorneaEyeCanvas {
+	background:url(../library/images/idoc_draw/cornea_eye.jpg) no-repeat;
+}
+.imgEOM2Canvas {
+	background:url(../library/images/idoc_draw/eom_2.jpg) no-repeat;
+}
+.imgLidsAndLacrimalCanvas {
+	background:url(../library/images/idoc_draw/lids_and_lacrimal.jpg) no-repeat;
+}
+.imgOnMaCanvas {
+	background:url(../library/images/idoc_draw/bg_on_ma.jpg) no-repeat;
+}
+
+
+.marginAll {
+	margin-top:8px;
+	margin-right:2px;
+	margin-bottom:0px;
+	margin-left:2px;
+}
+.toolIcon {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:24px;
+	height:24px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	/*margin:3px 1px 0px 1px;*/
+	margin:0px;
+	border:1px solid #CCC;
+}
+.toolIcon16 {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:16px;
+	height:16px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	margin:1px 0px 0px 5px;
+	border:1px solid #CCC;	
+	
+}
+.toolIcon48 {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:48px;
+	height:48px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	margin:5px 2px 0px 5px;
+	border:1px solid #CCC;
+}
+.toolEyeProb {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:64px;
+	height:31px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	margin:0px 0px 0px 0px;
+	border:1px solid #CCC;
+}
+
+.toolPBType {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:40px;
+	height:15px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	margin:5px 2px 0px 5px;
+	border:1px solid #CCC;
+}
+.toolImg {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:48px;
+	height:22px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	margin:5px 2px 0px 5px;
+	border:1px solid #CCC;
+}
+
+.scanImg{	width:24px;}
+
+.toolXtra {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:28px;
+	height:24px;
+	background-image:url(../library/images/idoc_draw/tools.png);
+	cursor:pointer;
+	margin:5px 2px 0px 5px;
+	border:1px solid #CCC;
+}
+
+.toolEraser16 {
+	background-position:0px -180px;
+}
+.uploadIcon16 {
+	background-position:0px -352px;
+}
+.webcamIcon16 {
+	background-position:0px -371px;
+}
+.scanIcon16 {
+	background-position:-18px -352px;
+}
+.previewIcon16 {
+	background-position:-34px -352px;
+}
+.rotateCounterClockWiseDB16 {
+	background-position:-94px -353px;
+}
+.rotateClockWiseDB16 {
+	background-position:-112px -353px;
+}
+.rotateCounterClockWise16 {
+	background-position:-54px -353px;
+}
+.rotateClockWise16 {
+	background-position:-71px -353px;
+}
+
+
+.toolFreeSelect {
+	background-position:0px 0px;
+}
+.toolSelect {
+	background-position:-24px 0px;
+}
+.toolPencil {
+	background-position:-48px 0px;
+}
+.toolBrush {
+	background-position:-72px 0px;
+}
+.toolFillColor {
+	background-position:-96px 0px;
+}
+.toolSparyColor {
+	background-position:-120px -72px;
+	
+}
+.toolEraserMain {
+	background-position:0px -24px;
+}
+.toolEraser48 {
+	background-position:0px -305px;
+}
+.toolText {
+	background-position:-24px -24px;
+}
+.toolArrow {
+	background-position:-48px -24px;
+}
+.toolLine {
+	background-position:-72px -24px;
+}
+
+/*.toolClear {*/
+.toolRemSelected {
+	background-position:-92px -349px;
+}
+
+.toolArc {
+	background-position:-96px -24px;
+}
+.toolRect {
+	background-position:-120px -24px;
+}
+.toolRoundRect {
+	background-position:0px -48px;
+}
+.toolEllipse {
+	background-position:-24px -48px;
+}
+.toolCircle {
+	background-position:-48px -48px;
+}
+.toolFilledRect {
+	background-position:-72px -48px;
+}
+.toolFilledRoundRect {
+	background-position:-96px -48px;
+}
+.toolFilledEllipse {
+	background-position:-120px -48px;
+}
+.toolFilledCircle {
+	background-position:0px -72px;
+}
+.toolSmallClear {
+	background-position:-101px -325px;
+}
+.toolSelectCopy{
+	background-position:-48px -72px;
+}
+.toolDrag {
+	background-position:-72px -71px;
+}
+.toolReleaseEvent {
+	background-position:-125px -325px;
+}
+.toolPucker {
+	background-position:1px -96px;
+}
+.toolDrusen {
+	background-position:-24px -96px;
+}
+.toolPollar {
+	background-position:-48px -96px;
+}
+.toolRetinal {
+	background-position:-72px -96px;
+}
+.toolLattice {
+	background-position:-72px -1052px;
+}
+.toolRetinalTear {
+	/*background-position:-120px -96px;*/
+	background-position:-87px -642px;
+}
+.toolHorse {
+	background-position:1px -120px;
+}
+.toolDry {
+	background-position:-24px -120px;
+}
+.toolChoroidal {
+	background-position:-48px -120px;
+}
+
+.toolSPKMild {
+	background-position:-98px -120px;
+}
+.toolDisciformScar {
+	background-position:-74px -120px;
+}
+.toolExudates {
+	background-position:-90px -740px;
+}
+.toolHemorrhage {
+	background-position:0px -144px;
+}
+.toolNeovascularization {
+	background-position:-24px -144px;
+}
+.toolPannus {
+	background-position:-48px -144px;
+}
+.toolPingnelcula {
+	background-position:-72px -144px;
+}
+.toolPRPTreatment {
+	background-position:-98px -144px;
+}
+.toolPterygium {
+	background-position:-122px -144px;
+}
+.toolRedDot {
+	background-position:-120px -168px;
+}
+.toolRetinalHemorrhageDot {
+	background-position:-96px -168px;
+}
+.toolUlcer {
+	background-position:-48px -168px;
+}
+.toolRetinalIrregularHemorrhage {
+	background-position:-72px -168px;
+}
+
+/*new icons*/
+.toolCME {
+	background-position:-15px -980px;
+}
+.toolDruMild {
+	background-position:-93px -980px;
+}
+.toolDruMod {
+	background-position:-93px -940px;
+}
+.toolFloaters {
+	background-position:-15px -1050px;
+}
+.toolFocalTreatment {
+	background-position:-15px -940px;
+}
+.toolMA {
+	background-position:-87px -1015px;
+}
+.toolPVD {
+	background-position:-15px -1015px;
+}
+.toolRPEChanges {
+	background-position:-90px -1090px;
+}
+.toolERM {
+	background-position:-90px -1125px;
+}
+
+
+/*new icons*/
+
+
+.toolClear {
+	background-position:-120px -374px;
+}
+.toolClearText {
+	background-position:-52px -350px;
+}
+.colorSpanBorder {
+	border:1px solid;
+	cursor:default;
+	margin:3px 1px 0px 1px;
+	width:24px;
+	height:24px;	
+}
+.eraserDivBorder {
+	border:2px #990 dashed;
+}
+.toolImgOptical {
+	background-position:-2px -410px;
+}
+.toolImgGonio {
+	background-position:-52px -410px;
+}
+.toolImgFace {
+	background-position:-102px -410px;
+}
+.toolImgPicCon {
+	background-position:-0px -438px;
+}
+.toolImgLa {
+	background-position:-54px -436px;
+}
+.toolImgNoImage {
+	background-position:-102px -438px;
+}
+.toolImgOphtha {
+	background-position:-0px -464px;
+}
+.toolImgEOM {
+	background-position:-56px -464px;
+}
+.toolImgCornea {
+	background-position:-2px -488px;
+}
+.toolImgCorneaEye {
+	background-position:-58px -488px;
+}
+.toolImgEOM2 {
+	background-position:0px -510px;
+}
+.toolImgLidsAndLacrimal {
+	background-position:-103px -490px;
+}
+
+.toolPBType1 {
+	/*background-position:0px -544px;*/
+	background-position:-53px -542px;
+}
+.toolPBType2 {
+	background-position:-53px -542px;
+}
+.toolPBType3 {
+	background-position:-104px -539px;
+}
+.toolPBType4 {
+	background-position:0px -553px;
+}
+
+.fllt{
+	float:left;	
+}
+
+.flltToolTop{
+	float:left;
+	max-height:32px;
+	overflow:hidden;
+	border:1px dashed #999; width:525px; text-align:left; 	
+}
+
+.loding {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:48px;
+	height:24px;
+	background-image:url(../library/images/idoc_draw/loader.gif);
+	margin:5px 2px 0px 5px;
+	position:absolute;
+	left:30px;
+	top:620px;
+}
+.saveing {
+	display:inline-block;
+	text-indent: -99999px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	width:48px;
+	height:48px;
+	background-image:url(../library/images/idoc_draw/saving.gif);
+	margin:5px 2px 0px 5px;
+	position:absolute;
+	left:120px;
+	top:590px;
+}
+.disableArea{
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:#000000;
+	opacity:.5;
+	z-index:100;
+}
+.titleBox{
+	background:#A6C9DB url(../../themes/default/images/himg.gif) repeat-x; 
+	height:21px; 
+	font-weight:bold; 
+	color:#000000; 
+	padding:6px 4px 4px 10px; 
+	font-size:120%;
+}
+.titleBox8px{
+	background:#A6C9DB url(../../themes/default/images/himg.gif) repeat-x; 
+	height:16px; 
+	font-weight:bold; 
+	color:#000000; 
+	padding:2px 2px 2px 2px; 
+	font-size:8px;
+}
+
+.closeBtn{
+	display:block; 
+	float:right; 
+	height:16px; width:16px; 
+	background:transparent url(../../themes/default/images/delete.gif) center no-repeat; 
+	cursor:pointer;
+}
+.imgDim{
+	position:absolute;
+	top:75px;
+	left:25px;
+	background:#FFFFFF;
+	border:#969A11 solid;
+	z-index:200;
+}
+.imgLoad{
+	background-size: 730px 465px;
+	background-repeat:no-repeat;
+}
+.toolPuckerT {
+	background-position:-19px -576px;
+}
+.toolDrusenT {
+	background-position:-90px -577px;
+}
+.toolPollarT {
+	background-position:-19px -609px;
+}
+.toolRetinalT {
+	background-position:-90px -610px;	
+}
+
+.toolRetinalTearT {
+	background-position:-87px -642px;
+}
+.toolHorseT {
+	background-position:-15px -675px;
+}
+.toolDryT {
+	background-position:-90px -675px;
+}
+.toolChoroidalT {
+	background-position:-22px -708px;
+}
+.toolSPKMildT {
+	background-position:-90px -708px;
+}
+.toolDisciformScarT {
+	background-position:-18px -743px;
+}
+.toolExudatesT {
+	background-position:-90px -742px;
+	
+}
+.toolHemorrhageT {
+	background-position:-18px -774px;
+}
+.toolNeovascularizationT {
+	background-position:-90px -773px;
+}
+.toolPannusT {
+	background-position:-24px -804px;
+}
+.toolPingnelculaT {
+	background-position:-93px -803px;
+}
+.toolPRPTreatmentT {
+	background-position:-10px -833px;
+}
+.toolPterygiumT {
+	background-position:-90px -834px;
+}
+.toolRedDotT {
+	background-position:-17px -868px;
+}
+.toolRetinalHemorrhageDotT {
+	background-position:-95px -870px;
+}
+.toolUlcerT {
+	background-position:-15px -903px;
+}
+
+.toolRetinalIrregularHemorrhageT {
+	background-position:-90px -902px;
+}
+
+/*new icons*/
+.toolCMET {
+	background-position:-17px -979px;
+}
+.toolDruMildT {
+	background-position:-90px -983px;
+}
+.toolDruModT {
+	background-position:-90px -942px;
+}
+.toolFloatersT {
+	background-position:-15px -1053px;
+}
+.toolFocalTreatmentT {
+	background-position:-15px -943px;
+}
+.toolLatticeT {
+	background-position:-80px -1050px;
+}
+.toolMAT {
+	background-position:-90px -1016px;
+}
+.toolPVDT {
+	background-position:-16px -1015px;
+}
+
+.toolRPEChangesT {
+	background-position:-90px -1090px;
+}
+.toolERMT {
+	background-position:-90px -1127px;
+}
+
+
+/*new icons*/
+
+/* new icons */
+.toolRemSelectedT {
+	background-position:-90px -1127px;
+}
+
+
+
+
+.bgColorCanvas{
+		background-color:#ffffff;
+}
+
+.backButton {
+	background-position:0px -1111px;
+}
+.nextButton {
+	background-position:-28px -1111px;
+}
+
+.labelDiv{
+	font-size:9px;
+	font-family:Calibri, Arial, Helvetica, sans-serif;
+	vertical-align:top; 
+	padding-left:2px; 
+	font-style:italic; 
+	font-weight:bold;
+	display:block;
+	color:#000000;
+}
+.counter{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#E8E8E8', endColorstr='#8B8B8B');
+	color:#FFFFFF;
+	font-size:xx-large;
+	font-weight:bolder;
+	font-family:Arial, Helvetica, sans-serif;
+	position:absolute;
+	top:350px;left:580px; z-index:1000;
+	width:80px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.moretoolbox{		
+		width:143px;
+}
+
+.moretoolbox div{float:left;margin-right:5px;}
+
+.idoc-colors span{ display:inline-block;width:20px;height:20px; }
+
+/*Menu*/
+.drw_menu{
+
+display:none;
+position:absolute;
+border:1px solid black;
+background-color:white;
+z-index:3
+
+}
+
+.drw_menu, .drw_menu ul{margin:0px;padding:2px;list-style-type: none;}
+	
+.drw_menu li{
+	background-color:white;
+	color:black;
+	border-bottom:1px solid #CCCCCC;
+	min-width:100px;
+	height:15px;
+	margin:0px;
+	cursor:pointer;
+}
+
+.drw_menu li:hover{
+	background-color:blue;
+	color:white;	
+}
+
+.drwactive{background-color:orange;border:1px solid red;}
+/*Menu*/
+
+.drwDel{background-position:-117px -353px;}
+.drwAdd{background-position:-96px -353px;}	
+.tooldel{width:10px;height:10px;margin-left:38px; 
+			background-image:url(../library/images/idoc_draw/tools.png);background-position:-104px -314px;
+		}
+.scanImg .tooldel{margin-left:14px;}
+/*
+.idocdrwtopbar{  border:0px solid red;width:100%;}
+.drwNEOD,.drwNEOS{ border:0px solid green;position:absolute;top:-2px;margin-left:4px;text-align:center;}
+.drwNEOD{right:15px;}
+*/
+
+.drwNE{width:35px;text-align:left;border:0px solid red;line-height:18px;}
+
+#divlinewidth td{padding:0px;padding-right:10px;}
+
+.drwhighlight{border-right:3px solid red;border-left:3px solid red;border-top:1px solid red;border-bottom:1px solid red;}
+
+#drwNeOptions{ height:25px; text-align:left; width:75px;border:0px solid red;display:inline-block;margin:0px;padding:0px;margin-left:5px;margin-right:5px; }
+	
+.bg_drw_con{border:1px dashed #999; width:550px; text-align:left;}
+
+#divTools{border:1px dashed #999; height:465px; width:60px; text-align:center; padding-left:1px!important;padding-right:1px!important;}
+#divToolsRight{ border:1px dashed #999; height:465px; width:60px; overflow:auto; text-align:center;padding-left:1px!important;padding-right:1px!important; }
+.idoc_drw_canvas{ height:465px; width:735px; background-color:#ffffff; padding-left:1px!important;padding-right:1px!important; }
+#divlinewidth{ width:125px;border:0px solid red;display:inline-block;margin:0px;margin-left:5px; padding:0px;}
+#drawing-line-width{border:0; width:18px; font-weight:bold; background-color:transparent;margin-top:4px;}
+.drw-tools-bottom{height:100px;border:border:1px dashed #999;padding-top:5px;}
+#divSendBackForth{width:100px;}
+#textOptions_font{width:170px;}
+#textOptions_font_size{width:100px;}
+#textOptions_font_deco{width:200px;}
+textarea.drw_text_box{ height:500px!important; }
+.right_tools{background-repeat:no-repeat!important;background-color:white!important;background-position:center!important;}	
+
+
+
+
+
+
+

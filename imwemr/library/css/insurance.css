@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Patient Info Insurance Page Css Start */
+.input-group-addon{ padding:6px;}
+.insurcase{ background-color:#2e4b76; padding:5px;}
+.inshead{ border-bottom:1px solid rgba(255,255,255,0.20); padding-bottom:10px ; margin-bottom:10px;}
+.inshead h2{ padding:8px 0px 8px 44px; margin:0px; font-size:22px; color:#fff; position:relative}
+.inshead h2 figure{ position:absolute; left:0px; top:0px; }
+
+.insurcase label { font-size:14px; color:#fff; text-transform:uppercase; font-weight:normal; font-family:robotobold} 
+.insurcase label.input-group-addon { color: #555 !important; }
+.insurcase .form-group{ margin-bottom:5px;} 
+.accordion dt { position:relative}
+.accordion dt .actnbar{ padding:2px; margin-bottom:5px; text-align: right; position:absolute; top:0px; right:35px;}
+.accordion dt .actnbar ul{ padding:0px; margin:0px; list-style:none;}
+.accordion dt .actnbar > ul > li{ padding:0px; margin:0px; list-style:none; display:inline-block; vertical-align:middle}
+
+.accordion dt { border:1px solid #d4d4d4; border-bottom:0px}
+.accordion dd { background-color: #fff; font-size: 1em; margin-bottom:15px; border:1px solid #d4d4d4; border-top:0px; }
+/*  line-height: 1.5em;  */
+.accordion p { padding: 1em 2em 1em 2em; }
+.accordion { position: relative; }
+.accordion-box { }
+
+.accordionTitle { background-color: #fff; text-align: left; padding: 9px 12px 9px 65px; display: block; text-decoration: none; color: #737373; 
+  -webkit-transition: background-color 0.5s ease-in-out;
+          transition: background-color 0.5s ease-in-out;
+  border-bottom: 1px solid #d4d4d4; position:relative; font-size:18px; font-weight:normal 
+}
+
+.accordionTitle:before{ position:absolute; content:url(../images/acrd_lft.png); top:0px; left:0px; width:60px; height:49px;}
+
+.accordionTitle:after { content: "+"; font-size: 1.5em; line-height: 22px; float: right;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
+}
+
+.accordionTitle:hover { background-color: #d3d3d3; color:#000000; text-decoration:none }
+.accordionTitle:hover:before{ position:absolute; content:url(../images/acrd_lfth.png); top:0px; left:0px; width:60px; height:49px;}
+
+.accordionTitleActive,
+.accordionTitle.is-expanded { color:#000000; }
+.accordionTitle.is-expanded:before { position:absolute; content:url(../images/acrd_lfth.png); top:0px; left:0px; width:60px; height:49px; }
+
+.accordionTitleActive:after,  
+.accordionTitle.is-expanded:after {
+  -webkit-transform: rotate(-225deg);
+      -ms-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+}
+.accordionItem {
+  height: auto;
+  overflow: hidden;
+  /*max-height: 50em;*/
+  -webkit-transition: max-height 1s;
+          transition: max-height 1s;
+}
+
+.accordionItemCollapsed, .accordionItem.is-collapsed { max-height: 0; }
+
+.realtime_icon,.realtime_icon_disabled{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:0 0; display:block; height:41px; padding:0px 21px;}
+.realtime_icon:hover{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:0 -41px;}
+
+.preautho{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-42px 0; display:block;  height:40px; padding:0px 20px;  }
+.preautho:hover{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-42px -41px;}
+
+.opencase{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-84px 0; display:block; height:40px; padding:0px 20px;  }
+.opencase:hover{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-84px -41px;}
+
+.pcopy{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-126px 0; display:block; height:40px; padding:0px 20px;  }
+.pcopy:hover{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-126px -41px;}
+
+.irearrenge{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-168px 0; display:block;  height:40px; padding:0px 20px;  }
+.irearrenge:hover{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-168px -41px;}
+
+.iscani{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-210px 0; display:block;  height:40px; padding:0px 20px;  }
+.iscani:hover{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-210px -41px;}
+
+.insuvalid .selectpicker{ border-radius:0px; width:180px; margin:0px 4px; }
+
+.inscasesect{ padding:10px; }
+
+.inscasesect > div > .col-sm-4 > div{ border:1px solid #d4d4d4; min-height:372px;}
+
+.insurancehd{ min-height:33px}
+.insurancehd .checkbox{margin:0px}
+/*.insurancehd2{ border-bottom:2px solid #ff6b6b; padding:13px 15px 17px 8px; margin-bottom:5px;}
+.insurancehd3{ border-bottom:2px solid #6e6eff; padding:14px 15px 16px 8px;  margin-bottom:5px;}
+.insurancehd span{ position:absolute; right:14px; top:14px;}*/
+.inscasesect h2{ font-size:16px; padding:0px; margin:0px; font-family:robotobold; text-transform:uppercase}
+
+.insurancehd h2{ line-height:31px}
+
+.inscasesect  label{ font-weight:normal}
+.inscasesect .form-group{ margin-bottom:4px;}
+
+.plr10{ padding:0px 18px; }
+.plr5{ padding:0px 5px; }
+
+.inscasesect textarea.form-control{ max-height:60px; height:40px;}
+
+#tool_tip_div{ z-index:3; background-color:#FFCC66; position:absolute; border:1 solid blue; display:none; }
+
+.adminbox{ border:1px solid #e1e1e1; padding:0px 10px 10px 10px; min-height:235px; margin-bottom:10px;}
+.adminbox .headinghd{ border-bottom:2px solid #ff6b6b; padding:0px; margin:0px 0px 10px 0px; display:inline-block; float:left; width:100%  }
+.adminbox .headinghd h4{ text-transform:uppercase; font-size:16px; font-family: 'robotobold'; }
+.adminbox label{ margin:4px 0px 0px 0px!important; font-size:14px!important;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.adminbox h3{ font-size:14px; color:#6c6c6c; margin:0px 0px 10px 0px; padding:0px; text-transform:uppercase; font-weight:bold }
+.adminbox .input-group-addon {padding: 0px 7px !important;}
+.adminbox .tblBg { clear:both }
+.margin-top-5 { margin-top:5px !important}
+.margin-top-10 { margin-top:10px !important}
+.margin-top-20 { margin-top:20px !important}
+.sub-heading { font-weight:500; font-family:robotobold; font-size:14px;}
+
+.icon-add-more { background: url(../images/add_but.png) no-repeat left; background-size: contain;  margin-right:10px; cursor:pointer; width:30px; height:35px; display:inline-block; }
+
+#exp_reff_opts{ position:fixed; bottom:0; background-color:white; z-index:999; width:100%; border-top:solid 1px #DDD;}
+/* Patient Info Insurance Page Css End */
+
+/********rte CSS****/
+.er_icon{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat;  display:block; height:41px; padding:0px 21px;  background-position: -250px 0px!important;}
+.er_icon.active{ background-image:url(../images/insuriconflt.png); background-repeat:no-repeat; background-position:-250px -41px!important;}
+/********RTE CSS END***/
+@media (min-width: 1800px) and (max-width: 2400px) {
+.insurancepanel .col-sm-10{width:82.33%!important}
+
+}
+@media (min-width: 1400px) and (max-width: 1780px) {
+.insurancepanel .col-sm-10{width:82.33%!important}
+
+}

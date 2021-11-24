@@ -1,0 +1,29 @@
+{
+    "name": "getPatientMessages",
+    "description": "This call will retrieve all the messages for the patient.",
+    "parameters": [
+        {
+			"name": "patientId",
+			"type": "Integer",
+			"description": "Patient MRN in IMW.",
+			"required": true
+		},{
+            "name": "physicianId",
+			"type": "Integer",
+			"description": "List messages sent to or received from given physician id only.",
+			"required": false
+        },{
+            "name": "senderType",
+			"type": "Integer",
+			"description": "1 for Physician and 2 for Patient",
+			"required": true
+        },
+		{
+            "name": "date",
+			"type": "Date",
+			"description": "Format: YYYY-MM-DD - Message date",
+			"required": false
+        }
+    ],
+    "accessToken": true
+}

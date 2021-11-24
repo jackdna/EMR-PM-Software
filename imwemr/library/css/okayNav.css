@@ -1,0 +1,154 @@
+/*
+ * We are hiding the invisible nav outside the screen
+ * so we need to avoid the horizontal scroll
+ */
+body.okayNav-loaded {
+  overflow-x: hidden;
+}
+.okayNav:not(.loaded) {
+  visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.okayNav ul {
+  /* We want two navigations - one hidden and one visible */
+  float: left; padding:0px; margin:0px;
+}
+.okayNav a {
+  /* Links general styling */
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: normal;
+  /*position: relative;*/
+  z-index: 1;
+  font-family: 'robotolight'; text-decoration:none
+}
+
+
+
+.okayNav__nav--visible {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.okayNav__nav--visible li {
+  display: inline-block; border-right:1px solid #88639d ; padding:0px; margin:0px; position:relative
+  
+}
+
+/*.okayNav__nav--visible li:last-child {
+  display: inline-block; border-right:0px solid #fff
+  
+}*/
+
+.okayNav__nav--visible a {
+  /* Link styling for the visible part of the nav */
+  display: block;
+  transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);
+  padding: 5px 15px;
+}
+.okayNav__nav--visible a:hover, .okayNav__nav--visible a.unread{
+ background-color:#ec407a; text-decoration:none; color:#fff
+}
+.okayNav__nav--visible a.read{
+ background-color:#5CB85C; text-decoration:none; color:#fff
+}
+
+/*okaynav*/
+/*.okayNav .NoData a{background-color:Yellow;text-decoration: none;color: #fff;}*/
+/*.okayNav .Allergic a{background-color:#ec407a;text-decoration: none;color: #fff;}
+.okayNav .NKAllergy a, .okayNav .mh_grn a{background-color:#5cb85c;text-decoration: none;color: #fff;}
+.okayNav .mh_orng a{background-color:orange;text-decoration: none;color: #fff;} */
+
+.okayNav .cbred a{background-color:red;text-decoration: none;color: #fff;}
+.okayNav .cbgreen a{background-color:green;text-decoration: none;color: #fff;}
+.okayNav .cborange a{background-color:orange;text-decoration: none;color: #fff;}
+
+/* Link styling for the off-screen part of the nav */
+.okayNav__nav--invisible {
+  transition: -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-top:0px!important;
+  -webkit-transform-origin: 200px 0;
+      -ms-transform-origin: 200px 0;
+          transform-origin: 200px 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+ overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  list-style:none; z-index:99999999
+}
+.okayNav__nav--invisible a {
+  background: #673782;
+  width: 240px;
+  display: block;
+  padding: 15px; text-align:center
+}
+.okayNav__nav--invisible.nav-open {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+/* Kebab icon */
+.okayNav__menu-toggle {
+  position: relative;
+  transition: -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  float: left;
+  z-index: 1;
+  top: 12px;
+}
+.okayNav__menu-toggle span {
+  display: block;
+  position: absolute;
+  margin: auto;
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+.okayNav__menu-toggle span:nth-child(1) {
+  top: 0;
+}
+.okayNav__menu-toggle span:nth-child(2) {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.okayNav__menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
+.okayNav__menu-toggle.icon--active {
+  /* Kebab icon when off-screen nav is open */
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+		  position:absolute; top:0px; right:0px; z-index:99999999
+}
+.okayNav__menu-toggle.icon--active span {
+  background: #8bc34a;
+}
+
+.okayNav span{ display:block; text-align:center}
+
+.okayNav__nav--invisible li{ border-bottom:1px solid #88639d; position:relative}
+.okayNav__nav--invisible li a:hover{ background-color:#ec407a!important}
+.okayNav__nav--invisible li:last-child{ border-bottom:0px solid #000000}
+
+
+

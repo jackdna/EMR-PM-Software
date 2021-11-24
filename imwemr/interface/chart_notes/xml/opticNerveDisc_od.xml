@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+/*
+// The MIT License (MIT)
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+-->
+<optic_nerve_disc main_exam="Optic Nerve">
+	<od>		
+		<normal_rim examname="Normal Rim">			
+			<pinksharp elem_name="elem_PinkOd_Sharp" pv="Pink &amp;amp; Sharp"></pinksharp>
+			<svp elem_name="elem_OdSVP" pv="+SVP"></svp>
+		</normal_rim>
+		<opticnerveOdhmg examname="Optic Nerve Hmg">
+			<absent elem_name="elem_negOd_normal"></absent>
+			<present elem_name="elem_posOd_normal"></present>
+		</opticnerveOdhmg>
+		<slopping examname="Sloping">
+			<mild elem_name="elem_sloppingOd_Mild"></mild>
+			<moderate elem_name="elem_sloppingOd_Moderate"></moderate>
+			<severe elem_name="elem_sloppingOd_Severe"></severe>
+			<superior elem_name="elem_sloppingOd_superior"></superior>
+			<inferior elem_name="elem_sloppingOd_inferior"></inferior>
+			<nasal elem_name="elem_sloppingOd_nasal"></nasal>
+			<temporal elem_name="elem_sloppingOd_temporal"></temporal>
+		</slopping>
+		<notch examname="Notch">
+			<mild elem_name="elem_notchOd_Mild"></mild>
+			<moderate elem_name="elem_notchOd_Moderate"></moderate>
+			<severe elem_name="elem_notchOd_Severe"></severe>
+			<superior elem_name="elem_notchOd_superior"></superior>
+			<inferior elem_name="elem_notchOd_inferior"></inferior>
+			<nasal elem_name="elem_notchOd_nasal"></nasal>
+			<temporal elem_name="elem_notchOd_temporal"></temporal>
+		</notch>
+		<pallor examname="Pallor">
+			<mild elem_name="elem_pallorOd_mild"></mild>
+			<moderate elem_name="elem_pallorOd_moderate"></moderate>			
+			<severe elem_name="elem_pallorOd_severe"></severe>
+			<superior elem_name="elem_pallorOd_superior"></superior>
+			<inferior elem_name="elem_pallorOd_inferior"></inferior>
+			<nasal elem_name="elem_pallorOd_nasal"></nasal>
+			<temporal elem_name="elem_pallorOd_temporal"></temporal>			
+		</pallor>
+		<nerveApp examname="Nerve Appearance">
+			<small elem_name="elem_nerveAppOd_Small"></small>
+			<medium elem_name="elem_nerveAppOd_Medium"></medium>	
+			<large elem_name="elem_nerveAppOd_Large"></large>	
+			<tilted_disc elem_name="elem_nerveAppOd_TiltedDisc" pv="Tilted Disc"></tilted_disc>
+		</nerveApp>		
+		<pp_atrophy examname="Peri-papillary atrophy">
+			<negative elem_name="elem_ppAtrophyOd_negative"></negative>
+			<present elem_name="elem_ppAtrophyOd_positive"></present>
+			<mild elem_name="elem_ppAtrophyOd_Mild"></mild>
+			<moderate elem_name="elem_ppAtrophyOd_Moderate"></moderate>
+			<severe elem_name="elem_ppAtrophyOd_Severe"></severe>
+		</pp_atrophy>
+		
+		<edema examname="Edema">
+			<absent elem_name="elem_edemaOd_Absent"></absent>	
+			<present elem_name="elem_edemaOd_Present"></present>
+			<mild elem_name="elem_edemaOd_Mild"></mild>
+			<moderate elem_name="elem_edemaOd_Moderate"></moderate>
+			<severe elem_name="elem_edemaOd_Severe"></severe>
+		</edema>
+		
+		<neovasc examname="Neovascularization">
+			<absent elem_name="elem_nvascOd_Absent"></absent>	
+			<present elem_name="elem_nvascOd_Present"></present>
+			<mild elem_name="elem_nvascOd_Mild"></mild>
+			<moderate elem_name="elem_nvascOd_Moderate"></moderate>
+			<severe elem_name="elem_nvascOd_Severe"></severe>
+		</neovasc>
+
+		<drusen examname="Drusen" commonexam="1">
+			<abesnt elem_name="elem_onOd_drusen_Absent"></abesnt>
+			<t elem_name="elem_onOd_drusen_T"></t>
+			<pos1 elem_name="elem_onOd_drusen_pos1"></pos1>
+			<pos2 elem_name="elem_onOd_drusen_pos2"></pos2>
+			<pos3 elem_name="elem_onOd_drusen_pos3"></pos3>
+			<pos4 elem_name="elem_onOd_drusen_pos4"></pos4>
+			
+			<f elem_name="elem_onOd_drusen_F" ></f>
+			<pf elem_name="elem_onOd_drusen_foveal" pv="PF"></pf>
+			<ef elem_name="elem_onOd_drusen_EF" pv="EF"></ef>
+			<hard elem_name="elem_onOd_drusen_hard"></hard>
+		</drusen>
+		
+		<advanceoptions elem_name="elem_opticNerveDiscAdOptionsOd"></advanceoptions>		
+	</od>
+</optic_nerve_disc>

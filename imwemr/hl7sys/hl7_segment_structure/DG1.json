@@ -1,0 +1,81 @@
+{
+    "segment_id": "DG1",
+    "setId_DG1": "",
+    "diagnosis_codein_methos": "",
+    "diagnosis_code": {
+        "identifier": "",
+        "text": "",
+        "coding_system": "",
+        "alternate_identifier": "",
+        "alternate_text": "",
+        "alternate_coding_system": ""
+    },
+    "diagnosis_desc": "",
+    "date_time": {
+        "time_of_event": "",
+        "degree_of_precision": ""
+    },
+    "diagnosis_type": "",
+    "major_diagnostic_category": {
+        "identifier": "",
+        "text": "",
+        "coding_system": "",
+        "alternate_identifier": "",
+        "alternate_text": "",
+        "alternate_coding_system": ""
+    },
+    "diagnosis_related_group": {
+        "identifier": "",
+        "text": "",
+        "coding_system": "",
+        "alternate_identifier": "",
+        "alternate_text": "",
+        "alternate_coding_system": ""
+    },
+    "DRG_approval_indicator": "",
+    "DRG_grouper_review_code": "",
+    "outlier_type": {
+        "identifier": "",
+        "text": "",
+        "coding_system": "",
+        "alternate_identifier": "",
+        "alternate_text": "",
+        "alternate_coding_system": ""
+    },
+    "outlier_days": "",
+    "outlier_cost": {
+        "price": "",
+        "price_type": "",
+        "from_value": "",
+        "to_value": "",
+        "range_units": "",
+        "range_type": ""
+    },
+    "group_version_type": "",
+    "diagnosis_priority": "",
+    "diagnosis_clinician": {
+        "id_number": "",
+        "last_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "suffix": "",
+        "prefix": "",
+        "degree": "",
+        "source_table": "",
+        "assigning_authority": "",
+        "name_type_code": "",
+        "identifier_check_digit": "",
+        "code_identifying_check_digit_schema": "",
+        "identifier_type_code": "",
+        "assigning_facility": "",
+        "name_representation_code": ""
+    },
+    "diagnosis_classification": "",
+    "confidential_indicator": "",
+    "attestation_date_time": {
+        "time_of_event": "",
+        "degree_of_precision": ""
+    },
+    "diagnosis_identifier": "",
+    "diagnosis_action_code": ""
+}

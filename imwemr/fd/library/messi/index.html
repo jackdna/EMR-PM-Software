@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="messi.css">
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="messi.js"></script>
+<title>New Fancy Alert</title>
+<script type="text/javascript">
+$(document).ready(function() {
+	 $('.code').hide();
+	
+	$('#show-hide-code').bind('click', function() {
+	  $('.code').toggle();
+	});
+
+	$('#simple').bind('click', function() {
+	  new Messi('This is a message with Messi.');
+	});
+	
+	$('#title').bind('click', function() {
+	  new Messi('This is a message with Messi.', {title: 'Title'});
+	});
+	
+	$('#modal').bind('click', function() {
+	  new Messi('This is a message with Messi in modal view. Now you can\'t interact with other elements in the page until close this.', {title: 'Modal Window', modal: true});
+	});
+	
+	$('#absolute').bind('click', function() {
+	  new Messi('This is a message with Messi in absolute position.', {center: false, viewport: {top: '760px', left: '0px'}});
+	});
+	
+	$('#close-button').bind('click', function() {
+	  new Messi('This is a message with Messi with custom buttons.', {title: 'Buttons', buttons: [{id: 0, label: 'Close', val: 'X'}]});
+	});
+	
+	$('#yes-no-buttons').bind('click', function() {
+	  new Messi('This is a message with Messi with custom buttons.', {title: 'Buttons', buttons: [{id: 0, label: 'Yes', val: 'Y'}, {id: 1, label: 'No', val: 'N'}], callback: function(val) { alert('Your selection: ' + val); }});
+	});
+	
+	$('#yes-no-cancel-buttons').bind('click', function() {
+	  new Messi('This is a message with Messi with custom buttons.', {title: 'Buttons', buttons: [{id: 0, label: 'Yes', val: 'Y', "class": 'btn-success'}, {id: 1, label: 'No', val: 'N', "class": 'btn-danger'}, {id: 2, label: 'Cancel', val: 'C'}]});
+	});
+	
+	$('#success-title').bind('click', function() {
+	  new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'success', buttons: [{id: 0, label: 'Close', val: 'X'}]});
+	});
+	
+	$('#info-title').bind('click', function() {
+	  new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'info', buttons: [{id: 0, label: 'Close', val: 'X'}]});
+	});
+	
+	$('#error-title').bind('click', function() {
+	  new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'anim error', buttons: [{id: 0, label: 'Close', val: 'X'}]});
+	});
+	
+	$('#warning-title').bind('click', function() {
+	  new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'anim warning', buttons: [{id: 0, label: 'Close', val: 'X'}]});
+	});
+	
+	$('#alert').bind('click', function() {
+	  Messi.alert('This is an alert with Messi.');
+	});
+	
+	$('#ask').bind('click', function() {
+	  Messi.ask('This is a question with Messi. Do you like it?', function(val) { alert('Your selection: ' + val); });
+	});
+	
+	$('#load').bind('click', function() {
+	  Messi.load('ajax.html');
+	});
+	
+	$('#img').bind('click', function() {
+	  Messi.img('messi.jpg');
+	});
+	
+});
+  
+function checkPauseOfJS(){
+	alert('hello');
+	new Messi('This is a message with Messi.',{title:'Hello'});
+	alert('bye');
+}
+</script>
+</head>
+
+<body>
+<input type="button" onClick="checkPauseOfJS()" value="JS Pause Check"><bR><br>
+<h3 id="usage">Usage<button id="show-hide-code" class="btn">show/hide code</span></h3>
+    <p>Simple message:</p>
+    <ul>
+      <li>
+        <a id="simple">Simple message</a>
+        <pre class="code">new Messi('This is a message with Messi.');</pre>
+      </li>
+      <li>
+        <a id="title">Message with title.</a>
+        <pre class="code">new Messi('This is a message with Messi.', {title: 'Title'});</pre>
+      </li>
+      <li>
+        <a id="modal">Message in modal view.</a>
+        <pre class="code">new Messi('This is a message with Messi in modal view. Now you can\'t interact with other elements in the page until close this.', {title: 'Modal Window', modal: true});</pre>
+      </li>
+      <li>
+        <a id="absolute">Message in absolute position.</a>
+        <pre class="code">new Messi('This is a message with Messi in absolute position.', {center: false, viewport: {top: '760px', left: '0px'}});</pre>
+      </li>
+    </ul>
+    <p>Buttons:</p>
+    <ul>
+      <li>
+        <a id="close-button">Message with custom button.</a>
+        <pre class="code">new Messi('This is a message with Messi with custom buttons.', {title: 'Buttons', buttons: [{id: 0, label: 'Close', val: 'X'}]});</pre>
+      </li>
+      <li>
+        <a id="yes-no-buttons">Message with custom buttons (yes/no) and callback function.</a>
+        <pre class="code">new Messi('This is a message with Messi with custom buttons.', {title: 'Buttons', buttons: [{id: 0, label: 'Yes', val: 'Y'}, {id: 1, label: 'No', val: 'N'}], callback: function(val) { alert('Your selection: ' + val); }});</pre>
+      </li>
+      <li>
+        <a id="yes-no-cancel-buttons">Message with custom buttons (yes/no/cancel) with style classes.</a>
+        <pre class="code">new Messi('This is a message with Messi with custom buttons.', {title: 'Buttons', buttons: [{id: 0, label: 'Yes', val: 'Y', class: 'btn-success'}, {id: 1, label: 'No', val: 'N', class: 'btn-danger'}, {id: 2, label: 'Cancel', val: 'C'}]});</pre>
+      </li>
+    </ul>
+    <p>Applying styles to title:</p>
+    <ul>
+      <li>
+        <a id="success-title">Success title.</a>
+        <pre class="code">new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'success', buttons: [{id: 0, label: 'Close', val: 'X'}]});</pre>
+      </li>
+      <li>
+        <a id="info-title">Info title.</a>
+        <pre class="code">new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'info', buttons: [{id: 0, label: 'Close', val: 'X'}]});</pre>
+      </li>
+      <li>
+        <a id="error-title">Error title (animated).</a>
+        <pre class="code">new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'anim error', buttons: [{id: 0, label: 'Close', val: 'X'}]});</pre>
+      </li>
+      <li>
+        <a id="warning-title">Warning title (animated).</a>
+        <pre class="code">new Messi('This is a message with Messi.', {title: 'Title', titleClass: 'anim warning', buttons: [{id: 0, label: 'Close', val: 'X'}]});</pre>
+      </li>
+    </ul>
+    <p>Other options:</p>
+    <ul>
+      <li>
+        <a id="alert">Use Messi.alert() to launch a fast simple message.</a>
+        <pre class="code">Messi.alert('This is an alert with Messi.');</pre>
+      </li>
+      <li>
+        <a id="ask">Use Messi.ask() to launch a fast yes/no message.</a>
+        <pre class="code">Messi.ask('This is a question with Messi. Do you like it?', function(val) { alert('Your selection: ' + val); });</pre>
+      </li>
+      <li>
+        <a id="load">Use Messi.load() to show an ajax request as a message.</a>
+        <pre class="code">Messi.load('login.php', {params: {user: 'demo', password: '1234'}});</pre>
+      </li>
+      <li>
+        <a id="img">Use Messi.img() to show an image.</a>
+        <pre class="code">Messi.img('messi.jpg');</pre>
+      </li>
+    </ul>
+    
+    <h3 id="setup">Setup</h3>
+    <p>Messi requires <a href="http://jquery.com/" title="jQuery">jQuery</a> framework to work, so include it first of all in your project. After that:</p>
+    <ol>
+
+      <li>Download <strong>Messi</strong> from <a href="https://github.com/marcosesperon/Messi">gitHub</a> and descompress.</li>
+      <li>Copy messi.css and messi.js files (or minified version) to your project folder.</li>
+      <li>Edit you html pages to include both files:<pre>&lt;link rel="stylesheet" href="messi.min.css" /&gt;
+&lt;script src="messi.js"&gt;&lt;/script&gt;</pre></li>
+      <li>Enjoy it!</li>
+    </ol>
+    
+    <h3 id="options">Options</h3>
+    <table class="options">
+      <thead>
+        <tr>
+          <th width="25%">Option</th>
+          <th width="60%">Description</th>
+          <th width="15%">Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>autoclose</code></td>
+          <td>Close message after 'x' milliseconds.</td>
+          <td><code>null</code></td>
+        </tr>
+        <tr>
+          <td><code>buttons</code></td>
+          <td>Array of buttons to show in the foot of the message, i.e: [{id: 'ok', label: 'OK', val: 'OK', class: ''}].</td>
+          <td><code>[]</code></td>
+        </tr>
+        <tr>
+          <td><code>callback</code></td>
+          <td>Callback function after close the message.</td>
+          <td><code>null</code></td>
+        </tr>
+        <tr>
+          <td><code>center</code></td>
+          <td>Centers message on the viewport.</td>
+          <td><code>true</code></td>
+        </tr>
+        <tr>
+          <td><code>closeButton</code></td>
+          <td>Show close button in header title (or content if buttons array is empty).</td>
+          <td><code>true</code></td>
+        </tr>
+        <tr>
+          <td><code>height</code></td>
+          <td>Content height.</td>
+          <td><code>'auto'</code></td>
+        </tr>
+        <tr>
+          <td><code>title</code></td>
+          <td>Text title in the message.</td>
+          <td><code>null</code></td>
+        </tr>
+        <tr>
+          <td><code>titleClass</code></td>
+          <td>Title background CSS style: info, warning, success, error, anim.</td>
+          <td><code>null</code></td>
+        </tr>
+        <tr>
+          <td><code>modal</code></td>
+          <td>Shows message in modal view (load background div).</td>
+          <td><code>false</code></td>
+        </tr>
+        <tr>
+          <td><code>modalOpacity</code></td>
+          <td>If modal, set the div's opacity.</td>
+          <td><code>.2</code></td>
+        </tr>
+        <tr>
+          <td><code>padding</code></td>
+          <td>Sets the content padding.</td>
+          <td><code>'10px'</code></td>
+        </tr>
+        <tr>
+          <td><code>show</code></td>
+          <td>Show message after load.</td>
+          <td><code>true</code></td>
+        </tr>
+        <tr>
+          <td><code>unload</code></td>
+          <td>Unload message from DOM after hide.</td>
+          <td><code>true</code></td>
+        </tr>
+        <tr>
+          <td><code>viewport</code></td>
+          <td>If not center message, sets X and Y positions.</td>
+          <td><code>{top: '0px', left: '0px'}</code></td>
+        </tr>
+        <tr>
+          <td><code>width</code></td>
+          <td>Message width.</td>
+          <td><code>'500px'</code></td>
+        </tr>
+        <tr>
+          <td><code>zIndex</code></td>
+          <td>Message initial z-index CSS property.</td>
+          <td><code>99999</code></td>
+        </tr>
+      </tbody>
+    </table>
+    
+</body>
+</html>

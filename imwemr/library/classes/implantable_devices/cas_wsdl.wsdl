@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:authorization.umlsks.nlm.nih.gov" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="urn:authorization.umlsks.nlm.nih.gov" xmlns:intf="urn:authorization.umlsks.nlm.nih.gov" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+
+    <wsdl:message name="getProxyGrantTicketResponse">
+
+
+        <wsdl:part name="getProxyGrantTicketReturn" type="soapenc:string"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="validateProxyTicketRequest">
+
+
+        <wsdl:part name="in0" type="soapenc:string"/>
+
+
+        <wsdl:part name="in1" type="soapenc:string"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="getProxyTicketResponse">
+
+
+        <wsdl:part name="getProxyTicketReturn" type="soapenc:string"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="getProxyTicketRequest">
+
+
+        <wsdl:part name="in0" type="soapenc:string"/>
+
+
+        <wsdl:part name="in1" type="soapenc:string"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="validateProxyTicketResponse">
+
+
+        <wsdl:part name="validateProxyTicketReturn" type="soapenc:string"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="getProxyGrantTicketRequest">
+
+
+        <wsdl:part name="in0" type="soapenc:string"/>
+
+
+        <wsdl:part name="in1" type="soapenc:string"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:portType name="AuthorizationPortType">
+
+
+        <wsdl:operation name="getProxyGrantTicket" parameterOrder="in0 in1">
+
+
+            <wsdl:input message="impl:getProxyGrantTicketRequest" name="getProxyGrantTicketRequest"/>
+
+
+            <wsdl:output message="impl:getProxyGrantTicketResponse" name="getProxyGrantTicketResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="getProxyTicket" parameterOrder="in0 in1">
+
+
+            <wsdl:input message="impl:getProxyTicketRequest" name="getProxyTicketRequest"/>
+
+
+            <wsdl:output message="impl:getProxyTicketResponse" name="getProxyTicketResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="validateProxyTicket" parameterOrder="in0 in1">
+
+
+            <wsdl:input message="impl:validateProxyTicketRequest" name="validateProxyTicketRequest"/>
+
+
+            <wsdl:output message="impl:validateProxyTicketResponse" name="validateProxyTicketResponse"/>
+
+
+        </wsdl:operation>
+
+
+    </wsdl:portType>
+
+
+    <wsdl:binding name="AuthorizationPortSoapBinding" type="impl:AuthorizationPortType">
+
+
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+
+        <wsdl:operation name="getProxyGrantTicket">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="getProxyGrantTicketRequest">
+
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:authorization.umlsks.nlm.nih.gov" use="encoded"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="getProxyGrantTicketResponse">
+
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:authorization.umlsks.nlm.nih.gov" use="encoded"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="getProxyTicket">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="getProxyTicketRequest">
+
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:authorization.umlsks.nlm.nih.gov" use="encoded"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="getProxyTicketResponse">
+
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:authorization.umlsks.nlm.nih.gov" use="encoded"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="validateProxyTicket">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="validateProxyTicketRequest">
+
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:authorization.umlsks.nlm.nih.gov" use="encoded"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="validateProxyTicketResponse">
+
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:authorization.umlsks.nlm.nih.gov" use="encoded"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+    </wsdl:binding>
+
+
+    <wsdl:service name="AuthorizationPortTypeService">
+
+
+        <wsdl:port binding="impl:AuthorizationPortSoapBinding" name="AuthorizationPort">
+
+
+            <wsdlsoap:address location="https://uts-ws.nlm.nih.gov/authorization/services/AuthorizationPort"/>
+
+
+        </wsdl:port>
+
+
+    </wsdl:service>
+
+
+</wsdl:definitions>

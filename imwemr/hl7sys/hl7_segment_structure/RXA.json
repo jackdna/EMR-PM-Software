@@ -1,0 +1,24 @@
+{
+    "segment_id": "RXA",
+    "give_sub_Id_counter": "",
+    "administered_sub_Id_counter": "",
+    "date_time_start": "",
+    "date_time_end": "",
+    "administered_code": {
+        "identifier": "",
+        "text": "",
+        "name_of_coding_system": "",
+        "alternate_text": "",
+        "name_alternate_coding_system": ""
+    },
+    "administered_amount": "",
+    "administered_units": {
+        "identifier": "",
+        "text": ""
+    },
+    "administered_dosage_form": "",
+    "administration_notes": {
+        "identifier": "",
+        "text": ""
+    }
+}

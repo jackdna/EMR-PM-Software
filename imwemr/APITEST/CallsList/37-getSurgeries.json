@@ -1,0 +1,6 @@
+{
+    "name": "getSurgeries",
+    "description": "This API call is used to list the Surgeries available in iDoc",
+    "parameters": [],
+    "accessToken": true
+}

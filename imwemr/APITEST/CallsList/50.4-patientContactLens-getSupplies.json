@@ -1,0 +1,6 @@
+{
+    "name": "patientContactLens/getSupplies",
+    "description": "This call will provide available supplies options in the iDoc.",
+    "parameters": [],
+    "accessToken": true
+}

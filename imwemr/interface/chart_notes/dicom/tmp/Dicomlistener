@@ -1,0 +1,79 @@
+#!/bin/bash
+# Name : DICOM Listener
+
+DAEMON="/usr/bin/php"
+DAEMON_OPTS1="/var/www/html/imwemr/interface/chart_notes/dicom/dicom_wlm.php"
+DAEMON_OPTS2="/var/www/html/imwemr/interface/chart_notes/dicom/dicom_receiver.php"
+PRACTICE1="imwemr"
+NAME="DICOMListener"
+
+getPid() {
+        PID=`ps -ef |grep [d]icom |awk '{ print $2 }'`
+        echo "$PID"
+}
+
+start() {
+if [[ "" != "$( getPid )" ]];
+then
+        echo "$NAME already running"
+else
+        echo -e "${NAME}: Starting..."
+	sleep 1
+#        nohup $DAEMON $DAEMON_OPTS1 > /dev/null 2>&1 &
+        nohup $DAEMON $DAEMON_OPTS1 $PRACTICE1 > /dev/null 2>&1 &
+        nohup $DAEMON $DAEMON_OPTS2 $PRACTICE1 > /dev/null 2>&1 &
+        echo -e "${NAME}: Started"
+fi
+}
+
+stop() {
+if [[ "" != "$( getPid )" ]]; then
+    echo -e "${NAME}: Stopping..."
+        for PID in $( getPid )
+	    do
+		kill -9 $PID
+		sleep 1
+	    done
+
+	if [[ "" ==  "$( getPid )" ]]; then
+	        echo -e "${NAME}: Stopped"
+	else
+		echo -e "Unable to stop ${NAME}"
+	fi
+else
+        echo "${NAME} not running"
+fi
+}
+
+status() {
+if [[ "" != "$( getPid )" ]];
+then
+        echo -e "$NAME Running with Following PIDs: \n$( getPid )"
+else
+        echo "$NAME not running"
+fi
+}
+
+case "$1" in
+start)
+        start
+        ;;
+stop)
+        stop
+        ;;
+status)
+        status
+        ;;
+restart)
+        /etc/init.d/Dicomlistener stop
+        sleep 1
+        echo -e "\n"
+		sleep 1
+        /etc/init.d/Dicomlistener start
+        ;;
+*)
+        echo "Usage : start|stop|status|restart"
+        exit 1
+        ;;
+esac
+exit 0

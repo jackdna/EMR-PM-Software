@@ -1,0 +1,6 @@
+{
+    "name": "getProcedureList",
+    "description": "This API call is used to list the procedures available for booking appointment:",
+    "parameters": [],
+    "accessToken": true
+}

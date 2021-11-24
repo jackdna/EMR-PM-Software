@@ -1,0 +1,10 @@
+.loading{
+	position:absolute;
+	left:40%;
+	top:40%;
+	z-index:1000;
+	width:145px;
+	color:#346585;
+	height:64px;
+	background:center transparent url(../../images/BiColorCircle.gif) no-repeat;
+}

@@ -1,0 +1,74 @@
+{
+    "segment_id": "GT1",
+    "setId_GT1": "",
+    "gurantor_number": "",
+    "name": {
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "spouse_name": "",
+    "address": {
+        "street": "",
+        "other_designation": "",
+        "city": "",
+        "state_province": "",
+        "zip": "",
+        "country": "",
+        "address_type": ""
+    },
+    "phone_home": {
+        "telephone_number": {
+            "home": "",
+            "cell": ""
+        },
+        "telComm_useCode": "",
+        "telComm_equipType": "",
+        "email": ""
+    },
+    "phone_business": {
+        "telephone_number": "",
+        "telComm_useCode": "",
+        "telComm_equipType": "",
+        "email": ""
+    },
+    "dob": "",
+    "sex": "",
+    "gurantor_type": "",
+    "relationship": "",
+    "ssn": "",
+    "date_begin": "",
+    "date_end": "",
+    "gurantor_priority": "",
+    "employer_name": {
+        "family_name": "",
+        "given_name": "",
+        "middle_name": "",
+        "name_suffix": "",
+        "name_prefix": ""
+    },
+    "employer_address": {
+        "street": "",
+        "other_designation": "",
+        "city": "",
+        "state_province": "",
+        "zip": "",
+        "country": "",
+        "address_type": ""
+    },
+    "employer_phone": "",
+    "employee_id": "",
+    "employment_status": "",
+    "organization_name": "",
+    "billing_hold_flag": "",
+    "creadit_rating_code": "",
+    "death_date": "",
+    "death_flag": "",
+    "charge_adjustment_code": "",
+    "annual_income": "",
+    "household_size": "",
+    "employer_id": "",
+    "marital_status": ""
+}

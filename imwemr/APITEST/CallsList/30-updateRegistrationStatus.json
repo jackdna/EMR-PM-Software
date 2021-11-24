@@ -1,0 +1,19 @@
+{
+    "name": "updateRegistrationStatus",
+    "description": "This API call is used to update the registration status of the patient.",
+    "parameters": [
+        {
+			"name": "patientId",
+			"type": "Integer",
+			"description": "Patient MRN in IMW.",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "Registration Status to update.",
+			"required": true
+		}
+    ],
+    "accessToken": true
+}
