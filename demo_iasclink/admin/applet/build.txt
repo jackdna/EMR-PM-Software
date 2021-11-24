@@ -1,5 +1,0 @@
-J-Painter
-Version 5.8.0
-Last build 2006-04-06
-Copyright 2001-2006 Igor Zhukovsky
-www.izhuk.com

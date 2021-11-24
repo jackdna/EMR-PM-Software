@@ -1,6 +1,0 @@
-{
-    "name": "getMedRoutes",
-    "description": "This API call is used to get all the available medication routes",
-    "parameters": [],
-    "accessToken": true
-}

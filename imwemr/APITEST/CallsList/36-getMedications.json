@@ -1,6 +1,0 @@
-{
-    "name": "getMedications",
-    "description": "This API call is used to list the Medications available in iDoc",
-    "parameters": [],
-    "accessToken": true
-}

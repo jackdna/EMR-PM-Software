@@ -1,6 +1,0 @@
-{
-    "name": "getDataImages",
-    "description": "This API call is used to list the images available",
-    "parameters": [],
-    "accessToken": true
-}

@@ -1,3 +1,0 @@
-Make sure you use superuser when running the demo, and that CLASSPATH and nmLD_LIBRARY_PATH are set correctly. Also, be sure the Topaz signature pad is connected prior to booting the computer. Finally, be sure to change the device permission access, chmod 777 /dev/hiddev0
-
-This folder contains a java demo you can run, an INI file, an SO file, and a JAR. The SigPlus.ini is set up for a 1X5-size pad, so you'll want to open the SigPlus.ini file and change the TabletModel parameter to match your pad. Be  ure to use the included SigPlusSimpleDemo to start. This will allow you to use HSB pads under Java running Linux.

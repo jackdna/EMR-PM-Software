@@ -1,6 +1,0 @@
-{
-    "name": "getRelationship",
-    "description": "This API call is used to list the relationship values available in iDoc",
-    "parameters": [],
-    "accessToken": true
-}

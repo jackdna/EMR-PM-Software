@@ -1,6 +1,0 @@
-{
-    "name": "patientContactLens/getDisposable",
-    "description": "This call will provide available disposable values in the iDoc.",
-    "parameters": [],
-    "accessToken": true
-}

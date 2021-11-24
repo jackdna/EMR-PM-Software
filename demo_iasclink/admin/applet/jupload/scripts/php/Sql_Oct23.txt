@@ -1,8 +1,0 @@
-# Chart_master_table
-
-ALTER TABLE chart_master_table 
-ADD isSuperBilled INT(2) NULL,
-ADD isVip INT(2) NULL,
-ADD isVip INT(2) NULL;
-
-#
