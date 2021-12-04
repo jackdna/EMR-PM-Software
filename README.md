@@ -394,3 +394,4 @@ Notes :
 1. There are additional software needed for scanning and other equipments, get vendor support for that.
 2. Any PHP error, enable php log within each pages or globally.
 3. Password can be change both from application and MySQL tables usualy in "users" table.
+4. Software might have errors please raise bug fix issues.
